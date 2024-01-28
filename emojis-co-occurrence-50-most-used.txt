@@ -1,0 +1,2538 @@
+###################################################################
+#################### NEO4J queries and results ####################
+###################################################################
+
+
+###################################################################
+##### POLY
+###################################################################
+
+#-----------------------------------------------
+# Indifferent
+
+MATCH (n)-[r:FOLLOWED_BY { index: "poly" }]->(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	478
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	221
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	203
+"🇺🇸"	"flag: United States"	"🇺🇸"	"flag: United States"	152
+"🔥"	"fire"	"🔥"	"fire"	101
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	60
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	51
+"❤️"	"red heart"	"❤️"	"red heart"	49
+"🚨"	"police car light"	"🚨"	"police car light"	44
+"🤔"	"thinking face"	"🤔"	"thinking face"	41
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	40
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	38
+"👏"	"clapping hands"	"👏"	"clapping hands"	37
+"😡"	"pouting face"	"😡"	"pouting face"	36
+"🥺"	"pleading face"	"🥺"	"pleading face"	35
+"🥰"	"smiling face with hearts"	"🥰"	"smiling face with hearts"	32
+"❤"	"red heart"	"❤"	"red heart"	31
+"🙏"	"folded hands"	"🙏"	"folded hands"	31
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	30
+"💕"	"two hearts"	"💕"	"two hearts"	26
+"👇🏾"	"backhand index pointing down: medium-dark skin tone"	"👇🏾"	"backhand index pointing down: medium-dark skin tone"	26
+"🤡"	"clown face"	"🤡"	"clown face"	26
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	25
+"💥"	"collision"	"💥"	"collision"	24
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	24
+"💯"	"hundred points"	"💯"	"hundred points"	23
+"😌"	"relieved face"	"😌"	"relieved face"	21
+"✨"	"sparkles"	"✨"	"sparkles"	21
+"😳"	"flushed face"	"😳"	"flushed face"	21
+"💙"	"blue heart"	"💙"	"blue heart"	21
+"😀"	"grinning face"	"😀"	"grinning face"	20
+"👀"	"eyes"	"👀"	"eyes"	20
+"🐏"	"ram"	"🐏"	"ram"	19
+"💀"	"skull"	"💀"	"skull"	19
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	19
+"🎉"	"party popper"	"🎉"	"party popper"	18
+"👍"	"thumbs up"	"👍"	"thumbs up"	18
+"💜"	"purple heart"	"💜"	"purple heart"	18
+"👄"	"mouth"	"👁"	"eye"	17
+"👁"	"eye"	"👄"	"mouth"	17
+"😝"	"squinting face with tongue"	"😝"	"squinting face with tongue"	16
+"🇺🇲"	"flag: U.S. Outlying Islands"	"🇺🇲"	"flag: U.S. Outlying Islands"	16
+"☀️"	"sun"	"☀️"	"sun"	15
+"👇🏼"	"backhand index pointing down: medium-light skin tone"	"👇🏼"	"backhand index pointing down: medium-light skin tone"	14
+"🤢"	"nauseated face"	"🤢"	"nauseated face"	14
+"❌"	"cross mark"	"❌"	"cross mark"	13
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	13
+"🥴"	"woozy face"	"🥴"	"woozy face"	13
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	12
+"😤"	"face with steam from nose"	"😤"	"face with steam from nose"	11
+
+#-----------------------------------------------
+# With repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "poly" }]->(m) WHERE n.emoji = m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	478
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	221
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	203
+"🇺🇸"	"flag: United States"	"🇺🇸"	"flag: United States"	152
+"🔥"	"fire"	"🔥"	"fire"	101
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	60
+"❤️"	"red heart"	"❤️"	"red heart"	49
+"🚨"	"police car light"	"🚨"	"police car light"	44
+"🤔"	"thinking face"	"🤔"	"thinking face"	41
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	38
+"👏"	"clapping hands"	"👏"	"clapping hands"	37
+"😡"	"pouting face"	"😡"	"pouting face"	36
+"🥺"	"pleading face"	"🥺"	"pleading face"	35
+"🥰"	"smiling face with hearts"	"🥰"	"smiling face with hearts"	32
+"🙏"	"folded hands"	"🙏"	"folded hands"	31
+"❤"	"red heart"	"❤"	"red heart"	31
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	30
+"🤡"	"clown face"	"🤡"	"clown face"	26
+"👇🏾"	"backhand index pointing down: medium-dark skin tone"	"👇🏾"	"backhand index pointing down: medium-dark skin tone"	26
+"💕"	"two hearts"	"💕"	"two hearts"	26
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	25
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	24
+"💥"	"collision"	"💥"	"collision"	24
+"💯"	"hundred points"	"💯"	"hundred points"	23
+"💙"	"blue heart"	"💙"	"blue heart"	21
+"😳"	"flushed face"	"😳"	"flushed face"	21
+"✨"	"sparkles"	"✨"	"sparkles"	21
+"😌"	"relieved face"	"😌"	"relieved face"	21
+"😀"	"grinning face"	"😀"	"grinning face"	20
+"👀"	"eyes"	"👀"	"eyes"	20
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	19
+"💀"	"skull"	"💀"	"skull"	19
+"🐏"	"ram"	"🐏"	"ram"	19
+"💜"	"purple heart"	"💜"	"purple heart"	18
+"👍"	"thumbs up"	"👍"	"thumbs up"	18
+"🎉"	"party popper"	"🎉"	"party popper"	18
+"😝"	"squinting face with tongue"	"😝"	"squinting face with tongue"	16
+"🇺🇲"	"flag: U.S. Outlying Islands"	"🇺🇲"	"flag: U.S. Outlying Islands"	16
+"☀️"	"sun"	"☀️"	"sun"	15
+"🤢"	"nauseated face"	"🤢"	"nauseated face"	14
+"👇🏼"	"backhand index pointing down: medium-light skin tone"	"👇🏼"	"backhand index pointing down: medium-light skin tone"	14
+"🥴"	"woozy face"	"🥴"	"woozy face"	13
+"❌"	"cross mark"	"❌"	"cross mark"	13
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	12
+"😼"	"cat with wry smile"	"😼"	"cat with wry smile"	11
+"😷"	"face with medical mask"	"😷"	"face with medical mask"	11
+"💖"	"sparkling heart"	"💖"	"sparkling heart"	11
+"😤"	"face with steam from nose"	"😤"	"face with steam from nose"	11
+"💔"	"broken heart"	"💔"	"broken heart"	11
+"🌊"	"water wave"	"🌊"	"water wave"	11
+
+#-----------------------------------------------
+# No repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "poly" }]->(m) WHERE n.emoji <> m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	51
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	40
+"👁"	"eye"	"👄"	"mouth"	17
+"👄"	"mouth"	"👁"	"eye"	17
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	13
+"👉"	"backhand index pointing right"	"👈"	"backhand index pointing left"	10
+"😂"	"face with tears of joy"	"😭"	"loudly crying face"	10
+"💋"	"kiss mark"	"😍"	"smiling face with heart-eyes"	10
+"🇺🇸"	"flag: United States"	"❤️"	"red heart"	9
+"🇺🇸"	"flag: United States"	"😂"	"face with tears of joy"	8
+"❤️"	"red heart"	"💋"	"kiss mark"	8
+"💕"	"two hearts"	"👏"	"clapping hands"	8
+"🧡"	"orange heart"	"💛"	"yellow heart"	7
+"👍"	"thumbs up"	"🇺🇸"	"flag: United States"	7
+"😍"	"smiling face with heart-eyes"	"❤️"	"red heart"	7
+"🐸"	"frog"	"☕"	"hot beverage"	7
+"🚔"	"oncoming police car"	"🚨"	"police car light"	6
+"💙"	"blue heart"	"💜"	"purple heart"	6
+"💛"	"yellow heart"	"💜"	"purple heart"	6
+"😆"	"grinning squinting face"	"🤣"	"rolling on the floor laughing"	6
+"💕"	"two hearts"	"💖"	"sparkling heart"	6
+"❤️"	"red heart"	"🤍"	"white heart"	6
+"🗳"	"ballot box with ballot"	"🇺🇸"	"flag: United States"	6
+"💙"	"blue heart"	"💛"	"yellow heart"	5
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	5
+"🇺🇸"	"flag: United States"	"💯"	"hundred points"	5
+"🇺🇸"	"flag: United States"	"🙏"	"folded hands"	5
+"❤️"	"red heart"	"😘"	"face blowing a kiss"	5
+"👁️"	"eye"	"👄"	"mouth"	5
+"🇺🇸"	"flag: United States"	"🗳"	"ballot box with ballot"	5
+"🙌"	"raising hands"	"🇺🇸"	"flag: United States"	5
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	5
+"😍"	"smiling face with heart-eyes"	"💕"	"two hearts"	5
+"😭"	"loudly crying face"	"🤣"	"rolling on the floor laughing"	5
+"🙏"	"folded hands"	"🇺🇸"	"flag: United States"	5
+"😁"	"beaming face with smiling eyes"	"😎"	"smiling face with sunglasses"	5
+"😎"	"smiling face with sunglasses"	"🇺🇸"	"flag: United States"	5
+"👄"	"mouth"	"👁️"	"eye"	5
+"❤️"	"red heart"	"💙"	"blue heart"	5
+"🥰"	"smiling face with hearts"	"❤️"	"red heart"	5
+"🏆"	"trophy"	"⚾"	"baseball"	5
+"💙"	"blue heart"	"🇺🇸"	"flag: United States"	4
+"💜"	"purple heart"	"💛"	"yellow heart"	4
+"🤍"	"white heart"	"💙"	"blue heart"	4
+"💜"	"purple heart"	"💙"	"blue heart"	4
+"💥"	"collision"	"🗳"	"ballot box with ballot"	4
+"❤️"	"red heart"	"✨"	"sparkles"	4
+"❤️"	"red heart"	"🧡"	"orange heart"	4
+"🗳"	"ballot box with ballot"	"💥"	"collision"	4
+"🇺🇸"	"flag: United States"	"😎"	"smiling face with sunglasses"	4
+
+#-----------------------------------------------
+# No repetition and independent of the order
+MATCH (n)-[r:FOLLOWED_BY { index: "poly" }]-(m) WHERE n.emoji <> m.emoji AND ID(n) < ID(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	91
+"👄"	"mouth"	"👁"	"eye"	34
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	22
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	15
+"🇺🇸"	"flag: United States"	"🗳"	"ballot box with ballot"	11
+"😍"	"smiling face with heart-eyes"	"💋"	"kiss mark"	10
+"🇺🇸"	"flag: United States"	"🙏"	"folded hands"	10
+"👄"	"mouth"	"👁️"	"eye"	10
+"🚨"	"police car light"	"🚔"	"oncoming police car"	10
+"🇺🇸"	"flag: United States"	"👍"	"thumbs up"	10
+"😂"	"face with tears of joy"	"🇺🇸"	"flag: United States"	10
+"👉"	"backhand index pointing right"	"👈"	"backhand index pointing left"	10
+"💜"	"purple heart"	"💛"	"yellow heart"	10
+"💙"	"blue heart"	"💜"	"purple heart"	10
+"💛"	"yellow heart"	"🧡"	"orange heart"	9
+"❤️"	"red heart"	"😍"	"smiling face with heart-eyes"	9
+"😭"	"loudly crying face"	"🤣"	"rolling on the floor laughing"	9
+"🤣"	"rolling on the floor laughing"	"😆"	"grinning squinting face"	9
+"😎"	"smiling face with sunglasses"	"🇺🇸"	"flag: United States"	9
+"❤️"	"red heart"	"🥰"	"smiling face with hearts"	8
+"💙"	"blue heart"	"🇺🇸"	"flag: United States"	8
+"💙"	"blue heart"	"💛"	"yellow heart"	8
+"❤️"	"red heart"	"💋"	"kiss mark"	8
+"🗳"	"ballot box with ballot"	"💥"	"collision"	8
+"❤️"	"red heart"	"💙"	"blue heart"	8
+"💕"	"two hearts"	"👏"	"clapping hands"	8
+"💙"	"blue heart"	"💚"	"green heart"	7
+"☕"	"hot beverage"	"🐸"	"frog"	7
+"💛"	"yellow heart"	"💚"	"green heart"	7
+"😁"	"beaming face with smiling eyes"	"😜"	"winking face with tongue"	7
+"🖕🏾"	"middle finger: medium-dark skin tone"	"🐬"	"dolphin"	7
+"💖"	"sparkling heart"	"💕"	"two hearts"	7
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	7
+"❤️"	"red heart"	"🤍"	"white heart"	7
+"👍🏼"	"thumbs up: medium-light skin tone"	"🇺🇸"	"flag: United States"	7
+"🥰"	"smiling face with hearts"	"😍"	"smiling face with heart-eyes"	7
+"🇺🇸"	"flag: United States"	"💯"	"hundred points"	6
+"❤️"	"red heart"	"🥺"	"pleading face"	6
+"🇺🇸"	"flag: United States"	"💪"	"flexed biceps"	5
+"😎"	"smiling face with sunglasses"	"😁"	"beaming face with smiling eyes"	5
+"😭"	"loudly crying face"	"🥴"	"woozy face"	5
+"🇺🇸"	"flag: United States"	"🙌"	"raising hands"	5
+"❤"	"red heart"	"💙"	"blue heart"	5
+"😍"	"smiling face with heart-eyes"	"💕"	"two hearts"	5
+"❤️"	"red heart"	"😘"	"face blowing a kiss"	5
+"✨"	"sparkles"	"💖"	"sparkling heart"	5
+"😂"	"face with tears of joy"	"😁"	"beaming face with smiling eyes"	5
+"❤️"	"red heart"	"🧡"	"orange heart"	5
+"🔥"	"fire"	"💕"	"two hearts"	5
+"✨"	"sparkles"	"😌"	"relieved face"	5
+
+###################################################################
+##### POLIAMORY
+###################################################################
+
+#-----------------------------------------------
+# Indifferent
+
+MATCH (n)-[r:FOLLOWED_BY { index: "poliamory" }]->(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	386
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	184
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	109
+"🇺🇸"	"flag: United States"	"🇺🇸"	"flag: United States"	92
+"🔥"	"fire"	"🔥"	"fire"	82
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	52
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	40
+"❤️"	"red heart"	"❤️"	"red heart"	38
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	37
+"😡"	"pouting face"	"😡"	"pouting face"	32
+"🤔"	"thinking face"	"🤔"	"thinking face"	32
+"❤"	"red heart"	"❤"	"red heart"	31
+"🥰"	"smiling face with hearts"	"🥰"	"smiling face with hearts"	30
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	28
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	27
+"👏"	"clapping hands"	"👏"	"clapping hands"	27
+"👇🏾"	"backhand index pointing down: medium-dark skin tone"	"👇🏾"	"backhand index pointing down: medium-dark skin tone"	26
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	24
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	24
+"🚨"	"police car light"	"🚨"	"police car light"	23
+"🥺"	"pleading face"	"🥺"	"pleading face"	22
+"💙"	"blue heart"	"💙"	"blue heart"	21
+"💯"	"hundred points"	"💯"	"hundred points"	21
+"💀"	"skull"	"💀"	"skull"	19
+"😳"	"flushed face"	"😳"	"flushed face"	19
+"🎉"	"party popper"	"🎉"	"party popper"	18
+"🙏"	"folded hands"	"🙏"	"folded hands"	18
+"💜"	"purple heart"	"💜"	"purple heart"	18
+"✨"	"sparkles"	"✨"	"sparkles"	18
+"👀"	"eyes"	"👀"	"eyes"	18
+"☀️"	"sun"	"☀️"	"sun"	15
+"😝"	"squinting face with tongue"	"😝"	"squinting face with tongue"	14
+"👇🏼"	"backhand index pointing down: medium-light skin tone"	"👇🏼"	"backhand index pointing down: medium-light skin tone"	14
+"👍"	"thumbs up"	"👍"	"thumbs up"	14
+"😀"	"grinning face"	"😀"	"grinning face"	13
+"❌"	"cross mark"	"❌"	"cross mark"	13
+"👄"	"mouth"	"👁"	"eye"	12
+"👁"	"eye"	"👄"	"mouth"	12
+"😌"	"relieved face"	"😌"	"relieved face"	12
+"🤢"	"nauseated face"	"🤢"	"nauseated face"	12
+"🥴"	"woozy face"	"🥴"	"woozy face"	11
+"🌊"	"water wave"	"🌊"	"water wave"	11
+"💃"	"woman dancing"	"💃"	"woman dancing"	11
+"🍺"	"beer mug"	"🍺"	"beer mug"	10
+"🇺🇲"	"flag: U.S. Outlying Islands"	"🇺🇲"	"flag: U.S. Outlying Islands"	10
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	10
+"😜"	"winking face with tongue"	"😜"	"winking face with tongue"	10
+"😂"	"face with tears of joy"	"😭"	"loudly crying face"	10
+"💕"	"two hearts"	"💕"	"two hearts"	10
+"🤡"	"clown face"	"🤡"	"clown face"	10
+
+#-----------------------------------------------
+# With repetition
+MATCH (n)-[r:FOLLOWED_BY { index: "poliamory" }]->(m) WHERE n.emoji = m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	386
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	184
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	109
+"🇺🇸"	"flag: United States"	"🇺🇸"	"flag: United States"	92
+"🔥"	"fire"	"🔥"	"fire"	82
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	52
+"❤️"	"red heart"	"❤️"	"red heart"	38
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	37
+"😡"	"pouting face"	"😡"	"pouting face"	32
+"🤔"	"thinking face"	"🤔"	"thinking face"	32
+"❤"	"red heart"	"❤"	"red heart"	31
+"🥰"	"smiling face with hearts"	"🥰"	"smiling face with hearts"	30
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	28
+"👏"	"clapping hands"	"👏"	"clapping hands"	27
+"👇🏾"	"backhand index pointing down: medium-dark skin tone"	"👇🏾"	"backhand index pointing down: medium-dark skin tone"	26
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	24
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	24
+"🚨"	"police car light"	"🚨"	"police car light"	23
+"🥺"	"pleading face"	"🥺"	"pleading face"	22
+"💙"	"blue heart"	"💙"	"blue heart"	21
+"💯"	"hundred points"	"💯"	"hundred points"	21
+"💀"	"skull"	"💀"	"skull"	19
+"😳"	"flushed face"	"😳"	"flushed face"	19
+"🙏"	"folded hands"	"🙏"	"folded hands"	18
+"💜"	"purple heart"	"💜"	"purple heart"	18
+"👀"	"eyes"	"👀"	"eyes"	18
+"✨"	"sparkles"	"✨"	"sparkles"	18
+"🎉"	"party popper"	"🎉"	"party popper"	18
+"☀️"	"sun"	"☀️"	"sun"	15
+"👍"	"thumbs up"	"👍"	"thumbs up"	14
+"👇🏼"	"backhand index pointing down: medium-light skin tone"	"👇🏼"	"backhand index pointing down: medium-light skin tone"	14
+"😝"	"squinting face with tongue"	"😝"	"squinting face with tongue"	14
+"❌"	"cross mark"	"❌"	"cross mark"	13
+"😀"	"grinning face"	"😀"	"grinning face"	13
+"🤢"	"nauseated face"	"🤢"	"nauseated face"	12
+"😌"	"relieved face"	"😌"	"relieved face"	12
+"🥴"	"woozy face"	"🥴"	"woozy face"	11
+"💃"	"woman dancing"	"💃"	"woman dancing"	11
+"🌊"	"water wave"	"🌊"	"water wave"	11
+"🤡"	"clown face"	"🤡"	"clown face"	10
+"💕"	"two hearts"	"💕"	"two hearts"	10
+"🇺🇲"	"flag: U.S. Outlying Islands"	"🇺🇲"	"flag: U.S. Outlying Islands"	10
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	10
+"😜"	"winking face with tongue"	"😜"	"winking face with tongue"	10
+"🍺"	"beer mug"	"🍺"	"beer mug"	10
+"👤"	"bust in silhouette"	"👤"	"bust in silhouette"	10
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	9
+"💥"	"collision"	"💥"	"collision"	9
+"😘"	"face blowing a kiss"	"😘"	"face blowing a kiss"	9
+"🙏🏾"	"folded hands: medium-dark skin tone"	"🙏🏾"	"folded hands: medium-dark skin tone"	9
+
+#-----------------------------------------------
+# No repetition
+MATCH (n)-[r:FOLLOWED_BY { index: "poliamory" }]->(m) WHERE n.emoji <> m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	40
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	27
+"👄"	"mouth"	"👁"	"eye"	12
+"👁"	"eye"	"👄"	"mouth"	12
+"😂"	"face with tears of joy"	"😭"	"loudly crying face"	10
+"🇺🇸"	"flag: United States"	"😂"	"face with tears of joy"	8
+"🐸"	"frog"	"☕"	"hot beverage"	7
+"👉"	"backhand index pointing right"	"👈"	"backhand index pointing left"	6
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	6
+"🗳"	"ballot box with ballot"	"🇺🇸"	"flag: United States"	6
+"🧡"	"orange heart"	"💛"	"yellow heart"	6
+"🚔"	"oncoming police car"	"🚨"	"police car light"	6
+"👄"	"mouth"	"👁️"	"eye"	5
+"😭"	"loudly crying face"	"🤣"	"rolling on the floor laughing"	5
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	5
+"👍"	"thumbs up"	"🇺🇸"	"flag: United States"	5
+"🥰"	"smiling face with hearts"	"❤️"	"red heart"	5
+"😁"	"beaming face with smiling eyes"	"😎"	"smiling face with sunglasses"	5
+"🏆"	"trophy"	"⚾"	"baseball"	5
+"👁️"	"eye"	"👄"	"mouth"	5
+"🇺🇸"	"flag: United States"	"🗳"	"ballot box with ballot"	5
+"🗳"	"ballot box with ballot"	"💥"	"collision"	4
+"😍"	"smiling face with heart-eyes"	"🥰"	"smiling face with hearts"	4
+"🚨"	"police car light"	"🚔"	"oncoming police car"	4
+"😭"	"loudly crying face"	"🥴"	"woozy face"	4
+"🖕🏾"	"middle finger: medium-dark skin tone"	"🐬"	"dolphin"	4
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	4
+"💙"	"blue heart"	"💛"	"yellow heart"	4
+"🇺🇸"	"flag: United States"	"💯"	"hundred points"	4
+"😜"	"winking face with tongue"	"😁"	"beaming face with smiling eyes"	4
+"🤣"	"rolling on the floor laughing"	"😭"	"loudly crying face"	4
+"💙"	"blue heart"	"💜"	"purple heart"	4
+"💜"	"purple heart"	"💙"	"blue heart"	4
+"❤️"	"red heart"	"🤍"	"white heart"	4
+"❤️"	"red heart"	"🧡"	"orange heart"	4
+"💥"	"collision"	"🗳"	"ballot box with ballot"	4
+"🇺🇸"	"flag: United States"	"❤️"	"red heart"	4
+"✨"	"sparkles"	"💖"	"sparkling heart"	3
+"🙏🏽"	"folded hands: medium skin tone"	"❤️"	"red heart"	3
+"😁"	"beaming face with smiling eyes"	"😜"	"winking face with tongue"	3
+"🥺"	"pleading face"	"👉"	"backhand index pointing right"	3
+"🔥"	"fire"	"💕"	"two hearts"	3
+"💙"	"blue heart"	"❤️"	"red heart"	3
+"💖"	"sparkling heart"	"💯"	"hundred points"	3
+"🤢"	"nauseated face"	"🤮"	"face vomiting"	3
+"😂"	"face with tears of joy"	"😁"	"beaming face with smiling eyes"	3
+"💙"	"blue heart"	"💯"	"hundred points"	3
+"🥰"	"smiling face with hearts"	"😍"	"smiling face with heart-eyes"	3
+"🥺"	"pleading face"	"😭"	"loudly crying face"	3
+"🇺🇸"	"flag: United States"	"🔥"	"fire"	3
+
+#-----------------------------------------------
+# No repetition and independent of the order
+MATCH (n)-[r:FOLLOWED_BY { index: "poliamory" }]-(m) WHERE n.emoji <> m.emoji AND ID(n) < ID(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	67
+"👄"	"mouth"	"👁"	"eye"	24
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	15
+"🇺🇸"	"flag: United States"	"🗳"	"ballot box with ballot"	11
+"🚨"	"police car light"	"🚔"	"oncoming police car"	10
+"👄"	"mouth"	"👁️"	"eye"	10
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	10
+"😭"	"loudly crying face"	"🤣"	"rolling on the floor laughing"	9
+"😂"	"face with tears of joy"	"🇺🇸"	"flag: United States"	9
+"💙"	"blue heart"	"💜"	"purple heart"	8
+"💛"	"yellow heart"	"🧡"	"orange heart"	8
+"❤️"	"red heart"	"🥰"	"smiling face with hearts"	8
+"🗳"	"ballot box with ballot"	"💥"	"collision"	8
+"☕"	"hot beverage"	"🐸"	"frog"	7
+"💙"	"blue heart"	"💛"	"yellow heart"	7
+"🥰"	"smiling face with hearts"	"😍"	"smiling face with heart-eyes"	7
+"🖕🏾"	"middle finger: medium-dark skin tone"	"🐬"	"dolphin"	7
+"🇺🇸"	"flag: United States"	"👍"	"thumbs up"	7
+"😁"	"beaming face with smiling eyes"	"😜"	"winking face with tongue"	7
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	6
+"❤️"	"red heart"	"💙"	"blue heart"	6
+"💛"	"yellow heart"	"💚"	"green heart"	6
+"💙"	"blue heart"	"💚"	"green heart"	6
+"👉"	"backhand index pointing right"	"👈"	"backhand index pointing left"	6
+"❤️"	"red heart"	"🧡"	"orange heart"	5
+"❤️"	"red heart"	"🤍"	"white heart"	5
+"🇺🇸"	"flag: United States"	"💯"	"hundred points"	5
+"✨"	"sparkles"	"💖"	"sparkling heart"	5
+"😎"	"smiling face with sunglasses"	"😁"	"beaming face with smiling eyes"	5
+"🏆"	"trophy"	"⚾"	"baseball"	5
+"😭"	"loudly crying face"	"🥴"	"woozy face"	5
+"💖"	"sparkling heart"	"💯"	"hundred points"	5
+"🔥"	"fire"	"💕"	"two hearts"	5
+"😂"	"face with tears of joy"	"😁"	"beaming face with smiling eyes"	5
+"❤️"	"red heart"	"🥺"	"pleading face"	4
+"🇸🇦"	"flag: Saudi Arabia"	"🏴"	"black flag"	4
+"🤣"	"rolling on the floor laughing"	"😆"	"grinning squinting face"	4
+"✨"	"sparkles"	"🦋"	"butterfly"	4
+"🤢"	"nauseated face"	"🤮"	"face vomiting"	4
+"❤"	"red heart"	"🔥"	"fire"	4
+"💖"	"sparkling heart"	"⚡"	"high voltage"	4
+"❤"	"red heart"	"💙"	"blue heart"	4
+"💙"	"blue heart"	"🇺🇸"	"flag: United States"	4
+"🇺🇸"	"flag: United States"	"🔥"	"fire"	4
+"😭"	"loudly crying face"	"💀"	"skull"	4
+"👍🏼"	"thumbs up: medium-light skin tone"	"🇺🇸"	"flag: United States"	4
+"😭"	"loudly crying face"	"😩"	"weary face"	4
+"❤️"	"red heart"	"😍"	"smiling face with heart-eyes"	4
+"🔥"	"fire"	"⚡"	"high voltage"	4
+"😭"	"loudly crying face"	"🥺"	"pleading face"	3
+
+###################################################################
+##### METOO
+###################################################################
+
+#-----------------------------------------------
+# Indifferent
+
+MATCH (n)-[r:FOLLOWED_BY { index: "metoo" }]->(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	284
+"👏"	"clapping hands"	"👏"	"clapping hands"	107
+"🔥"	"fire"	"🔥"	"fire"	68
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	57
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	54
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	43
+"❤️"	"red heart"	"❤️"	"red heart"	37
+"🖕"	"middle finger"	"🖕"	"middle finger"	34
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	31
+"💜"	"purple heart"	"💜"	"purple heart"	28
+"🤔"	"thinking face"	"🤔"	"thinking face"	26
+"👍"	"thumbs up"	"👍"	"thumbs up"	25
+"🌊"	"water wave"	"🌊"	"water wave"	25
+"👏🏽"	"clapping hands: medium skin tone"	"👏🏽"	"clapping hands: medium skin tone"	24
+"😴"	"sleeping face"	"😴"	"sleeping face"	23
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	22
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	20
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	19
+"🙌"	"raising hands"	"🙌"	"raising hands"	19
+"❤"	"red heart"	"❤"	"red heart"	19
+"💕"	"two hearts"	"💕"	"two hearts"	18
+"😡"	"pouting face"	"😡"	"pouting face"	17
+"🙏"	"folded hands"	"🙏"	"folded hands"	17
+"❌"	"cross mark"	"❌"	"cross mark"	16
+"👇🏻"	"backhand index pointing down: light skin tone"	"👇🏻"	"backhand index pointing down: light skin tone"	15
+"🦌"	"deer"	"🦌"	"deer"	15
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	13
+"😢"	"crying face"	"😢"	"crying face"	13
+"🏌️"	"person golfing"	"🏌️"	"person golfing"	13
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	13
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	13
+"💐"	"bouquet"	"💐"	"bouquet"	12
+"🖕🏽"	"middle finger: medium skin tone"	"🖕🏽"	"middle finger: medium skin tone"	12
+"👇🏼"	"backhand index pointing down: medium-light skin tone"	"👇🏼"	"backhand index pointing down: medium-light skin tone"	12
+"💤"	"zzz"	"💤"	"zzz"	12
+"🗣"	"speaking head"	"🗣"	"speaking head"	11
+"💖"	"sparkling heart"	"💖"	"sparkling heart"	11
+"😠"	"angry face"	"😠"	"angry face"	11
+"🙏🏽"	"folded hands: medium skin tone"	"🙏🏽"	"folded hands: medium skin tone"	10
+"😳"	"flushed face"	"😳"	"flushed face"	10
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	10
+"👌"	"OK hand"	"👌"	"OK hand"	10
+"💢"	"anger symbol"	"💢"	"anger symbol"	10
+"💪"	"flexed biceps"	"💪"	"flexed biceps"	10
+"😎"	"smiling face with sunglasses"	"😎"	"smiling face with sunglasses"	9
+"👎"	"thumbs down"	"👎"	"thumbs down"	9
+"☺"	"smiling face"	"☺"	"smiling face"	8
+"💛"	"yellow heart"	"💚"	"green heart"	8
+"👎🏻"	"thumbs down: light skin tone"	"👎🏻"	"thumbs down: light skin tone"	8
+"🎉"	"party popper"	"🎉"	"party popper"	7
+
+#-----------------------------------------------
+# With repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "metoo" }]->(m) WHERE n.emoji = m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	284
+"👏"	"clapping hands"	"👏"	"clapping hands"	107
+"🔥"	"fire"	"🔥"	"fire"	68
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	57
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	54
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	43
+"❤️"	"red heart"	"❤️"	"red heart"	37
+"🖕"	"middle finger"	"🖕"	"middle finger"	34
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	31
+"💜"	"purple heart"	"💜"	"purple heart"	28
+"🤔"	"thinking face"	"🤔"	"thinking face"	26
+"👍"	"thumbs up"	"👍"	"thumbs up"	25
+"🌊"	"water wave"	"🌊"	"water wave"	25
+"👏🏽"	"clapping hands: medium skin tone"	"👏🏽"	"clapping hands: medium skin tone"	24
+"😴"	"sleeping face"	"😴"	"sleeping face"	23
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	22
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	20
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	19
+"🙌"	"raising hands"	"🙌"	"raising hands"	19
+"❤"	"red heart"	"❤"	"red heart"	19
+"💕"	"two hearts"	"💕"	"two hearts"	18
+"😡"	"pouting face"	"😡"	"pouting face"	17
+"🙏"	"folded hands"	"🙏"	"folded hands"	17
+"❌"	"cross mark"	"❌"	"cross mark"	16
+"👇🏻"	"backhand index pointing down: light skin tone"	"👇🏻"	"backhand index pointing down: light skin tone"	15
+"🦌"	"deer"	"🦌"	"deer"	15
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	13
+"🏌️"	"person golfing"	"🏌️"	"person golfing"	13
+"😢"	"crying face"	"😢"	"crying face"	13
+"👇🏼"	"backhand index pointing down: medium-light skin tone"	"👇🏼"	"backhand index pointing down: medium-light skin tone"	12
+"💐"	"bouquet"	"💐"	"bouquet"	12
+"💤"	"zzz"	"💤"	"zzz"	12
+"🖕🏽"	"middle finger: medium skin tone"	"🖕🏽"	"middle finger: medium skin tone"	12
+"💖"	"sparkling heart"	"💖"	"sparkling heart"	11
+"🗣"	"speaking head"	"🗣"	"speaking head"	11
+"😠"	"angry face"	"😠"	"angry face"	11
+"😳"	"flushed face"	"😳"	"flushed face"	10
+"💢"	"anger symbol"	"💢"	"anger symbol"	10
+"👌"	"OK hand"	"👌"	"OK hand"	10
+"🙏🏽"	"folded hands: medium skin tone"	"🙏🏽"	"folded hands: medium skin tone"	10
+"💪"	"flexed biceps"	"💪"	"flexed biceps"	10
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	10
+"👎"	"thumbs down"	"👎"	"thumbs down"	9
+"😎"	"smiling face with sunglasses"	"😎"	"smiling face with sunglasses"	9
+"☺"	"smiling face"	"☺"	"smiling face"	8
+"👎🏻"	"thumbs down: light skin tone"	"👎🏻"	"thumbs down: light skin tone"	8
+"🌹"	"rose"	"🌹"	"rose"	7
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	7
+"✊"	"raised fist"	"✊"	"raised fist"	7
+"🎉"	"party popper"	"🎉"	"party popper"	7
+
+#-----------------------------------------------
+# No repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "metoo" }]->(m) WHERE n.emoji <> m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	13
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	13
+"💛"	"yellow heart"	"💚"	"green heart"	8
+"💜"	"purple heart"	"💛"	"yellow heart"	5
+"💚"	"green heart"	"💙"	"blue heart"	5
+"🎄"	"Christmas tree"	"🎁"	"wrapped gift"	5
+"💚"	"green heart"	"💛"	"yellow heart"	4
+"💪🏾"	"flexed biceps: medium-dark skin tone"	"💪🏿"	"flexed biceps: dark skin tone"	4
+"🙉"	"hear-no-evil monkey"	"🙈"	"see-no-evil monkey"	4
+"🐓"	"rooster"	"🐷"	"pig face"	4
+"😍"	"smiling face with heart-eyes"	"😘"	"face blowing a kiss"	4
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	4
+"💪"	"flexed biceps"	"❤️"	"red heart"	4
+"🐷"	"pig face"	"🐓"	"rooster"	4
+"❤"	"red heart"	"💜"	"purple heart"	4
+"😂"	"face with tears of joy"	"🔥"	"fire"	3
+"💛"	"yellow heart"	"💜"	"purple heart"	3
+"💙"	"blue heart"	"💚"	"green heart"	3
+"😘"	"face blowing a kiss"	"💑"	"couple with heart"	3
+"😢"	"crying face"	"💔"	"broken heart"	3
+"✊🏽"	"raised fist: medium skin tone"	"✊🏾"	"raised fist: medium-dark skin tone"	3
+"😅"	"grinning face with sweat"	"😂"	"face with tears of joy"	3
+"💜"	"purple heart"	"✊"	"raised fist"	3
+"💜"	"purple heart"	"💙"	"blue heart"	3
+"🙄"	"face with rolling eyes"	"😒"	"unamused face"	3
+"😡"	"pouting face"	"😢"	"crying face"	3
+"🎁"	"wrapped gift"	"🎄"	"Christmas tree"	3
+"😜"	"winking face with tongue"	"😂"	"face with tears of joy"	3
+"💪🏻"	"flexed biceps: light skin tone"	"💪🏼"	"flexed biceps: medium-light skin tone"	3
+"🤔"	"thinking face"	"🙄"	"face with rolling eyes"	3
+"💪🏼"	"flexed biceps: medium-light skin tone"	"💪🏽"	"flexed biceps: medium skin tone"	3
+"💪🏽"	"flexed biceps: medium skin tone"	"💪🏾"	"flexed biceps: medium-dark skin tone"	3
+"✊🏻"	"raised fist: light skin tone"	"✊🏽"	"raised fist: medium skin tone"	3
+"😂"	"face with tears of joy"	"👌"	"OK hand"	2
+"💕"	"two hearts"	"💪"	"flexed biceps"	2
+"💥"	"collision"	"🔥"	"fire"	2
+"😳"	"flushed face"	"🤯"	"exploding head"	2
+"🙌"	"raising hands"	"😂"	"face with tears of joy"	2
+"🖤"	"black heart"	"✊🏾"	"raised fist: medium-dark skin tone"	2
+"🇬🇧"	"flag: United Kingdom"	"👍"	"thumbs up"	2
+"🎂"	"birthday cake"	"🎉"	"party popper"	2
+"🇺🇸"	"flag: United States"	"🌲"	"evergreen tree"	2
+"👍"	"thumbs up"	"💞"	"revolving hearts"	2
+"😤"	"face with steam from nose"	"😖"	"confounded face"	2
+"👍"	"thumbs up"	"🙌"	"raising hands"	2
+"👍"	"thumbs up"	"👏"	"clapping hands"	2
+"😠"	"angry face"	"😡"	"pouting face"	2
+"😡"	"pouting face"	"😤"	"face with steam from nose"	2
+"🤔"	"thinking face"	"😳"	"flushed face"	2
+"😐"	"neutral face"	"🙄"	"face with rolling eyes"	2
+
+#-----------------------------------------------
+# No repetition and independent of the order
+MATCH (n)-[r:FOLLOWED_BY { index: "metoo" }]-(m) WHERE n.emoji <> m.emoji AND ID(n) < ID(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	26
+"💛"	"yellow heart"	"💚"	"green heart"	12
+"🐷"	"pig face"	"🐓"	"rooster"	8
+"💙"	"blue heart"	"💚"	"green heart"	8
+"💜"	"purple heart"	"💛"	"yellow heart"	8
+"🎁"	"wrapped gift"	"🎄"	"Christmas tree"	8
+"🙈"	"see-no-evil monkey"	"🙉"	"hear-no-evil monkey"	6
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	5
+"💙"	"blue heart"	"💜"	"purple heart"	5
+"❤️"	"red heart"	"💪"	"flexed biceps"	5
+"✊🏽"	"raised fist: medium skin tone"	"✊🏾"	"raised fist: medium-dark skin tone"	4
+"💪🏼"	"flexed biceps: medium-light skin tone"	"💪🏻"	"flexed biceps: light skin tone"	4
+"💪🏾"	"flexed biceps: medium-dark skin tone"	"💪🏿"	"flexed biceps: dark skin tone"	4
+"💪"	"flexed biceps"	"👏"	"clapping hands"	4
+"😘"	"face blowing a kiss"	"💑"	"couple with heart"	4
+"🖤"	"black heart"	"✊🏾"	"raised fist: medium-dark skin tone"	4
+"❤"	"red heart"	"💜"	"purple heart"	4
+"💜"	"purple heart"	"✊"	"raised fist"	4
+"👍"	"thumbs up"	"👏"	"clapping hands"	4
+"🇺🇸"	"flag: United States"	"🌲"	"evergreen tree"	4
+"😍"	"smiling face with heart-eyes"	"😘"	"face blowing a kiss"	4
+"🤔"	"thinking face"	"🙄"	"face with rolling eyes"	3
+"🤔"	"thinking face"	"😳"	"flushed face"	3
+"💪🏽"	"flexed biceps: medium skin tone"	"💪🏾"	"flexed biceps: medium-dark skin tone"	3
+"✌"	"victory hand"	"✋"	"raised hand"	3
+"😊"	"smiling face with smiling eyes"	"👍"	"thumbs up"	3
+"💙"	"blue heart"	"📘"	"blue book"	3
+"😡"	"pouting face"	"😤"	"face with steam from nose"	3
+"💔"	"broken heart"	"😢"	"crying face"	3
+"😡"	"pouting face"	"😩"	"weary face"	3
+"🙌🏻"	"raising hands: light skin tone"	"👐🏻"	"open hands: light skin tone"	3
+"😂"	"face with tears of joy"	"😜"	"winking face with tongue"	3
+"😂"	"face with tears of joy"	"👌"	"OK hand"	3
+"❤️"	"red heart"	"✊🏾"	"raised fist: medium-dark skin tone"	3
+"❤️"	"red heart"	"💋"	"kiss mark"	3
+"👌"	"OK hand"	"✌"	"victory hand"	3
+"✊🏽"	"raised fist: medium skin tone"	"✊🏻"	"raised fist: light skin tone"	3
+"🔥"	"fire"	"💥"	"collision"	3
+"🔥"	"fire"	"💀"	"skull"	3
+"👍"	"thumbs up"	"🙌"	"raising hands"	3
+"❤"	"red heart"	"👏"	"clapping hands"	3
+"❤️"	"red heart"	"✊🏽"	"raised fist: medium skin tone"	3
+"👍"	"thumbs up"	"🇬🇧"	"flag: United Kingdom"	3
+"🙄"	"face with rolling eyes"	"😒"	"unamused face"	3
+"🎂"	"birthday cake"	"🎉"	"party popper"	3
+"😂"	"face with tears of joy"	"🔥"	"fire"	3
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	3
+"💪🏼"	"flexed biceps: medium-light skin tone"	"💪🏽"	"flexed biceps: medium skin tone"	3
+"😡"	"pouting face"	"😢"	"crying face"	3
+"👍"	"thumbs up"	"💞"	"revolving hearts"	3
+
+###################################################################
+##### CLIMATE
+###################################################################
+
+#-----------------------------------------------
+# Indifferent
+
+MATCH (n)-[r:FOLLOWED_BY { index: "climate" }]->(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	5292
+"🔥"	"fire"	"🔥"	"fire"	1868
+"👏"	"clapping hands"	"👏"	"clapping hands"	1704
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	1354
+"❤️"	"red heart"	"❤️"	"red heart"	1136
+"🤔"	"thinking face"	"🤔"	"thinking face"	1084
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	847
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	810
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	693
+"🌲"	"evergreen tree"	"🌲"	"evergreen tree"	596
+"🌍"	"globe showing Europe-Africa"	"🌏"	"globe showing Asia-Australia"	595
+"🌎"	"globe showing Americas"	"🌍"	"globe showing Europe-Africa"	582
+"😱"	"face screaming in fear"	"😱"	"face screaming in fear"	542
+"😡"	"pouting face"	"😡"	"pouting face"	517
+"🌲"	"evergreen tree"	"🌳"	"deciduous tree"	471
+"❄️"	"snowflake"	"❄️"	"snowflake"	470
+"🌳"	"deciduous tree"	"🌳"	"deciduous tree"	435
+"🌳"	"deciduous tree"	"🌲"	"evergreen tree"	430
+"🚨"	"police car light"	"🚨"	"police car light"	420
+"🌊"	"water wave"	"🌊"	"water wave"	399
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	392
+"☀️"	"sun"	"☀️"	"sun"	364
+"👍"	"thumbs up"	"👍"	"thumbs up"	337
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	324
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	321
+"🌎"	"globe showing Americas"	"🔥"	"fire"	321
+"💚"	"green heart"	"💚"	"green heart"	301
+"🙃"	"upside-down face"	"🙃"	"upside-down face"	294
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	292
+"🌍"	"globe showing Europe-Africa"	"🌎"	"globe showing Americas"	287
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	268
+"😳"	"flushed face"	"😳"	"flushed face"	254
+"🌱"	"seedling"	"🌱"	"seedling"	252
+"🌎"	"globe showing Americas"	"🌏"	"globe showing Asia-Australia"	235
+"🐧"	"penguin"	"🐧"	"penguin"	234
+"😢"	"crying face"	"😢"	"crying face"	226
+"💨"	"dashing away"	"💨"	"dashing away"	205
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	205
+"😩"	"weary face"	"😩"	"weary face"	205
+"🤡"	"clown face"	"🤡"	"clown face"	204
+"💚"	"green heart"	"🌍"	"globe showing Europe-Africa"	204
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	198
+"🌳"	"deciduous tree"	"🌴"	"palm tree"	195
+"😒"	"unamused face"	"😒"	"unamused face"	192
+"💚"	"green heart"	"🌎"	"globe showing Americas"	191
+"🌍"	"globe showing Europe-Africa"	"💚"	"green heart"	186
+"🙏"	"folded hands"	"🙏"	"folded hands"	184
+"😎"	"smiling face with sunglasses"	"😎"	"smiling face with sunglasses"	182
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	176
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	175
+#-----------------------------------------------
+# With repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "climate" }]->(m) WHERE n.emoji = m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	5292
+"🔥"	"fire"	"🔥"	"fire"	1868
+"👏"	"clapping hands"	"👏"	"clapping hands"	1704
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	1354
+"❤️"	"red heart"	"❤️"	"red heart"	1136
+"🤔"	"thinking face"	"🤔"	"thinking face"	1084
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	847
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	810
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	693
+"🌲"	"evergreen tree"	"🌲"	"evergreen tree"	596
+"😱"	"face screaming in fear"	"😱"	"face screaming in fear"	542
+"😡"	"pouting face"	"😡"	"pouting face"	517
+"❄️"	"snowflake"	"❄️"	"snowflake"	470
+"🌳"	"deciduous tree"	"🌳"	"deciduous tree"	435
+"🚨"	"police car light"	"🚨"	"police car light"	420
+"🌊"	"water wave"	"🌊"	"water wave"	399
+"☀️"	"sun"	"☀️"	"sun"	364
+"👍"	"thumbs up"	"👍"	"thumbs up"	337
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	321
+"💚"	"green heart"	"💚"	"green heart"	301
+"🙃"	"upside-down face"	"🙃"	"upside-down face"	294
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	292
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	268
+"😳"	"flushed face"	"😳"	"flushed face"	254
+"🌱"	"seedling"	"🌱"	"seedling"	252
+"🐧"	"penguin"	"🐧"	"penguin"	234
+"😢"	"crying face"	"😢"	"crying face"	226
+"😩"	"weary face"	"😩"	"weary face"	205
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	205
+"💨"	"dashing away"	"💨"	"dashing away"	205
+"🤡"	"clown face"	"🤡"	"clown face"	204
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	198
+"😒"	"unamused face"	"😒"	"unamused face"	192
+"🙏"	"folded hands"	"🙏"	"folded hands"	184
+"😎"	"smiling face with sunglasses"	"😎"	"smiling face with sunglasses"	182
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	176
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	175
+"👏🏽"	"clapping hands: medium skin tone"	"👏🏽"	"clapping hands: medium skin tone"	168
+"🌎"	"globe showing Americas"	"🌎"	"globe showing Americas"	166
+"🤯"	"exploding head"	"🤯"	"exploding head"	164
+"🇺🇸"	"flag: United States"	"🇺🇸"	"flag: United States"	161
+"🐢"	"turtle"	"🐢"	"turtle"	161
+"😤"	"face with steam from nose"	"😤"	"face with steam from nose"	157
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	155
+"🤪"	"zany face"	"🤪"	"zany face"	152
+"🛑"	"stop sign"	"🛑"	"stop sign"	151
+"🌞"	"sun with face"	"🌞"	"sun with face"	149
+"👉"	"backhand index pointing right"	"👉"	"backhand index pointing right"	146
+"💰"	"money bag"	"💰"	"money bag"	137
+"🎉"	"party popper"	"🎉"	"party popper"	135
+
+#-----------------------------------------------
+# No repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "climate" }]->(m) WHERE n.emoji <> m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"🌍"	"globe showing Europe-Africa"	"🌏"	"globe showing Asia-Australia"	595
+"🌎"	"globe showing Americas"	"🌍"	"globe showing Europe-Africa"	582
+"🌲"	"evergreen tree"	"🌳"	"deciduous tree"	471
+"🌳"	"deciduous tree"	"🌲"	"evergreen tree"	430
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	392
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	324
+"🌎"	"globe showing Americas"	"🔥"	"fire"	321
+"🌍"	"globe showing Europe-Africa"	"🌎"	"globe showing Americas"	287
+"🌎"	"globe showing Americas"	"🌏"	"globe showing Asia-Australia"	235
+"💚"	"green heart"	"🌍"	"globe showing Europe-Africa"	204
+"🌳"	"deciduous tree"	"🌴"	"palm tree"	195
+"💚"	"green heart"	"🌎"	"globe showing Americas"	191
+"🌍"	"globe showing Europe-Africa"	"💚"	"green heart"	186
+"™"	"trade mark"	"©"	"copyright"	173
+"🌏"	"globe showing Asia-Australia"	"🌎"	"globe showing Americas"	169
+"🌳"	"deciduous tree"	"🌍"	"globe showing Europe-Africa"	153
+"🌍"	"globe showing Europe-Africa"	"🔥"	"fire"	148
+"🌎"	"globe showing Americas"	"💚"	"green heart"	143
+"🌏"	"globe showing Asia-Australia"	"🌍"	"globe showing Europe-Africa"	142
+"🌱"	"seedling"	"🌍"	"globe showing Europe-Africa"	130
+"🌍"	"globe showing Europe-Africa"	"🌱"	"seedling"	128
+"🔥"	"fire"	"🌎"	"globe showing Americas"	127
+"🌎"	"globe showing Americas"	"❤️"	"red heart"	125
+"🌳"	"deciduous tree"	"🌎"	"globe showing Americas"	123
+"🌎"	"globe showing Americas"	"🌱"	"seedling"	121
+"🔥"	"fire"	"🌍"	"globe showing Europe-Africa"	119
+"🌱"	"seedling"	"🌿"	"herb"	119
+"🌏"	"globe showing Asia-Australia"	"🔥"	"fire"	116
+"🌴"	"palm tree"	"🌳"	"deciduous tree"	107
+"❄️"	"snowflake"	"☃️"	"snowman"	106
+"🌏"	"globe showing Asia-Australia"	"💚"	"green heart"	104
+"💨"	"dashing away"	"🌪️"	"tornado"	102
+"🍨"	"ice cream"	"🏅"	"sports medal"	100
+"🏅"	"sports medal"	"🎑"	"moon viewing ceremony"	100
+"🎑"	"moon viewing ceremony"	"🌡"	"thermometer"	100
+"🌱"	"seedling"	"🌎"	"globe showing Americas"	100
+"🕎"	"menorah"	"🛐"	"place of worship"	99
+"🕯️"	"candle"	"🕎"	"menorah"	99
+"❤️"	"red heart"	"🌎"	"globe showing Americas"	98
+"☀️"	"sun"	"🔥"	"fire"	96
+"💚"	"green heart"	"🌏"	"globe showing Asia-Australia"	95
+"🔥"	"fire"	"🌏"	"globe showing Asia-Australia"	89
+"♻️"	"recycling symbol"	"🌎"	"globe showing Americas"	89
+"⬆️"	"up arrow"	"‼️"	"double exclamation mark"	84
+"💦"	"sweat droplets"	"💨"	"dashing away"	84
+"🔭"	"telescope"	"🔬"	"microscope"	84
+"🌏"	"globe showing Asia-Australia"	"✌️"	"victory hand"	83
+"🎧"	"headphone"	"🚲"	"bicycle"	81
+"🐅"	"tiger"	"🌪"	"tornado"	81
+"👍🏻"	"thumbs up: light skin tone"	"🐅"	"tiger"	81
+
+#-----------------------------------------------
+# No repetition and independent of the order
+MATCH (n)-[r:FOLLOWED_BY { index: "climate" }]-(m) WHERE n.emoji <> m.emoji AND ID(n) < ID(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"🌲"	"evergreen tree"	"🌳"	"deciduous tree"	901
+"🌍"	"globe showing Europe-Africa"	"🌎"	"globe showing Americas"	869
+"🌏"	"globe showing Asia-Australia"	"🌍"	"globe showing Europe-Africa"	737
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	716
+"🔥"	"fire"	"🌎"	"globe showing Americas"	448
+"🌏"	"globe showing Asia-Australia"	"🌎"	"globe showing Americas"	404
+"💚"	"green heart"	"🌍"	"globe showing Europe-Africa"	390
+"💚"	"green heart"	"🌎"	"globe showing Americas"	334
+"🌴"	"palm tree"	"🌳"	"deciduous tree"	302
+"🔥"	"fire"	"🌍"	"globe showing Europe-Africa"	267
+"🌍"	"globe showing Europe-Africa"	"🌱"	"seedling"	258
+"❤️"	"red heart"	"🌎"	"globe showing Americas"	223
+"🌎"	"globe showing Americas"	"🌱"	"seedling"	221
+"🌍"	"globe showing Europe-Africa"	"🌳"	"deciduous tree"	220
+"🔥"	"fire"	"🌏"	"globe showing Asia-Australia"	205
+"🌎"	"globe showing Americas"	"🌳"	"deciduous tree"	199
+"💚"	"green heart"	"🌏"	"globe showing Asia-Australia"	199
+"™"	"trade mark"	"©"	"copyright"	173
+"🌿"	"herb"	"🌱"	"seedling"	162
+"❄️"	"snowflake"	"☃️"	"snowman"	160
+"❤️"	"red heart"	"🌍"	"globe showing Europe-Africa"	149
+"🔥"	"fire"	"☀️"	"sun"	148
+"🌎"	"globe showing Americas"	"♻️"	"recycling symbol"	148
+"🌲"	"evergreen tree"	"🌴"	"palm tree"	144
+"🌳"	"deciduous tree"	"🌱"	"seedling"	135
+"💙"	"blue heart"	"💚"	"green heart"	134
+"🌿"	"herb"	"🌎"	"globe showing Americas"	123
+"‼️"	"double exclamation mark"	"⬆️"	"up arrow"	120
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	118
+"‼️"	"double exclamation mark"	"⬇️"	"down arrow"	117
+"🌍"	"globe showing Europe-Africa"	"♻️"	"recycling symbol"	114
+"👍"	"thumbs up"	"👏"	"clapping hands"	108
+"💚"	"green heart"	"🌱"	"seedling"	108
+"💨"	"dashing away"	"🌪️"	"tornado"	103
+"✊"	"raised fist"	"🌎"	"globe showing Americas"	102
+"🌡️"	"thermometer"	"🌍"	"globe showing Europe-Africa"	101
+"🎑"	"moon viewing ceremony"	"🏅"	"sports medal"	100
+"🌡"	"thermometer"	"🎑"	"moon viewing ceremony"	100
+"🏅"	"sports medal"	"🍨"	"ice cream"	100
+"🛐"	"place of worship"	"🕎"	"menorah"	99
+"🕯️"	"candle"	"🕎"	"menorah"	99
+"🌊"	"water wave"	"🌎"	"globe showing Americas"	98
+"🔭"	"telescope"	"🔬"	"microscope"	98
+"☀️"	"sun"	"🌎"	"globe showing Americas"	96
+"💨"	"dashing away"	"💦"	"sweat droplets"	94
+"💙"	"blue heart"	"🌎"	"globe showing Americas"	90
+"🌿"	"herb"	"🌍"	"globe showing Europe-Africa"	90
+"☀️"	"sun"	"❄️"	"snowflake"	88
+"🔥"	"fire"	"🌞"	"sun with face"	87
+"❄️"	"snowflake"	"🌨"	"cloud with snow"	86
+
+###################################################################
+##### CAPITOL
+###################################################################
+
+#-----------------------------------------------
+# Indifferent
+MATCH (n)-[r:FOLLOWED_BY { index: "capitol" }]->(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	1593
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	1062
+"🇺🇸"	"flag: United States"	"🇺🇸"	"flag: United States"	583
+"🇲🇲"	"flag: Myanmar (Burma)"	"🇲🇲"	"flag: Myanmar (Burma)"	381
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	351
+"🙏"	"folded hands"	"🙏"	"folded hands"	267
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	262
+"👏"	"clapping hands"	"👏"	"clapping hands"	248
+"🔥"	"fire"	"🔥"	"fire"	246
+"🤔"	"thinking face"	"🤔"	"thinking face"	196
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	186
+"🤡"	"clown face"	"🤡"	"clown face"	138
+"🌱"	"seedling"	"🌱"	"seedling"	136
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	133
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	105
+"😱"	"face screaming in fear"	"😱"	"face screaming in fear"	83
+"🚨"	"police car light"	"🚨"	"police car light"	82
+"😳"	"flushed face"	"😳"	"flushed face"	76
+"💙"	"blue heart"	"💙"	"blue heart"	76
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	74
+"😡"	"pouting face"	"😡"	"pouting face"	73
+"🇮🇳"	"flag: India"	"🇮🇳"	"flag: India"	72
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	70
+"🇺🇲"	"flag: U.S. Outlying Islands"	"🇺🇲"	"flag: U.S. Outlying Islands"	68
+"🥴"	"woozy face"	"🥴"	"woozy face"	65
+"🖤"	"black heart"	"💛"	"yellow heart"	64
+"💛"	"yellow heart"	"🖤"	"black heart"	64
+"👀"	"eyes"	"👀"	"eyes"	62
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	61
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	58
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	58
+"🔴"	"red circle"	"🇺🇸"	"flag: United States"	56
+"💯"	"hundred points"	"💯"	"hundred points"	56
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	55
+"❤️"	"red heart"	"❤️"	"red heart"	54
+"👏🏾"	"clapping hands: medium-dark skin tone"	"👏🏾"	"clapping hands: medium-dark skin tone"	54
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	52
+"🤷🏼‍♂️"	"man shrugging: medium-light skin tone"	"🤷🏼‍♂️"	"man shrugging: medium-light skin tone"	51
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	48
+"🇺🇸"	"flag: United States"	"🔴"	"red circle"	47
+"😆"	"grinning squinting face"	"😆"	"grinning squinting face"	47
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	46
+"💀"	"skull"	"💀"	"skull"	45
+"🇺🇸"	"flag: United States"	"❤️"	"red heart"	44
+"😀"	"grinning face"	"😀"	"grinning face"	43
+"👏🏽"	"clapping hands: medium skin tone"	"👏🏽"	"clapping hands: medium skin tone"	39
+"🚮"	"litter in bin sign"	"🚮"	"litter in bin sign"	39
+"👇🏽"	"backhand index pointing down: medium skin tone"	"👇🏽"	"backhand index pointing down: medium skin tone"	38
+"👇🏾"	"backhand index pointing down: medium-dark skin tone"	"👇🏾"	"backhand index pointing down: medium-dark skin tone"	37
+"😑"	"expressionless face"	"😑"	"expressionless face"	37
+
+#-----------------------------------------------
+# With repetition
+MATCH (n)-[r:FOLLOWED_BY { index: "capitol" }]->(m) WHERE n.emoji = m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	1593
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	1062
+"🇺🇸"	"flag: United States"	"🇺🇸"	"flag: United States"	583
+"🇲🇲"	"flag: Myanmar (Burma)"	"🇲🇲"	"flag: Myanmar (Burma)"	381
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	351
+"🙏"	"folded hands"	"🙏"	"folded hands"	267
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	262
+"👏"	"clapping hands"	"👏"	"clapping hands"	248
+"🔥"	"fire"	"🔥"	"fire"	246
+"🤔"	"thinking face"	"🤔"	"thinking face"	196
+"🤡"	"clown face"	"🤡"	"clown face"	138
+"🌱"	"seedling"	"🌱"	"seedling"	136
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	105
+"😱"	"face screaming in fear"	"😱"	"face screaming in fear"	83
+"🚨"	"police car light"	"🚨"	"police car light"	82
+"😳"	"flushed face"	"😳"	"flushed face"	76
+"💙"	"blue heart"	"💙"	"blue heart"	76
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	74
+"😡"	"pouting face"	"😡"	"pouting face"	73
+"🇮🇳"	"flag: India"	"🇮🇳"	"flag: India"	72
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	70
+"🇺🇲"	"flag: U.S. Outlying Islands"	"🇺🇲"	"flag: U.S. Outlying Islands"	68
+"🥴"	"woozy face"	"🥴"	"woozy face"	65
+"👀"	"eyes"	"👀"	"eyes"	62
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	61
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	58
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	58
+"💯"	"hundred points"	"💯"	"hundred points"	56
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	55
+"👏🏾"	"clapping hands: medium-dark skin tone"	"👏🏾"	"clapping hands: medium-dark skin tone"	54
+"❤️"	"red heart"	"❤️"	"red heart"	54
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	52
+"🤷🏼‍♂️"	"man shrugging: medium-light skin tone"	"🤷🏼‍♂️"	"man shrugging: medium-light skin tone"	51
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	48
+"😆"	"grinning squinting face"	"😆"	"grinning squinting face"	47
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	46
+"💀"	"skull"	"💀"	"skull"	45
+"😀"	"grinning face"	"😀"	"grinning face"	43
+"🚮"	"litter in bin sign"	"🚮"	"litter in bin sign"	39
+"👏🏽"	"clapping hands: medium skin tone"	"👏🏽"	"clapping hands: medium skin tone"	39
+"👇🏽"	"backhand index pointing down: medium skin tone"	"👇🏽"	"backhand index pointing down: medium skin tone"	38
+"👇🏾"	"backhand index pointing down: medium-dark skin tone"	"👇🏾"	"backhand index pointing down: medium-dark skin tone"	37
+"🙏🏻"	"folded hands: light skin tone"	"🙏🏻"	"folded hands: light skin tone"	37
+"😑"	"expressionless face"	"😑"	"expressionless face"	37
+"😜"	"winking face with tongue"	"😜"	"winking face with tongue"	36
+"✊"	"raised fist"	"✊"	"raised fist"	34
+"🥳"	"partying face"	"🥳"	"partying face"	32
+"😷"	"face with medical mask"	"😷"	"face with medical mask"	31
+"❗"	"red exclamation mark"	"❗"	"red exclamation mark"	30
+"😠"	"angry face"	"😠"	"angry face"	30
+
+#-----------------------------------------------
+# No repetition
+MATCH (n)-[r:FOLLOWED_BY { index: "capitol" }]->(m) WHERE n.emoji <> m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	186
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	133
+"🖤"	"black heart"	"💛"	"yellow heart"	64
+"💛"	"yellow heart"	"🖤"	"black heart"	64
+"🔴"	"red circle"	"🇺🇸"	"flag: United States"	56
+"🇺🇸"	"flag: United States"	"🔴"	"red circle"	47
+"🇺🇸"	"flag: United States"	"❤️"	"red heart"	44
+"💙"	"blue heart"	"🇺🇸"	"flag: United States"	34
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	32
+"🤍"	"white heart"	"💙"	"blue heart"	31
+"🇺🇸"	"flag: United States"	"💙"	"blue heart"	27
+"♥️"	"heart suit"	"🇺🇸"	"flag: United States"	26
+"🇺🇸"	"flag: United States"	"🗽"	"Statue of Liberty"	26
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	21
+"💛"	"yellow heart"	"🌟"	"glowing star"	20
+"🌟"	"glowing star"	"💛"	"yellow heart"	20
+"🖤"	"black heart"	"🌟"	"glowing star"	20
+"🏍"	"motorcycle"	"🎱"	"pool 8 ball"	20
+"🌟"	"glowing star"	"🖤"	"black heart"	20
+"🎱"	"pool 8 ball"	"🔥"	"fire"	20
+"🇺🇸"	"flag: United States"	"🇸🇦"	"flag: Saudi Arabia"	19
+"❤️"	"red heart"	"🤍"	"white heart"	19
+"🇺🇸"	"flag: United States"	"♥️"	"heart suit"	19
+"😂"	"face with tears of joy"	"😭"	"loudly crying face"	19
+"🇸🇦"	"flag: Saudi Arabia"	"🇺🇸"	"flag: United States"	18
+"😅"	"grinning face with sweat"	"😂"	"face with tears of joy"	18
+"🇺🇸"	"flag: United States"	"🙏"	"folded hands"	18
+"🙄"	"face with rolling eyes"	"🤔"	"thinking face"	18
+"💯"	"hundred points"	"👉"	"backhand index pointing right"	16
+"❤️"	"red heart"	"💙"	"blue heart"	16
+"👈"	"backhand index pointing left"	"💯"	"hundred points"	16
+"😂"	"face with tears of joy"	"😜"	"winking face with tongue"	15
+"✊🏾"	"raised fist: medium-dark skin tone"	"✊🏿"	"raised fist: dark skin tone"	14
+"🇺🇸"	"flag: United States"	"🏛️"	"classical building"	14
+"🙏"	"folded hands"	"🇺🇸"	"flag: United States"	14
+"😡"	"pouting face"	"🤬"	"face with symbols on mouth"	13
+"🇺🇸"	"flag: United States"	"🖤"	"black heart"	13
+"🤴🏾"	"prince: medium-dark skin tone"	"🎥"	"movie camera"	13
+"💛"	"yellow heart"	"🇺🇸"	"flag: United States"	12
+"🙏"	"folded hands"	"🇲🇲"	"flag: Myanmar (Burma)"	12
+"🇺🇲"	"flag: U.S. Outlying Islands"	"🗽"	"Statue of Liberty"	12
+"😁"	"beaming face with smiling eyes"	"😂"	"face with tears of joy"	12
+"🖤"	"black heart"	"🇺🇸"	"flag: United States"	12
+"🇺🇸"	"flag: United States"	"💛"	"yellow heart"	12
+"🤣"	"rolling on the floor laughing"	"😭"	"loudly crying face"	12
+"😅"	"grinning face with sweat"	"🤣"	"rolling on the floor laughing"	12
+"😳"	"flushed face"	"🤯"	"exploding head"	11
+"🤔"	"thinking face"	"🤣"	"rolling on the floor laughing"	11
+"🎉"	"party popper"	"🎊"	"confetti ball"	11
+"😭"	"loudly crying face"	"🤣"	"rolling on the floor laughing"	11
+
+#-----------------------------------------------
+# No repetition and independent of the order
+MATCH (n)-[r:FOLLOWED_BY { index: "capitol" }]-(m) WHERE n.emoji <> m.emoji AND ID(n) < ID(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	319
+"🖤"	"black heart"	"💛"	"yellow heart"	128
+"🇺🇸"	"flag: United States"	"🔴"	"red circle"	103
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	76
+"💙"	"blue heart"	"🇺🇸"	"flag: United States"	61
+"🇺🇸"	"flag: United States"	"♥️"	"heart suit"	45
+"🌟"	"glowing star"	"🖤"	"black heart"	40
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	40
+"🌟"	"glowing star"	"💛"	"yellow heart"	40
+"💙"	"blue heart"	"🤍"	"white heart"	39
+"🇺🇸"	"flag: United States"	"🇸🇦"	"flag: Saudi Arabia"	37
+"🇺🇸"	"flag: United States"	"🗽"	"Statue of Liberty"	36
+"🇺🇸"	"flag: United States"	"🙏"	"folded hands"	32
+"🤔"	"thinking face"	"🙄"	"face with rolling eyes"	29
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	29
+"❤️"	"red heart"	"💙"	"blue heart"	26
+"🇺🇸"	"flag: United States"	"🖤"	"black heart"	25
+"🇺🇸"	"flag: United States"	"💛"	"yellow heart"	24
+"😂"	"face with tears of joy"	"😜"	"winking face with tongue"	23
+"😭"	"loudly crying face"	"🤣"	"rolling on the floor laughing"	23
+"❤️"	"red heart"	"🤍"	"white heart"	23
+"🙏"	"folded hands"	"🇲🇲"	"flag: Myanmar (Burma)"	22
+"😟"	"worried face"	"😞"	"disappointed face"	21
+"🎱"	"pool 8 ball"	"🏍"	"motorcycle"	20
+"🔥"	"fire"	"🎱"	"pool 8 ball"	20
+"😡"	"pouting face"	"🤬"	"face with symbols on mouth"	20
+"🤣"	"rolling on the floor laughing"	"😅"	"grinning face with sweat"	20
+"✊🏾"	"raised fist: medium-dark skin tone"	"✊🏿"	"raised fist: dark skin tone"	20
+"🎉"	"party popper"	"🎊"	"confetti ball"	17
+"👉"	"backhand index pointing right"	"💯"	"hundred points"	16
+"😂"	"face with tears of joy"	"😁"	"beaming face with smiling eyes"	16
+"🇺🇲"	"flag: U.S. Outlying Islands"	"🗽"	"Statue of Liberty"	16
+"🇺🇸"	"flag: United States"	"💪"	"flexed biceps"	16
+"💯"	"hundred points"	"👈"	"backhand index pointing left"	16
+"🇺🇸"	"flag: United States"	"🔥"	"fire"	15
+"💃"	"woman dancing"	"🕺"	"man dancing"	15
+"🎶"	"musical notes"	"🎵"	"musical note"	15
+"✊🏽"	"raised fist: medium skin tone"	"✊🏾"	"raised fist: medium-dark skin tone"	15
+"🇺🇸"	"flag: United States"	"✊"	"raised fist"	14
+"🇺🇸"	"flag: United States"	"💔"	"broken heart"	14
+"🇺🇸"	"flag: United States"	"🏛️"	"classical building"	14
+"👍"	"thumbs up"	"👏"	"clapping hands"	13
+"🤮"	"face vomiting"	"🤬"	"face with symbols on mouth"	13
+"🤔"	"thinking face"	"🤣"	"rolling on the floor laughing"	13
+"🎇"	"sparkler"	"🎆"	"fireworks"	13
+"🎥"	"movie camera"	"🤴🏾"	"prince: medium-dark skin tone"	13
+"👍"	"thumbs up"	"✔️"	"check mark"	12
+"🇺🇸"	"flag: United States"	"🙏🏻"	"folded hands: light skin tone"	12
+"🧐"	"face with monocle"	"🤨"	"face with raised eyebrow"	12
+"🤔"	"thinking face"	"🧐"	"face with monocle"	12
+
+###################################################################
+##### BREXIT
+###################################################################
+
+#-----------------------------------------------
+# Indifferent
+
+MATCH (n)-[r:FOLLOWED_BY { index: "brexit" }]->(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	22647
+"🇬🇧"	"flag: United Kingdom"	"🇬🇧"	"flag: United Kingdom"	9358
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	4038
+"🇬🇧"	"flag: United Kingdom"	"🇪🇺"	"flag: European Union"	4018
+"👏"	"clapping hands"	"👏"	"clapping hands"	3862
+"🇪🇺"	"flag: European Union"	"🇬🇧"	"flag: United Kingdom"	2771
+"🇪🇺"	"flag: European Union"	"🇪🇺"	"flag: European Union"	2079
+"😱"	"face screaming in fear"	"😱"	"face screaming in fear"	1732
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	1619
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	1573
+"🤔"	"thinking face"	"🤔"	"thinking face"	1569
+"😡"	"pouting face"	"😡"	"pouting face"	1349
+"🔥"	"fire"	"🔥"	"fire"	1170
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	1078
+"👍"	"thumbs up"	"👍"	"thumbs up"	1005
+"😀"	"grinning face"	"😀"	"grinning face"	954
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	926
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	870
+"😳"	"flushed face"	"😳"	"flushed face"	730
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	727
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	711
+"😊"	"smiling face with smiling eyes"	"😊"	"smiling face with smiling eyes"	694
+"🎉"	"party popper"	"🎉"	"party popper"	627
+"🙈"	"see-no-evil monkey"	"🙈"	"see-no-evil monkey"	616
+"😆"	"grinning squinting face"	"😆"	"grinning squinting face"	598
+"😢"	"crying face"	"😢"	"crying face"	560
+"😄"	"grinning face with smiling eyes"	"😄"	"grinning face with smiling eyes"	517
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	490
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	483
+"🏴󠁧󠁢󠁳󠁣󠁴󠁿"	"flag: Scotland"	"🇪🇺"	"flag: European Union"	480
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	463
+"🐟"	"fish"	"🐟"	"fish"	453
+"💩"	"pile of poo"	"💩"	"pile of poo"	436
+"😴"	"sleeping face"	"😴"	"sleeping face"	433
+"🇬🇧"	"flag: United Kingdom"	"❤️"	"red heart"	407
+"😠"	"angry face"	"😠"	"angry face"	390
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	374
+"❤️"	"red heart"	"🇬🇧"	"flag: United Kingdom"	354
+"🇬🇧"	"flag: United Kingdom"	"🇺🇸"	"flag: United States"	343
+"😩"	"weary face"	"😩"	"weary face"	340
+"👋"	"waving hand"	"👋"	"waving hand"	326
+"🇺🇸"	"flag: United States"	"🇬🇧"	"flag: United Kingdom"	323
+"👍"	"thumbs up"	"👏"	"clapping hands"	323
+"😫"	"tired face"	"😫"	"tired face"	313
+"🍾"	"bottle with popping cork"	"🍾"	"bottle with popping cork"	306
+"❤️"	"red heart"	"❤️"	"red heart"	306
+"🤡"	"clown face"	"🤡"	"clown face"	296
+"👀"	"eyes"	"👀"	"eyes"	293
+"😨"	"fearful face"	"😨"	"fearful face"	283
+"❤️"	"red heart"	"🇪🇺"	"flag: European Union"	283
+
+#-----------------------------------------------
+# With repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "brexit" }]->(m) WHERE n.emoji = m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	22647
+"🇬🇧"	"flag: United Kingdom"	"🇬🇧"	"flag: United Kingdom"	9358
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	4038
+"👏"	"clapping hands"	"👏"	"clapping hands"	3862
+"🇪🇺"	"flag: European Union"	"🇪🇺"	"flag: European Union"	2079
+"😱"	"face screaming in fear"	"😱"	"face screaming in fear"	1732
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	1619
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	1573
+"🤔"	"thinking face"	"🤔"	"thinking face"	1569
+"😡"	"pouting face"	"😡"	"pouting face"	1349
+"🔥"	"fire"	"🔥"	"fire"	1170
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	1078
+"👍"	"thumbs up"	"👍"	"thumbs up"	1005
+"😀"	"grinning face"	"😀"	"grinning face"	954
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	870
+"😳"	"flushed face"	"😳"	"flushed face"	730
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	711
+"😊"	"smiling face with smiling eyes"	"😊"	"smiling face with smiling eyes"	694
+"🎉"	"party popper"	"🎉"	"party popper"	627
+"🙈"	"see-no-evil monkey"	"🙈"	"see-no-evil monkey"	616
+"😆"	"grinning squinting face"	"😆"	"grinning squinting face"	598
+"😢"	"crying face"	"😢"	"crying face"	560
+"😄"	"grinning face with smiling eyes"	"😄"	"grinning face with smiling eyes"	517
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	490
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	483
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	463
+"🐟"	"fish"	"🐟"	"fish"	453
+"💩"	"pile of poo"	"💩"	"pile of poo"	436
+"😴"	"sleeping face"	"😴"	"sleeping face"	433
+"😠"	"angry face"	"😠"	"angry face"	390
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	374
+"😩"	"weary face"	"😩"	"weary face"	340
+"👋"	"waving hand"	"👋"	"waving hand"	326
+"😫"	"tired face"	"😫"	"tired face"	313
+"🍾"	"bottle with popping cork"	"🍾"	"bottle with popping cork"	306
+"❤️"	"red heart"	"❤️"	"red heart"	306
+"🤡"	"clown face"	"🤡"	"clown face"	296
+"👀"	"eyes"	"👀"	"eyes"	293
+"😨"	"fearful face"	"😨"	"fearful face"	283
+"🙃"	"upside-down face"	"🙃"	"upside-down face"	281
+"😒"	"unamused face"	"😒"	"unamused face"	276
+"🇺🇸"	"flag: United States"	"🇺🇸"	"flag: United States"	266
+"😜"	"winking face with tongue"	"😜"	"winking face with tongue"	260
+"💤"	"zzz"	"💤"	"zzz"	252
+"😬"	"grimacing face"	"😬"	"grimacing face"	251
+"😔"	"pensive face"	"😔"	"pensive face"	249
+"🇮🇹"	"flag: Italy"	"🇮🇹"	"flag: Italy"	238
+"😃"	"grinning face with big eyes"	"😃"	"grinning face with big eyes"	238
+"💰"	"money bag"	"💰"	"money bag"	231
+"👎"	"thumbs down"	"👎"	"thumbs down"	225
+
+#-----------------------------------------------
+# No repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "brexit" }]->(m) WHERE n.emoji <> m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"🇬🇧"	"flag: United Kingdom"	"🇪🇺"	"flag: European Union"	4018
+"🇪🇺"	"flag: European Union"	"🇬🇧"	"flag: United Kingdom"	2771
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	926
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	727
+"🏴󠁧󠁢󠁳󠁣󠁴󠁿"	"flag: Scotland"	"🇪🇺"	"flag: European Union"	480
+"🇬🇧"	"flag: United Kingdom"	"❤️"	"red heart"	407
+"❤️"	"red heart"	"🇬🇧"	"flag: United Kingdom"	354
+"🇬🇧"	"flag: United Kingdom"	"🇺🇸"	"flag: United States"	343
+"🇺🇸"	"flag: United States"	"🇬🇧"	"flag: United Kingdom"	323
+"👍"	"thumbs up"	"👏"	"clapping hands"	323
+"❤️"	"red heart"	"🇪🇺"	"flag: European Union"	283
+"👍"	"thumbs up"	"🇬🇧"	"flag: United Kingdom"	248
+"🇬🇧"	"flag: United Kingdom"	"💔"	"broken heart"	235
+"💔"	"broken heart"	"🇪🇺"	"flag: European Union"	234
+"😂"	"face with tears of joy"	"😭"	"loudly crying face"	190
+"🤔"	"thinking face"	"🏴󠁧󠁢󠁳󠁣󠁴󠁿"	"flag: Scotland"	161
+"🇬🇧"	"flag: United Kingdom"	"👍"	"thumbs up"	159
+"🏴󠁧󠁢󠁥󠁮󠁧󠁿"	"flag: England"	"🇬🇧"	"flag: United Kingdom"	155
+"🇪🇺"	"flag: European Union"	"❤️"	"red heart"	155
+"😂"	"face with tears of joy"	"🇬🇧"	"flag: United Kingdom"	152
+"🇫🇷"	"flag: France"	"🇬🇧"	"flag: United Kingdom"	151
+"😂"	"face with tears of joy"	"🙈"	"see-no-evil monkey"	146
+"🙈"	"see-no-evil monkey"	"🙉"	"hear-no-evil monkey"	145
+"👍🏻"	"thumbs up: light skin tone"	"🇬🇧"	"flag: United Kingdom"	139
+"🤔"	"thinking face"	"🙄"	"face with rolling eyes"	138
+"😂"	"face with tears of joy"	"👍"	"thumbs up"	131
+"🙉"	"hear-no-evil monkey"	"🙊"	"speak-no-evil monkey"	127
+"💔"	"broken heart"	"🇬🇧"	"flag: United Kingdom"	125
+"🤔"	"thinking face"	"😂"	"face with tears of joy"	124
+"😢"	"crying face"	"😭"	"loudly crying face"	121
+"👋"	"waving hand"	"🇬🇧"	"flag: United Kingdom"	119
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	119
+"🙄"	"face with rolling eyes"	"😂"	"face with tears of joy"	114
+"🇮🇪"	"flag: Ireland"	"🇪🇺"	"flag: European Union"	112
+"🎉"	"party popper"	"🎊"	"confetti ball"	112
+"🙈"	"see-no-evil monkey"	"😂"	"face with tears of joy"	111
+"😁"	"beaming face with smiling eyes"	"😂"	"face with tears of joy"	109
+"🇪🇺"	"flag: European Union"	"💔"	"broken heart"	107
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	107
+"🇬🇧"	"flag: United Kingdom"	"🎉"	"party popper"	106
+"🎶"	"musical notes"	"🎵"	"musical note"	103
+"🇬🇧"	"flag: United Kingdom"	"🏴󠁧󠁢󠁥󠁮󠁧󠁿"	"flag: England"	103
+"👏"	"clapping hands"	"😆"	"grinning squinting face"	102
+"😭"	"loudly crying face"	"😢"	"crying face"	102
+"🇬🇧"	"flag: United Kingdom"	"🇫🇷"	"flag: France"	101
+"🇪🇺"	"flag: European Union"	"👋"	"waving hand"	100
+"💙"	"blue heart"	"💛"	"yellow heart"	99
+"🇫🇷"	"flag: France"	"🇪🇺"	"flag: European Union"	98
+"🤔"	"thinking face"	"🇬🇧"	"flag: United Kingdom"	97
+"🎵"	"musical note"	"🎶"	"musical notes"	95
+
+#-----------------------------------------------
+# No repetition and independent of the order
+MATCH (n)-[r:FOLLOWED_BY { index: "brexit" }]-(m) WHERE n.emoji <> m.emoji AND ID(n) < ID(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"🇬🇧"	"flag: United Kingdom"	"🇪🇺"	"flag: European Union"	6789
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	1653
+"❤️"	"red heart"	"🇬🇧"	"flag: United Kingdom"	761
+"🇺🇸"	"flag: United States"	"🇬🇧"	"flag: United Kingdom"	666
+"🏴󠁧󠁢󠁳󠁣󠁴󠁿"	"flag: Scotland"	"🇪🇺"	"flag: European Union"	573
+"❤️"	"red heart"	"🇪🇺"	"flag: European Union"	438
+"👍"	"thumbs up"	"🇬🇧"	"flag: United Kingdom"	407
+"👍"	"thumbs up"	"👏"	"clapping hands"	401
+"🇬🇧"	"flag: United Kingdom"	"💔"	"broken heart"	360
+"💔"	"broken heart"	"🇪🇺"	"flag: European Union"	341
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	309
+"🇬🇧"	"flag: United Kingdom"	"🏴󠁧󠁢󠁥󠁮󠁧󠁿"	"flag: England"	258
+"😂"	"face with tears of joy"	"🙈"	"see-no-evil monkey"	257
+"🇬🇧"	"flag: United Kingdom"	"🇫🇷"	"flag: France"	252
+"🤔"	"thinking face"	"🙄"	"face with rolling eyes"	224
+"😭"	"loudly crying face"	"😢"	"crying face"	223
+"🇬🇧"	"flag: United Kingdom"	"👍🏻"	"thumbs up: light skin tone"	202
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	200
+"😂"	"face with tears of joy"	"🇬🇧"	"flag: United Kingdom"	199
+"🎶"	"musical notes"	"🎵"	"musical note"	198
+"🎉"	"party popper"	"🎊"	"confetti ball"	196
+"🙈"	"see-no-evil monkey"	"🙉"	"hear-no-evil monkey"	188
+"😂"	"face with tears of joy"	"👍"	"thumbs up"	186
+"🇬🇧"	"flag: United Kingdom"	"🎉"	"party popper"	186
+"😂"	"face with tears of joy"	"🤔"	"thinking face"	173
+"🙊"	"speak-no-evil monkey"	"🙉"	"hear-no-evil monkey"	173
+"😂"	"face with tears of joy"	"🙄"	"face with rolling eyes"	173
+"💙"	"blue heart"	"💛"	"yellow heart"	170
+"🤔"	"thinking face"	"🏴󠁧󠁢󠁳󠁣󠁴󠁿"	"flag: Scotland"	169
+"🇫🇷"	"flag: France"	"🇪🇺"	"flag: European Union"	168
+"🇬🇧"	"flag: United Kingdom"	"🍾"	"bottle with popping cork"	163
+"😂"	"face with tears of joy"	"😁"	"beaming face with smiling eyes"	162
+"🇮🇪"	"flag: Ireland"	"🇪🇺"	"flag: European Union"	162
+"🇬🇧"	"flag: United Kingdom"	"👋"	"waving hand"	160
+"😂"	"face with tears of joy"	"😆"	"grinning squinting face"	140
+"😂"	"face with tears of joy"	"😉"	"winking face"	139
+"🇬🇧"	"flag: United Kingdom"	"💀"	"skull"	138
+"🤔"	"thinking face"	"🇬🇧"	"flag: United Kingdom"	134
+"🥂"	"clinking glasses"	"🍾"	"bottle with popping cork"	124
+"👋"	"waving hand"	"🇪🇺"	"flag: European Union"	123
+"❌"	"cross mark"	"🇪🇺"	"flag: European Union"	120
+"😊"	"smiling face with smiling eyes"	"👍"	"thumbs up"	114
+"🇬🇧"	"flag: United Kingdom"	"❌"	"cross mark"	111
+"😎"	"smiling face with sunglasses"	"👍"	"thumbs up"	110
+"👏"	"clapping hands"	"😆"	"grinning squinting face"	108
+"💙"	"blue heart"	"🇪🇺"	"flag: European Union"	106
+"👍"	"thumbs up"	"😀"	"grinning face"	103
+"😂"	"face with tears of joy"	"👏"	"clapping hands"	102
+"🚶‍♂️"	"man walking"	"🚶‍♀️"	"woman walking"	102
+"🙊"	"speak-no-evil monkey"	"🙈"	"see-no-evil monkey"	101
+
+###################################################################
+##### UKRAINE
+###################################################################
+
+#-----------------------------------------------
+# Indifferent
+
+MATCH (n)-[r:FOLLOWED_BY { index: "ukraine" }]->(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"🇺🇦"	"flag: Ukraine"	"🇺🇦"	"flag: Ukraine"	46153
+"🙏"	"folded hands"	"🙏"	"folded hands"	11667
+"💙"	"blue heart"	"💛"	"yellow heart"	11447
+"🇷🇺"	"flag: Russia"	"🇺🇦"	"flag: Ukraine"	7692
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	7609
+"🇺🇦"	"flag: Ukraine"	"🇷🇺"	"flag: Russia"	7330
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	6773
+"🚨"	"police car light"	"🚨"	"police car light"	6731
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	6375
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	6369
+"💛"	"yellow heart"	"💙"	"blue heart"	4596
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	4559
+"👏"	"clapping hands"	"👏"	"clapping hands"	3771
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	3583
+"🔥"	"fire"	"🔥"	"fire"	3245
+"🛑"	"stop sign"	"🛑"	"stop sign"	2787
+"💔"	"broken heart"	"💔"	"broken heart"	2517
+"🇺🇦"	"flag: Ukraine"	"❤️"	"red heart"	2461
+"🙏"	"folded hands"	"🇺🇦"	"flag: Ukraine"	2281
+"🌻"	"sunflower"	"🌻"	"sunflower"	2139
+"🇺🇦"	"flag: Ukraine"	"🙏"	"folded hands"	2086
+"❤️"	"red heart"	"🇺🇦"	"flag: Ukraine"	2008
+"❤️"	"red heart"	"❤️"	"red heart"	2004
+"🙏🏻"	"folded hands: light skin tone"	"🙏🏻"	"folded hands: light skin tone"	1990
+"🇺🇦"	"flag: Ukraine"	"💙"	"blue heart"	1976
+"🇷🇺"	"flag: Russia"	"🇷🇺"	"flag: Russia"	1839
+"🇪🇺"	"flag: European Union"	"🇺🇦"	"flag: Ukraine"	1694
+"🚀"	"rocket"	"🚀"	"rocket"	1634
+"🚨"	"police car light"	"🇺🇦"	"flag: Ukraine"	1627
+"❗"	"red exclamation mark"	"❗"	"red exclamation mark"	1607
+"💙"	"blue heart"	"💙"	"blue heart"	1605
+"🇺🇦"	"flag: Ukraine"	"⚡"	"high voltage"	1591
+"😡"	"pouting face"	"😡"	"pouting face"	1528
+"🇺🇦"	"flag: Ukraine"	"🌻"	"sunflower"	1518
+"💥"	"collision"	"💥"	"collision"	1476
+"🔴"	"red circle"	"🔴"	"red circle"	1353
+"💛"	"yellow heart"	"🇺🇦"	"flag: Ukraine"	1347
+"🤔"	"thinking face"	"🤔"	"thinking face"	1346
+"💪"	"flexed biceps"	"💪"	"flexed biceps"	1291
+"🇺🇦"	"flag: Ukraine"	"🇪🇺"	"flag: European Union"	1259
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	1226
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	1173
+"🙏🏻"	"folded hands: light skin tone"	"🇺🇦"	"flag: Ukraine"	1131
+"🇺🇦"	"flag: Ukraine"	"🙏🏻"	"folded hands: light skin tone"	1119
+"💛"	"yellow heart"	"💛"	"yellow heart"	1084
+"❤"	"red heart"	"❤"	"red heart"	1075
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	1073
+"🇺🇦"	"flag: Ukraine"	"❤"	"red heart"	1039
+"😢"	"crying face"	"😢"	"crying face"	1033
+"🟨"	"yellow square"	"🟨"	"yellow square"	992
+
+#-----------------------------------------------
+# With repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "ukraine" }]->(m) WHERE n.emoji = m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"🇺🇦"	"flag: Ukraine"	"🇺🇦"	"flag: Ukraine"	46153
+"🙏"	"folded hands"	"🙏"	"folded hands"	11667
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	7609
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	6773
+"🚨"	"police car light"	"🚨"	"police car light"	6731
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	6375
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	6369
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	4559
+"👏"	"clapping hands"	"👏"	"clapping hands"	3771
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	3583
+"🔥"	"fire"	"🔥"	"fire"	3245
+"🛑"	"stop sign"	"🛑"	"stop sign"	2787
+"💔"	"broken heart"	"💔"	"broken heart"	2517
+"🌻"	"sunflower"	"🌻"	"sunflower"	2139
+"❤️"	"red heart"	"❤️"	"red heart"	2004
+"🙏🏻"	"folded hands: light skin tone"	"🙏🏻"	"folded hands: light skin tone"	1990
+"🇷🇺"	"flag: Russia"	"🇷🇺"	"flag: Russia"	1839
+"🚀"	"rocket"	"🚀"	"rocket"	1634
+"❗"	"red exclamation mark"	"❗"	"red exclamation mark"	1607
+"💙"	"blue heart"	"💙"	"blue heart"	1605
+"😡"	"pouting face"	"😡"	"pouting face"	1528
+"💥"	"collision"	"💥"	"collision"	1476
+"🔴"	"red circle"	"🔴"	"red circle"	1353
+"🤔"	"thinking face"	"🤔"	"thinking face"	1346
+"💪"	"flexed biceps"	"💪"	"flexed biceps"	1291
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	1226
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	1173
+"💛"	"yellow heart"	"💛"	"yellow heart"	1084
+"❤"	"red heart"	"❤"	"red heart"	1075
+"😢"	"crying face"	"😢"	"crying face"	1033
+"🟨"	"yellow square"	"🟨"	"yellow square"	992
+"🟦"	"blue square"	"🟦"	"blue square"	979
+"🤡"	"clown face"	"🤡"	"clown face"	948
+"😥"	"sad but relieved face"	"😥"	"sad but relieved face"	929
+"🙏🏼"	"folded hands: medium-light skin tone"	"🙏🏼"	"folded hands: medium-light skin tone"	865
+"🕊"	"dove"	"🕊"	"dove"	833
+"🟩"	"green square"	"🟩"	"green square"	809
+"💚"	"green heart"	"💚"	"green heart"	748
+"👍"	"thumbs up"	"👍"	"thumbs up"	744
+"⚠️"	"warning"	"⚠️"	"warning"	712
+"😱"	"face screaming in fear"	"😱"	"face screaming in fear"	710
+"😔"	"pensive face"	"😔"	"pensive face"	680
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	653
+"⚡"	"high voltage"	"⚡"	"high voltage"	626
+"✊"	"raised fist"	"✊"	"raised fist"	596
+"🥺"	"pleading face"	"🥺"	"pleading face"	594
+"🖕"	"middle finger"	"🖕"	"middle finger"	568
+"🇹🇷"	"flag: Turkey"	"🇹🇷"	"flag: Turkey"	561
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	519
+"⛔"	"no entry"	"⛔"	"no entry"	516
+
+#-----------------------------------------------
+# No repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "ukraine" }]->(m) WHERE n.emoji <> m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"💙"	"blue heart"	"💛"	"yellow heart"	11447
+"🇷🇺"	"flag: Russia"	"🇺🇦"	"flag: Ukraine"	7692
+"🇺🇦"	"flag: Ukraine"	"🇷🇺"	"flag: Russia"	7330
+"💛"	"yellow heart"	"💙"	"blue heart"	4596
+"🇺🇦"	"flag: Ukraine"	"❤️"	"red heart"	2461
+"🙏"	"folded hands"	"🇺🇦"	"flag: Ukraine"	2281
+"🇺🇦"	"flag: Ukraine"	"🙏"	"folded hands"	2086
+"❤️"	"red heart"	"🇺🇦"	"flag: Ukraine"	2008
+"🇺🇦"	"flag: Ukraine"	"💙"	"blue heart"	1976
+"🇪🇺"	"flag: European Union"	"🇺🇦"	"flag: Ukraine"	1694
+"🚨"	"police car light"	"🇺🇦"	"flag: Ukraine"	1627
+"🇺🇦"	"flag: Ukraine"	"⚡"	"high voltage"	1591
+"🇺🇦"	"flag: Ukraine"	"🌻"	"sunflower"	1518
+"💛"	"yellow heart"	"🇺🇦"	"flag: Ukraine"	1347
+"🇺🇦"	"flag: Ukraine"	"🇪🇺"	"flag: European Union"	1259
+"🙏🏻"	"folded hands: light skin tone"	"🇺🇦"	"flag: Ukraine"	1131
+"🇺🇦"	"flag: Ukraine"	"🙏🏻"	"folded hands: light skin tone"	1119
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	1073
+"🇺🇦"	"flag: Ukraine"	"❤"	"red heart"	1039
+"🇺🇦"	"flag: Ukraine"	"🇺🇸"	"flag: United States"	971
+"🇺🇦"	"flag: Ukraine"	"💛"	"yellow heart"	957
+"💙"	"blue heart"	"🇺🇦"	"flag: Ukraine"	871
+"🤝"	"handshake"	"🇺🇦"	"flag: Ukraine"	857
+"🇺🇦"	"flag: Ukraine"	"💪"	"flexed biceps"	836
+"🇺🇸"	"flag: United States"	"🇺🇦"	"flag: Ukraine"	828
+"🌻"	"sunflower"	"🇺🇦"	"flag: Ukraine"	811
+"🇷🇺"	"flag: Russia"	"⚡"	"high voltage"	790
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	770
+"🔴"	"red circle"	"🇺🇦"	"flag: Ukraine"	765
+"💪"	"flexed biceps"	"🇺🇦"	"flag: Ukraine"	754
+"🇺🇦"	"flag: Ukraine"	"✊"	"raised fist"	718
+"🇺🇦"	"flag: Ukraine"	"❗"	"red exclamation mark"	674
+"🇺🇦"	"flag: Ukraine"	"💔"	"broken heart"	664
+"🇺🇦"	"flag: Ukraine"	"🚨"	"police car light"	647
+"🇺🇦"	"flag: Ukraine"	"🕊"	"dove"	612
+"💔"	"broken heart"	"🇺🇦"	"flag: Ukraine"	563
+"✊"	"raised fist"	"🇺🇦"	"flag: Ukraine"	562
+"🇹🇷"	"flag: Turkey"	"🇺🇦"	"flag: Ukraine"	545
+"🙏"	"folded hands"	"❤️"	"red heart"	499
+"🇺🇦"	"flag: Ukraine"	"🇹🇷"	"flag: Turkey"	492
+"❤"	"red heart"	"🇺🇦"	"flag: Ukraine"	463
+"🇺🇸"	"flag: United States"	"🇷🇺"	"flag: Russia"	461
+"🚨"	"police car light"	"🇷🇺"	"flag: Russia"	436
+"⚠️"	"warning"	"🚨"	"police car light"	429
+"🇦🇿"	"flag: Azerbaijan"	"🇺🇦"	"flag: Ukraine"	428
+"❤️"	"red heart"	"🙏"	"folded hands"	415
+"🇺🇦"	"flag: Ukraine"	"🇬🇧"	"flag: United Kingdom"	411
+"🇺🇦"	"flag: Ukraine"	"♥️"	"heart suit"	408
+"🇷🇺"	"flag: Russia"	"💥"	"collision"	406
+"🇫🇷"	"flag: France"	"🇺🇦"	"flag: Ukraine"	404
+
+#-----------------------------------------------
+# No repetition and independent of the order
+MATCH (n)-[r:FOLLOWED_BY { index: "ukraine" }]-(m) WHERE n.emoji <> m.emoji AND ID(n) < ID(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"💙"	"blue heart"	"💛"	"yellow heart"	16043
+"🇷🇺"	"flag: Russia"	"🇺🇦"	"flag: Ukraine"	15022
+"❤️"	"red heart"	"🇺🇦"	"flag: Ukraine"	4469
+"🙏"	"folded hands"	"🇺🇦"	"flag: Ukraine"	4367
+"🇪🇺"	"flag: European Union"	"🇺🇦"	"flag: Ukraine"	2953
+"💙"	"blue heart"	"🇺🇦"	"flag: Ukraine"	2847
+"🌻"	"sunflower"	"🇺🇦"	"flag: Ukraine"	2329
+"💛"	"yellow heart"	"🇺🇦"	"flag: Ukraine"	2304
+"🚨"	"police car light"	"🇺🇦"	"flag: Ukraine"	2274
+"🙏🏻"	"folded hands: light skin tone"	"🇺🇦"	"flag: Ukraine"	2250
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	1843
+"⚡"	"high voltage"	"🇺🇦"	"flag: Ukraine"	1838
+"🇺🇸"	"flag: United States"	"🇺🇦"	"flag: Ukraine"	1799
+"💪"	"flexed biceps"	"🇺🇦"	"flag: Ukraine"	1590
+"❤"	"red heart"	"🇺🇦"	"flag: Ukraine"	1502
+"✊"	"raised fist"	"🇺🇦"	"flag: Ukraine"	1280
+"💔"	"broken heart"	"🇺🇦"	"flag: Ukraine"	1227
+"🤝"	"handshake"	"🇺🇦"	"flag: Ukraine"	1194
+"🇹🇷"	"flag: Turkey"	"🇺🇦"	"flag: Ukraine"	1037
+"⚡"	"high voltage"	"🇷🇺"	"flag: Russia"	925
+"🕊"	"dove"	"🇺🇦"	"flag: Ukraine"	922
+"❤️"	"red heart"	"🙏"	"folded hands"	914
+"🔴"	"red circle"	"🇺🇦"	"flag: Ukraine"	833
+"🚨"	"police car light"	"🇷🇺"	"flag: Russia"	781
+"🇬🇧"	"flag: United Kingdom"	"🇺🇦"	"flag: Ukraine"	777
+"✌️"	"victory hand"	"🇺🇦"	"flag: Ukraine"	764
+"🙏🏼"	"folded hands: medium-light skin tone"	"🇺🇦"	"flag: Ukraine"	761
+"🇺🇦"	"flag: Ukraine"	"🇬🇪"	"flag: Georgia"	744
+"❗"	"red exclamation mark"	"🇺🇦"	"flag: Ukraine"	732
+"♥️"	"heart suit"	"🇺🇦"	"flag: Ukraine"	727
+"🔥"	"fire"	"🇺🇦"	"flag: Ukraine"	704
+"🇵🇱"	"flag: Poland"	"🇺🇦"	"flag: Ukraine"	668
+"💥"	"collision"	"🇺🇦"	"flag: Ukraine"	647
+"🇫🇷"	"flag: France"	"🇺🇦"	"flag: Ukraine"	645
+"🇺🇦"	"flag: Ukraine"	"🇦🇿"	"flag: Azerbaijan"	643
+"😭"	"loudly crying face"	"💔"	"broken heart"	633
+"💥"	"collision"	"🇷🇺"	"flag: Russia"	619
+"🇺🇸"	"flag: United States"	"🇷🇺"	"flag: Russia"	589
+"🚨"	"police car light"	"⚠️"	"warning"	533
+"🇫🇷"	"flag: France"	"🇪🇺"	"flag: European Union"	533
+"🕊️"	"dove"	"🇺🇦"	"flag: Ukraine"	514
+"😪"	"sleepy face"	"🇺🇦"	"flag: Ukraine"	497
+"🇫🇷"	"flag: France"	"🇷🇺"	"flag: Russia"	494
+"🔥"	"fire"	"🇷🇺"	"flag: Russia"	489
+"💙"	"blue heart"	"🙏"	"folded hands"	458
+"❤️"	"red heart"	"🇷🇺"	"flag: Russia"	427
+"🌍"	"globe showing Europe-Africa"	"🌎"	"globe showing Americas"	426
+"🇨🇦"	"flag: Canada"	"🇺🇦"	"flag: Ukraine"	424
+"💔"	"broken heart"	"😢"	"crying face"	422
+"🚨"	"police car light"	"🛑"	"stop sign"	416
+
+###################################################################
+##### US2020
+###################################################################
+
+#-----------------------------------------------
+# Indifferent
+
+MATCH (n)-[r:FOLLOWED_BY { index: "us2020" }]->(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	5431508
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	4199006
+"🇺🇸"	"flag: United States"	"🇺🇸"	"flag: United States"	1921376
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	801228
+"👏"	"clapping hands"	"👏"	"clapping hands"	793902
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	737244
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	676692
+"💩"	"pile of poo"	"💩"	"pile of poo"	528945
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	509501
+"🤡"	"clown face"	"🤡"	"clown face"	446097
+"❤️"	"red heart"	"❤️"	"red heart"	416302
+"🙏"	"folded hands"	"🙏"	"folded hands"	414532
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	378595
+"🌊"	"water wave"	"🌊"	"water wave"	376533
+"👍"	"thumbs up"	"👍"	"thumbs up"	365393
+"🔥"	"fire"	"🔥"	"fire"	320487
+"💙"	"blue heart"	"💙"	"blue heart"	312177
+"🖕"	"middle finger"	"🖕"	"middle finger"	304764
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	255038
+"😡"	"pouting face"	"😡"	"pouting face"	247577
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	201019
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	195462
+"🤔"	"thinking face"	"🤔"	"thinking face"	187472
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	181179
+"😆"	"grinning squinting face"	"😆"	"grinning squinting face"	171108
+"🤥"	"lying face"	"🤥"	"lying face"	163489
+"🚨"	"police car light"	"🚨"	"police car light"	146287
+"🇺🇸"	"flag: United States"	"❤️"	"red heart"	141559
+"💀"	"skull"	"💀"	"skull"	137823
+"🐍"	"snake"	"🐍"	"snake"	135206
+"❤"	"red heart"	"❤"	"red heart"	127334
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	121791
+"👇🏻"	"backhand index pointing down: light skin tone"	"👇🏻"	"backhand index pointing down: light skin tone"	118969
+"🇺🇲"	"flag: U.S. Outlying Islands"	"🇺🇲"	"flag: U.S. Outlying Islands"	114968
+"💯"	"hundred points"	"💯"	"hundred points"	106452
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	101287
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	99255
+"👇🏼"	"backhand index pointing down: medium-light skin tone"	"👇🏼"	"backhand index pointing down: medium-light skin tone"	95364
+"🤪"	"zany face"	"🤪"	"zany face"	94348
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	90064
+"🙏🏻"	"folded hands: light skin tone"	"🙏🏻"	"folded hands: light skin tone"	88195
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	86692
+"💥"	"collision"	"💥"	"collision"	86611
+"🙏"	"folded hands"	"🇺🇸"	"flag: United States"	86324
+"✋"	"raised hand"	"✋"	"raised hand"	85719
+"👎"	"thumbs down"	"👎"	"thumbs down"	85497
+"😷"	"face with medical mask"	"😷"	"face with medical mask"	81940
+"💪"	"flexed biceps"	"💪"	"flexed biceps"	80806
+"🖕🏻"	"middle finger: light skin tone"	"🖕🏻"	"middle finger: light skin tone"	78773
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	78303
+
+#-----------------------------------------------
+# With repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "us2020" }]->(m) WHERE n.emoji = m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	5431508
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	4199006
+"🇺🇸"	"flag: United States"	"🇺🇸"	"flag: United States"	1921376
+"👏"	"clapping hands"	"👏"	"clapping hands"	793902
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	676692
+"💩"	"pile of poo"	"💩"	"pile of poo"	528945
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	509501
+"🤡"	"clown face"	"🤡"	"clown face"	446097
+"❤️"	"red heart"	"❤️"	"red heart"	416302
+"🙏"	"folded hands"	"🙏"	"folded hands"	414532
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	378595
+"🌊"	"water wave"	"🌊"	"water wave"	376533
+"👍"	"thumbs up"	"👍"	"thumbs up"	365393
+"🔥"	"fire"	"🔥"	"fire"	320487
+"💙"	"blue heart"	"💙"	"blue heart"	312177
+"🖕"	"middle finger"	"🖕"	"middle finger"	304764
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	255038
+"😡"	"pouting face"	"😡"	"pouting face"	247577
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	201019
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	195462
+"🤔"	"thinking face"	"🤔"	"thinking face"	187472
+"😆"	"grinning squinting face"	"😆"	"grinning squinting face"	171108
+"🤥"	"lying face"	"🤥"	"lying face"	163489
+"🚨"	"police car light"	"🚨"	"police car light"	146287
+"💀"	"skull"	"💀"	"skull"	137823
+"🐍"	"snake"	"🐍"	"snake"	135206
+"❤"	"red heart"	"❤"	"red heart"	127334
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	121791
+"👇🏻"	"backhand index pointing down: light skin tone"	"👇🏻"	"backhand index pointing down: light skin tone"	118969
+"🇺🇲"	"flag: U.S. Outlying Islands"	"🇺🇲"	"flag: U.S. Outlying Islands"	114968
+"💯"	"hundred points"	"💯"	"hundred points"	106452
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	101287
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	99255
+"👇🏼"	"backhand index pointing down: medium-light skin tone"	"👇🏼"	"backhand index pointing down: medium-light skin tone"	95364
+"🤪"	"zany face"	"🤪"	"zany face"	94348
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	90064
+"🙏🏻"	"folded hands: light skin tone"	"🙏🏻"	"folded hands: light skin tone"	88195
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	86692
+"💥"	"collision"	"💥"	"collision"	86611
+"✋"	"raised hand"	"✋"	"raised hand"	85719
+"👎"	"thumbs down"	"👎"	"thumbs down"	85497
+"😷"	"face with medical mask"	"😷"	"face with medical mask"	81940
+"💪"	"flexed biceps"	"💪"	"flexed biceps"	80806
+"🖕🏻"	"middle finger: light skin tone"	"🖕🏻"	"middle finger: light skin tone"	78773
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	78303
+"🖕🏼"	"middle finger: medium-light skin tone"	"🖕🏼"	"middle finger: medium-light skin tone"	74328
+"👀"	"eyes"	"👀"	"eyes"	73469
+"😳"	"flushed face"	"😳"	"flushed face"	72866
+"🤢"	"nauseated face"	"🤢"	"nauseated face"	72298
+"♥️"	"heart suit"	"♥️"	"heart suit"	67330
+
+#-----------------------------------------------
+# No repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "us2020" }]->(m) WHERE n.emoji <> m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	801228
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	737244
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	181179
+"🇺🇸"	"flag: United States"	"❤️"	"red heart"	141559
+"🙏"	"folded hands"	"🇺🇸"	"flag: United States"	86324
+"💙"	"blue heart"	"🇺🇸"	"flag: United States"	69221
+"👍"	"thumbs up"	"🇺🇸"	"flag: United States"	63307
+"🇺🇸"	"flag: United States"	"🙏"	"folded hands"	60482
+"🤢"	"nauseated face"	"🤮"	"face vomiting"	54619
+"🇺🇸"	"flag: United States"	"💙"	"blue heart"	53791
+"😅"	"grinning face with sweat"	"😂"	"face with tears of joy"	48126
+"❤"	"red heart"	"🇺🇸"	"flag: United States"	45608
+"😅"	"grinning face with sweat"	"🤣"	"rolling on the floor laughing"	45004
+"🤣"	"rolling on the floor laughing"	"😅"	"grinning face with sweat"	40998
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	39846
+"♥️"	"heart suit"	"🇺🇸"	"flag: United States"	37968
+"🇺🇸"	"flag: United States"	"👍"	"thumbs up"	37588
+"🇺🇸"	"flag: United States"	"❤"	"red heart"	34777
+"🙏"	"folded hands"	"❤️"	"red heart"	33361
+"🤍"	"white heart"	"💙"	"blue heart"	31838
+"😂"	"face with tears of joy"	"🤡"	"clown face"	29296
+"🇺🇸"	"flag: United States"	"♥️"	"heart suit"	26630
+"💙"	"blue heart"	"🌊"	"water wave"	26598
+"❤️"	"red heart"	"🙏"	"folded hands"	25018
+"🙏🏻"	"folded hands: light skin tone"	"🇺🇸"	"flag: United States"	24862
+"🍊"	"tangerine"	"🤡"	"clown face"	24509
+"😆"	"grinning squinting face"	"🤣"	"rolling on the floor laughing"	24111
+"🇺🇸"	"flag: United States"	"🦅"	"eagle"	23863
+"😆"	"grinning squinting face"	"😂"	"face with tears of joy"	23736
+"❤️"	"red heart"	"🤍"	"white heart"	23532
+"😂"	"face with tears of joy"	"😭"	"loudly crying face"	23376
+"👍"	"thumbs up"	"👏"	"clapping hands"	21926
+"🤣"	"rolling on the floor laughing"	"😆"	"grinning squinting face"	21319
+"🌊"	"water wave"	"🇺🇸"	"flag: United States"	20946
+"🌊"	"water wave"	"💙"	"blue heart"	20626
+"🇺🇸"	"flag: United States"	"🌊"	"water wave"	20612
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	19948
+"🇺🇸"	"flag: United States"	"💪"	"flexed biceps"	19819
+"😂"	"face with tears of joy"	"😆"	"grinning squinting face"	19502
+"🇺🇸"	"flag: United States"	"🙏🏻"	"folded hands: light skin tone"	19373
+"🤮"	"face vomiting"	"🤢"	"nauseated face"	19238
+"😂"	"face with tears of joy"	"👍"	"thumbs up"	18965
+"💯"	"hundred points"	"🇺🇸"	"flag: United States"	18915
+"😡"	"pouting face"	"🤬"	"face with symbols on mouth"	18913
+"🤣"	"rolling on the floor laughing"	"🤡"	"clown face"	18269
+"💪"	"flexed biceps"	"🇺🇸"	"flag: United States"	18116
+"🤡"	"clown face"	"😂"	"face with tears of joy"	17670
+"🇺🇸"	"flag: United States"	"🗽"	"Statue of Liberty"	17550
+"👏"	"clapping hands"	"🇺🇸"	"flag: United States"	17043
+"🐂"	"ox"	"💩"	"pile of poo"	16877
+
+#-----------------------------------------------
+# No repetition and independent of the order
+MATCH (n)-[r:FOLLOWED_BY { index: "us2020" }]-(m) WHERE n.emoji <> m.emoji AND ID(n) < ID(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	1538472
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	322738
+"🇺🇸"	"flag: United States"	"🙏"	"folded hands"	146806
+"💙"	"blue heart"	"🇺🇸"	"flag: United States"	123012
+"🇺🇸"	"flag: United States"	"👍"	"thumbs up"	100895
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	87972
+"🤣"	"rolling on the floor laughing"	"😅"	"grinning face with sweat"	86002
+"❤"	"red heart"	"🇺🇸"	"flag: United States"	80385
+"🤢"	"nauseated face"	"🤮"	"face vomiting"	73857
+"🇺🇸"	"flag: United States"	"♥️"	"heart suit"	64598
+"❤️"	"red heart"	"🙏"	"folded hands"	58379
+"💙"	"blue heart"	"🌊"	"water wave"	47224
+"😂"	"face with tears of joy"	"🤡"	"clown face"	46966
+"🤣"	"rolling on the floor laughing"	"😆"	"grinning squinting face"	45430
+"🇺🇸"	"flag: United States"	"🙏🏻"	"folded hands: light skin tone"	44235
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	43324
+"😂"	"face with tears of joy"	"😆"	"grinning squinting face"	43238
+"🇺🇸"	"flag: United States"	"🌊"	"water wave"	41558
+"👍"	"thumbs up"	"👏"	"clapping hands"	38426
+"🇺🇸"	"flag: United States"	"💪"	"flexed biceps"	37935
+"🇺🇸"	"flag: United States"	"🦅"	"eagle"	37302
+"💙"	"blue heart"	"🤍"	"white heart"	35318
+"🇺🇸"	"flag: United States"	"💯"	"hundred points"	34654
+"🇺🇸"	"flag: United States"	"🗽"	"Statue of Liberty"	30692
+"💩"	"pile of poo"	"🤡"	"clown face"	30564
+"🤣"	"rolling on the floor laughing"	"🤡"	"clown face"	30123
+"😡"	"pouting face"	"🤬"	"face with symbols on mouth"	29274
+"🇺🇸"	"flag: United States"	"👏"	"clapping hands"	27568
+"🤡"	"clown face"	"🍊"	"tangerine"	27398
+"🇺🇸"	"flag: United States"	"🇧🇷"	"flag: Brazil"	26953
+"😂"	"face with tears of joy"	"👍"	"thumbs up"	26095
+"💥"	"collision"	"👇"	"backhand index pointing down"	25420
+"❤"	"red heart"	"🙏"	"folded hands"	25061
+"❤️"	"red heart"	"🤍"	"white heart"	24796
+"❤️"	"red heart"	"💙"	"blue heart"	24085
+"🇺🇸"	"flag: United States"	"🙏🏼"	"folded hands: medium-light skin tone"	23868
+"😭"	"loudly crying face"	"🤣"	"rolling on the floor laughing"	23640
+"🤣"	"rolling on the floor laughing"	"🤪"	"zany face"	23023
+"😂"	"face with tears of joy"	"🤪"	"zany face"	22133
+"❤️"	"red heart"	"🙏🏻"	"folded hands: light skin tone"	22105
+"👍"	"thumbs up"	"🙏"	"folded hands"	21874
+"😅"	"grinning face with sweat"	"😆"	"grinning squinting face"	21071
+"💩"	"pile of poo"	"🐂"	"ox"	20621
+"❤️"	"red heart"	"👍"	"thumbs up"	20170
+"🇺🇸"	"flag: United States"	"✝️"	"latin cross"	19344
+"😂"	"face with tears of joy"	"😁"	"beaming face with smiling eyes"	18963
+"😂"	"face with tears of joy"	"🙄"	"face with rolling eyes"	17642
+"🇺🇸"	"flag: United States"	"💕"	"two hearts"	17418
+"😎"	"smiling face with sunglasses"	"🇺🇸"	"flag: United States"	17324
+"🎉"	"party popper"	"🎊"	"confetti ball"	17287
+
+###################################################################
+##### COVID
+###################################################################
+
+#-----------------------------------------------
+# Indifferent
+
+MATCH (n)-[r:FOLLOWED_BY { index: "covid" }]->(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	3420020
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	2017543
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	1930736
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	845283
+"👏"	"clapping hands"	"👏"	"clapping hands"	761272
+"🙏"	"folded hands"	"🙏"	"folded hands"	722801
+"😷"	"face with medical mask"	"😷"	"face with medical mask"	411762
+"😡"	"pouting face"	"😡"	"pouting face"	382537
+"🤡"	"clown face"	"🤡"	"clown face"	376959
+"🤔"	"thinking face"	"🤔"	"thinking face"	354319
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	310602
+"🔥"	"fire"	"🔥"	"fire"	306792
+"❤️"	"red heart"	"❤️"	"red heart"	304086
+"🥺"	"pleading face"	"🥺"	"pleading face"	267713
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	251817
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	248789
+"🇺🇸"	"flag: United States"	"🇺🇸"	"flag: United States"	236329
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	218317
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	212841
+"👍"	"thumbs up"	"👍"	"thumbs up"	203505
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	185526
+"😱"	"face screaming in fear"	"😱"	"face screaming in fear"	181850
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	181202
+"💀"	"skull"	"💀"	"skull"	179777
+"💔"	"broken heart"	"💔"	"broken heart"	174606
+"🚨"	"police car light"	"🚨"	"police car light"	169471
+"😳"	"flushed face"	"😳"	"flushed face"	156537
+"😔"	"pensive face"	"😔"	"pensive face"	151844
+"😢"	"crying face"	"😢"	"crying face"	150726
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	142250
+"👇🏻"	"backhand index pointing down: light skin tone"	"👇🏻"	"backhand index pointing down: light skin tone"	134021
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	130766
+"😩"	"weary face"	"😩"	"weary face"	122767
+"👀"	"eyes"	"👀"	"eyes"	118870
+"🙏🏻"	"folded hands: light skin tone"	"🙏🏻"	"folded hands: light skin tone"	117437
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	110243
+"🙃"	"upside-down face"	"🙃"	"upside-down face"	109722
+"🥰"	"smiling face with hearts"	"🥰"	"smiling face with hearts"	109456
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	106980
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	104034
+"❤"	"red heart"	"❤"	"red heart"	103425
+"💜"	"purple heart"	"💜"	"purple heart"	99630
+"🦠"	"microbe"	"🦠"	"microbe"	96748
+"👇🏼"	"backhand index pointing down: medium-light skin tone"	"👇🏼"	"backhand index pointing down: medium-light skin tone"	94187
+"🥴"	"woozy face"	"🥴"	"woozy face"	84516
+"🥳"	"partying face"	"🥳"	"partying face"	82916
+"😆"	"grinning squinting face"	"😆"	"grinning squinting face"	81815
+"💙"	"blue heart"	"💙"	"blue heart"	81162
+"💪"	"flexed biceps"	"💪"	"flexed biceps"	79454
+"😠"	"angry face"	"😠"	"angry face"	79124
+
+#-----------------------------------------------
+# With repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "covid" }]->(m) WHERE n.emoji = m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	3420020
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	2017543
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	1930736
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	845283
+"👏"	"clapping hands"	"👏"	"clapping hands"	761272
+"🙏"	"folded hands"	"🙏"	"folded hands"	722801
+"😷"	"face with medical mask"	"😷"	"face with medical mask"	411762
+"😡"	"pouting face"	"😡"	"pouting face"	382537
+"🤡"	"clown face"	"🤡"	"clown face"	376959
+"🤔"	"thinking face"	"🤔"	"thinking face"	354319
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	310602
+"🔥"	"fire"	"🔥"	"fire"	306792
+"❤️"	"red heart"	"❤️"	"red heart"	304086
+"🥺"	"pleading face"	"🥺"	"pleading face"	267713
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	251817
+"🇺🇸"	"flag: United States"	"🇺🇸"	"flag: United States"	236329
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	218317
+"👍"	"thumbs up"	"👍"	"thumbs up"	203505
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	185526
+"😱"	"face screaming in fear"	"😱"	"face screaming in fear"	181850
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	181202
+"💀"	"skull"	"💀"	"skull"	179777
+"💔"	"broken heart"	"💔"	"broken heart"	174606
+"🚨"	"police car light"	"🚨"	"police car light"	169471
+"😳"	"flushed face"	"😳"	"flushed face"	156537
+"😔"	"pensive face"	"😔"	"pensive face"	151844
+"😢"	"crying face"	"😢"	"crying face"	150726
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	142250
+"👇🏻"	"backhand index pointing down: light skin tone"	"👇🏻"	"backhand index pointing down: light skin tone"	134021
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	130766
+"😩"	"weary face"	"😩"	"weary face"	122767
+"👀"	"eyes"	"👀"	"eyes"	118870
+"🙏🏻"	"folded hands: light skin tone"	"🙏🏻"	"folded hands: light skin tone"	117437
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	110243
+"🙃"	"upside-down face"	"🙃"	"upside-down face"	109722
+"🥰"	"smiling face with hearts"	"🥰"	"smiling face with hearts"	109456
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	106980
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	104034
+"❤"	"red heart"	"❤"	"red heart"	103425
+"💜"	"purple heart"	"💜"	"purple heart"	99630
+"🦠"	"microbe"	"🦠"	"microbe"	96748
+"👇🏼"	"backhand index pointing down: medium-light skin tone"	"👇🏼"	"backhand index pointing down: medium-light skin tone"	94187
+"🥴"	"woozy face"	"🥴"	"woozy face"	84516
+"🥳"	"partying face"	"🥳"	"partying face"	82916
+"😆"	"grinning squinting face"	"😆"	"grinning squinting face"	81815
+"💙"	"blue heart"	"💙"	"blue heart"	81162
+"💪"	"flexed biceps"	"💪"	"flexed biceps"	79454
+"😠"	"angry face"	"😠"	"angry face"	79124
+"🟩"	"green square"	"🟩"	"green square"	74186
+"🤦‍♂️"	"man facepalming"	"🤦‍♂️"	"man facepalming"	73951
+
+#-----------------------------------------------
+# No repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "covid" }]->(m) WHERE n.emoji <> m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	248789
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	212841
+"😂"	"face with tears of joy"	"😭"	"loudly crying face"	48308
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	47616
+"😭"	"loudly crying face"	"💔"	"broken heart"	29238
+"😡"	"pouting face"	"🤬"	"face with symbols on mouth"	28837
+"😅"	"grinning face with sweat"	"😂"	"face with tears of joy"	26976
+"🦠"	"microbe"	"😷"	"face with medical mask"	25576
+"🥺"	"pleading face"	"😭"	"loudly crying face"	25482
+"🙏"	"folded hands"	"❤️"	"red heart"	24673
+"😷"	"face with medical mask"	"🦠"	"microbe"	22336
+"🥺"	"pleading face"	"❤️"	"red heart"	22161
+"🍳"	"cooking"	"☕"	"hot beverage"	21879
+"🤢"	"nauseated face"	"🤮"	"face vomiting"	21792
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	21728
+"😭"	"loudly crying face"	"🙏"	"folded hands"	20266
+"👁"	"eye"	"👄"	"mouth"	18844
+"😅"	"grinning face with sweat"	"🤣"	"rolling on the floor laughing"	18815
+"👄"	"mouth"	"👁"	"eye"	18813
+"🇻🇪"	"flag: Venezuela"	"📢"	"loudspeaker"	18788
+"😭"	"loudly crying face"	"🤣"	"rolling on the floor laughing"	18524
+"❤️"	"red heart"	"🙏"	"folded hands"	18388
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	18367
+"💛"	"yellow heart"	"💙"	"blue heart"	18246
+"👑"	"crown"	"❤️"	"red heart"	17287
+"❤️"	"red heart"	"👑"	"crown"	17155
+"🐐"	"goat"	"👑"	"crown"	16815
+"👑"	"crown"	"🐐"	"goat"	16807
+"🤣"	"rolling on the floor laughing"	"😭"	"loudly crying face"	16792
+"👍"	"thumbs up"	"👏"	"clapping hands"	16749
+"😭"	"loudly crying face"	"❤️"	"red heart"	16090
+"🤬"	"face with symbols on mouth"	"😡"	"pouting face"	15960
+"🤣"	"rolling on the floor laughing"	"😅"	"grinning face with sweat"	15575
+"😍"	"smiling face with heart-eyes"	"😘"	"face blowing a kiss"	15040
+"👉"	"backhand index pointing right"	"👈"	"backhand index pointing left"	14316
+"🤔"	"thinking face"	"🙄"	"face with rolling eyes"	14049
+"💔"	"broken heart"	"😭"	"loudly crying face"	13575
+"⚠️"	"warning"	"🦠"	"microbe"	13333
+"🎉"	"party popper"	"🎊"	"confetti ball"	13020
+"🇺🇸"	"flag: United States"	"❤️"	"red heart"	12899
+"👏"	"clapping hands"	"👍"	"thumbs up"	12716
+"😭"	"loudly crying face"	"🥺"	"pleading face"	12606
+"💙"	"blue heart"	"❤️"	"red heart"	12260
+"🙏"	"folded hands"	"🇺🇸"	"flag: United States"	12172
+"😂"	"face with tears of joy"	"💀"	"skull"	12025
+"😷"	"face with medical mask"	"💉"	"syringe"	12009
+"👀"	"eyes"	"👇"	"backhand index pointing down"	11866
+"💙"	"blue heart"	"🇺🇸"	"flag: United States"	11650
+"😢"	"crying face"	"😭"	"loudly crying face"	11624
+"🙏"	"folded hands"	"❤"	"red heart"	11463
+
+#-----------------------------------------------
+# No repetition and independent of the order
+MATCH (n)-[r:FOLLOWED_BY { index: "covid" }]-(m) WHERE n.emoji <> m.emoji AND ID(n) < ID(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	461630
+"😭"	"loudly crying face"	"😂"	"face with tears of joy"	95924
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	48704
+"😷"	"face with medical mask"	"🦠"	"microbe"	47912
+"😡"	"pouting face"	"🤬"	"face with symbols on mouth"	44797
+"❤️"	"red heart"	"🙏"	"folded hands"	43061
+"😭"	"loudly crying face"	"💔"	"broken heart"	42813
+"😭"	"loudly crying face"	"🥺"	"pleading face"	38088
+"👄"	"mouth"	"👁"	"eye"	37657
+"😭"	"loudly crying face"	"🤣"	"rolling on the floor laughing"	35316
+"❤️"	"red heart"	"👑"	"crown"	34442
+"🤣"	"rolling on the floor laughing"	"😅"	"grinning face with sweat"	34390
+"👑"	"crown"	"🐐"	"goat"	33622
+"❤️"	"red heart"	"🇺🇸"	"flag: United States"	31266
+"😭"	"loudly crying face"	"🙏"	"folded hands"	29525
+"👍"	"thumbs up"	"👏"	"clapping hands"	29465
+"🤢"	"nauseated face"	"🤮"	"face vomiting"	28578
+"😍"	"smiling face with heart-eyes"	"😘"	"face blowing a kiss"	26455
+"❤️"	"red heart"	"🥺"	"pleading face"	26113
+"💙"	"blue heart"	"💛"	"yellow heart"	25838
+"🤔"	"thinking face"	"🙄"	"face with rolling eyes"	24108
+"🇺🇸"	"flag: United States"	"🙏"	"folded hands"	22440
+"☕"	"hot beverage"	"🍳"	"cooking"	21904
+"🥰"	"smiling face with hearts"	"😍"	"smiling face with heart-eyes"	21388
+"🎉"	"party popper"	"🎊"	"confetti ball"	20912
+"📢"	"loudspeaker"	"🇻🇪"	"flag: Venezuela"	20713
+"❤"	"red heart"	"🙏"	"folded hands"	20018
+"😭"	"loudly crying face"	"❤️"	"red heart"	19719
+"💙"	"blue heart"	"🇺🇸"	"flag: United States"	19567
+"❤️"	"red heart"	"💙"	"blue heart"	19558
+"😂"	"face with tears of joy"	"💀"	"skull"	18792
+"👀"	"eyes"	"👇"	"backhand index pointing down"	18644
+"😭"	"loudly crying face"	"😩"	"weary face"	18235
+"😭"	"loudly crying face"	"😢"	"crying face"	18081
+"😡"	"pouting face"	"😠"	"angry face"	17730
+"💔"	"broken heart"	"😢"	"crying face"	17617
+"👍"	"thumbs up"	"🙏"	"folded hands"	16845
+"🎶"	"musical notes"	"🎵"	"musical note"	16714
+"😂"	"face with tears of joy"	"😁"	"beaming face with smiling eyes"	16711
+"😷"	"face with medical mask"	"🙏"	"folded hands"	16060
+"❤️"	"red heart"	"🙏🏻"	"folded hands: light skin tone"	15619
+"🤔"	"thinking face"	"🧐"	"face with monocle"	15392
+"😷"	"face with medical mask"	"💉"	"syringe"	15353
+"😂"	"face with tears of joy"	"👍"	"thumbs up"	15343
+"😂"	"face with tears of joy"	"🙄"	"face with rolling eyes"	14851
+"👉"	"backhand index pointing right"	"👈"	"backhand index pointing left"	14813
+"😔"	"pensive face"	"💔"	"broken heart"	14625
+"😂"	"face with tears of joy"	"😆"	"grinning squinting face"	14575
+"👄"	"mouth"	"👁️"	"eye"	14413
+"⚠️"	"warning"	"🦠"	"microbe"	14317
+
+###################################################################
+##### UKRAINEWAR
+###################################################################
+
+#-----------------------------------------------
+# Indifferent
+
+MATCH (n)-[r:FOLLOWED_BY { index: "ukrainewar" }]->(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"🇺🇦"	"flag: Ukraine"	"🇺🇦"	"flag: Ukraine"	115744
+"💙"	"blue heart"	"💛"	"yellow heart"	47770
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	33431
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	32608
+"🇷🇺"	"flag: Russia"	"🇺🇦"	"flag: Ukraine"	32332
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	28480
+"🙏"	"folded hands"	"🙏"	"folded hands"	25154
+"👹"	"ogre"	"👹"	"ogre"	19483
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	19377
+"🇺🇦"	"flag: Ukraine"	"🇷🇺"	"flag: Russia"	17114
+"🛑"	"stop sign"	"🛑"	"stop sign"	16847
+"🔥"	"fire"	"🔥"	"fire"	16617
+"👏"	"clapping hands"	"👏"	"clapping hands"	15498
+"🚨"	"police car light"	"🚨"	"police car light"	15454
+"💛"	"yellow heart"	"💙"	"blue heart"	15439
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	13975
+"👑"	"crown"	"👑"	"crown"	10450
+"🙏"	"folded hands"	"🇺🇦"	"flag: Ukraine"	10320
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	10061
+"🇺🇦"	"flag: Ukraine"	"🌻"	"sunflower"	9971
+"🇷🇺"	"flag: Russia"	"🇷🇺"	"flag: Russia"	9494
+"💔"	"broken heart"	"💔"	"broken heart"	8704
+"🇺🇦"	"flag: Ukraine"	"💙"	"blue heart"	8703
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	8430
+"❤️"	"red heart"	"❤️"	"red heart"	7821
+"💥"	"collision"	"💥"	"collision"	7746
+"🇺🇦"	"flag: Ukraine"	"⚡"	"high voltage"	7239
+"🇺🇦"	"flag: Ukraine"	"🇪🇺"	"flag: European Union"	7214
+"🌻"	"sunflower"	"🌻"	"sunflower"	7006
+"🇺🇦"	"flag: Ukraine"	"❤️"	"red heart"	6460
+"😡"	"pouting face"	"😡"	"pouting face"	6164
+"🇺🇦"	"flag: Ukraine"	"🙏"	"folded hands"	5946
+"🌻"	"sunflower"	"🇺🇦"	"flag: Ukraine"	5892
+"💙"	"blue heart"	"🇺🇦"	"flag: Ukraine"	5876
+"🚀"	"rocket"	"🚀"	"rocket"	5801
+"❤️"	"red heart"	"🇺🇦"	"flag: Ukraine"	5772
+"🇺🇦"	"flag: Ukraine"	"💛"	"yellow heart"	5572
+"👀"	"eyes"	"👀"	"eyes"	5486
+"🤡"	"clown face"	"🤡"	"clown face"	5425
+"💛"	"yellow heart"	"🇺🇦"	"flag: Ukraine"	5398
+"👺"	"goblin"	"👺"	"goblin"	5112
+"❗"	"red exclamation mark"	"❗"	"red exclamation mark"	4942
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	4893
+"💪"	"flexed biceps"	"💪"	"flexed biceps"	4823
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	4753
+"🤔"	"thinking face"	"🤔"	"thinking face"	4720
+"🔥"	"fire"	"💀"	"skull"	4662
+"👍"	"thumbs up"	"👍"	"thumbs up"	4567
+"🇺🇦"	"flag: Ukraine"	"💪"	"flexed biceps"	4368
+"🇺🇦"	"flag: Ukraine"	"🦅"	"eagle"	4363
+
+#-----------------------------------------------
+# With repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "ukrainewar" }]->(m) WHERE n.emoji = m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"🇺🇦"	"flag: Ukraine"	"🇺🇦"	"flag: Ukraine"	115744
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	33431
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	32608
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	28480
+"🙏"	"folded hands"	"🙏"	"folded hands"	25154
+"👹"	"ogre"	"👹"	"ogre"	19483
+"⬇️"	"down arrow"	"⬇️"	"down arrow"	19377
+"🛑"	"stop sign"	"🛑"	"stop sign"	16847
+"🔥"	"fire"	"🔥"	"fire"	16617
+"👏"	"clapping hands"	"👏"	"clapping hands"	15498
+"🚨"	"police car light"	"🚨"	"police car light"	15454
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	13975
+"👑"	"crown"	"👑"	"crown"	10450
+"‼️"	"double exclamation mark"	"‼️"	"double exclamation mark"	10061
+"🇷🇺"	"flag: Russia"	"🇷🇺"	"flag: Russia"	9494
+"💔"	"broken heart"	"💔"	"broken heart"	8704
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	8430
+"❤️"	"red heart"	"❤️"	"red heart"	7821
+"💥"	"collision"	"💥"	"collision"	7746
+"🌻"	"sunflower"	"🌻"	"sunflower"	7006
+"😡"	"pouting face"	"😡"	"pouting face"	6164
+"🚀"	"rocket"	"🚀"	"rocket"	5801
+"👀"	"eyes"	"👀"	"eyes"	5486
+"🤡"	"clown face"	"🤡"	"clown face"	5425
+"👺"	"goblin"	"👺"	"goblin"	5112
+"❗"	"red exclamation mark"	"❗"	"red exclamation mark"	4942
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	4893
+"💪"	"flexed biceps"	"💪"	"flexed biceps"	4823
+"🤔"	"thinking face"	"🤔"	"thinking face"	4720
+"👍"	"thumbs up"	"👍"	"thumbs up"	4567
+"💙"	"blue heart"	"💙"	"blue heart"	3789
+"❤"	"red heart"	"❤"	"red heart"	3710
+"🌊"	"water wave"	"🌊"	"water wave"	3455
+"⚡"	"high voltage"	"⚡"	"high voltage"	3422
+"🙏🏻"	"folded hands: light skin tone"	"🙏🏻"	"folded hands: light skin tone"	3399
+"😢"	"crying face"	"😢"	"crying face"	2627
+"🔴"	"red circle"	"🔴"	"red circle"	2532
+"💛"	"yellow heart"	"💛"	"yellow heart"	2496
+"⛔"	"no entry"	"⛔"	"no entry"	2476
+"😱"	"face screaming in fear"	"😱"	"face screaming in fear"	2460
+"⬅️"	"left arrow"	"⬅️"	"left arrow"	2435
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	2426
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	2403
+"💩"	"pile of poo"	"💩"	"pile of poo"	2352
+"🥰"	"smiling face with hearts"	"🥰"	"smiling face with hearts"	2288
+"🖕"	"middle finger"	"🖕"	"middle finger"	2233
+"🕊"	"dove"	"🕊"	"dove"	2157
+"💀"	"skull"	"💀"	"skull"	2113
+"🆘"	"SOS button"	"🆘"	"SOS button"	2090
+"⚠️"	"warning"	"⚠️"	"warning"	2015
+
+#-----------------------------------------------
+# No repetition
+
+MATCH (n)-[r:FOLLOWED_BY { index: "ukrainewar" }]->(m) WHERE n.emoji <> m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"💙"	"blue heart"	"💛"	"yellow heart"	47770
+"🇷🇺"	"flag: Russia"	"🇺🇦"	"flag: Ukraine"	32332
+"🇺🇦"	"flag: Ukraine"	"🇷🇺"	"flag: Russia"	17114
+"💛"	"yellow heart"	"💙"	"blue heart"	15439
+"🙏"	"folded hands"	"🇺🇦"	"flag: Ukraine"	10320
+"🇺🇦"	"flag: Ukraine"	"🌻"	"sunflower"	9971
+"🇺🇦"	"flag: Ukraine"	"💙"	"blue heart"	8703
+"🇺🇦"	"flag: Ukraine"	"⚡"	"high voltage"	7239
+"🇺🇦"	"flag: Ukraine"	"🇪🇺"	"flag: European Union"	7214
+"🇺🇦"	"flag: Ukraine"	"❤️"	"red heart"	6460
+"🇺🇦"	"flag: Ukraine"	"🙏"	"folded hands"	5946
+"🌻"	"sunflower"	"🇺🇦"	"flag: Ukraine"	5892
+"💙"	"blue heart"	"🇺🇦"	"flag: Ukraine"	5876
+"❤️"	"red heart"	"🇺🇦"	"flag: Ukraine"	5772
+"🇺🇦"	"flag: Ukraine"	"💛"	"yellow heart"	5572
+"💛"	"yellow heart"	"🇺🇦"	"flag: Ukraine"	5398
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	4753
+"🔥"	"fire"	"💀"	"skull"	4662
+"🇺🇦"	"flag: Ukraine"	"💪"	"flexed biceps"	4368
+"🇺🇦"	"flag: Ukraine"	"🦅"	"eagle"	4363
+"🇺🇸"	"flag: United States"	"🇺🇦"	"flag: Ukraine"	4118
+"💀"	"skull"	"🇺🇦"	"flag: Ukraine"	4028
+"💪"	"flexed biceps"	"🇺🇦"	"flag: Ukraine"	3918
+"🇷🇺"	"flag: Russia"	"⚡"	"high voltage"	3861
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	3827
+"🇪🇺"	"flag: European Union"	"🇺🇦"	"flag: Ukraine"	3673
+"💔"	"broken heart"	"🇺🇦"	"flag: Ukraine"	3647
+"🇺🇦"	"flag: Ukraine"	"🇺🇸"	"flag: United States"	3574
+"❤️"	"red heart"	"👑"	"crown"	3172
+"👑"	"crown"	"❤️"	"red heart"	3146
+"🇷🇺"	"flag: Russia"	"🔥"	"fire"	2838
+"🇺🇦"	"flag: Ukraine"	"🕊"	"dove"	2819
+"✊"	"raised fist"	"🇺🇦"	"flag: Ukraine"	2617
+"🇺🇦"	"flag: Ukraine"	"💔"	"broken heart"	2552
+"🇬🇧"	"flag: United Kingdom"	"🇺🇦"	"flag: Ukraine"	2442
+"👑"	"crown"	"🐐"	"goat"	2428
+"🇺🇦"	"flag: Ukraine"	"✊"	"raised fist"	2406
+"🇺🇦"	"flag: Ukraine"	"❤"	"red heart"	2398
+"🍳"	"cooking"	"☕"	"hot beverage"	2315
+"🔥"	"fire"	"🇺🇦"	"flag: Ukraine"	2295
+"🐐"	"goat"	"👑"	"crown"	2294
+"🙏🏻"	"folded hands: light skin tone"	"🇺🇦"	"flag: Ukraine"	2282
+"🚨"	"police car light"	"🇺🇦"	"flag: Ukraine"	2224
+"🤝"	"handshake"	"🇺🇦"	"flag: Ukraine"	2205
+"🇺🇦"	"flag: Ukraine"	"🇬🇧"	"flag: United Kingdom"	2124
+"🇺🇦"	"flag: Ukraine"	"🙏🏻"	"folded hands: light skin tone"	2116
+"🇺🇦"	"flag: Ukraine"	"😟"	"worried face"	2043
+"💀"	"skull"	"🔥"	"fire"	1906
+"✌️"	"victory hand"	"🇺🇦"	"flag: Ukraine"	1871
+"✊🏻"	"raised fist: light skin tone"	"🇺🇦"	"flag: Ukraine"	1803
+
+#-----------------------------------------------
+# No repetition and independent of the order
+MATCH (n)-[r:FOLLOWED_BY { index: "ukrainewar" }]-(m) WHERE n.emoji <> m.emoji AND ID(n) < ID(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"💙"	"blue heart"	"💛"	"yellow heart"	63209
+"🇷🇺"	"flag: Russia"	"🇺🇦"	"flag: Ukraine"	49446
+"🙏"	"folded hands"	"🇺🇦"	"flag: Ukraine"	16266
+"🌻"	"sunflower"	"🇺🇦"	"flag: Ukraine"	15863
+"💙"	"blue heart"	"🇺🇦"	"flag: Ukraine"	14579
+"❤️"	"red heart"	"🇺🇦"	"flag: Ukraine"	12232
+"💛"	"yellow heart"	"🇺🇦"	"flag: Ukraine"	10970
+"🇪🇺"	"flag: European Union"	"🇺🇦"	"flag: Ukraine"	10887
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	8580
+"⚡"	"high voltage"	"🇺🇦"	"flag: Ukraine"	8408
+"💪"	"flexed biceps"	"🇺🇦"	"flag: Ukraine"	8286
+"🇺🇸"	"flag: United States"	"🇺🇦"	"flag: Ukraine"	7692
+"🔥"	"fire"	"💀"	"skull"	6568
+"❤️"	"red heart"	"👑"	"crown"	6318
+"💔"	"broken heart"	"🇺🇦"	"flag: Ukraine"	6199
+"✊"	"raised fist"	"🇺🇦"	"flag: Ukraine"	5023
+"👑"	"crown"	"🐐"	"goat"	4722
+"🇬🇧"	"flag: United Kingdom"	"🇺🇦"	"flag: Ukraine"	4566
+"🦅"	"eagle"	"🇺🇦"	"flag: Ukraine"	4460
+"🙏🏻"	"folded hands: light skin tone"	"🇺🇦"	"flag: Ukraine"	4398
+"⚡"	"high voltage"	"🇷🇺"	"flag: Russia"	4249
+"💀"	"skull"	"🇺🇦"	"flag: Ukraine"	4189
+"❤"	"red heart"	"🇺🇦"	"flag: Ukraine"	4148
+"🤝"	"handshake"	"🇺🇦"	"flag: Ukraine"	3902
+"🕊"	"dove"	"🇺🇦"	"flag: Ukraine"	3745
+"🔥"	"fire"	"🇺🇦"	"flag: Ukraine"	3717
+"🔥"	"fire"	"🇷🇺"	"flag: Russia"	3639
+"🚨"	"police car light"	"🇺🇦"	"flag: Ukraine"	3285
+"✌️"	"victory hand"	"🇺🇦"	"flag: Ukraine"	3257
+"♥️"	"heart suit"	"💋"	"kiss mark"	3130
+"✊🏻"	"raised fist: light skin tone"	"🇺🇦"	"flag: Ukraine"	2815
+"🆘"	"SOS button"	"🇺🇦"	"flag: Ukraine"	2657
+"❤️"	"red heart"	"🙏"	"folded hands"	2499
+"🇵🇱"	"flag: Poland"	"🇺🇦"	"flag: Ukraine"	2458
+"☕"	"hot beverage"	"🍳"	"cooking"	2317
+"😭"	"loudly crying face"	"💔"	"broken heart"	2065
+"😟"	"worried face"	"🇺🇦"	"flag: Ukraine"	2056
+"💥"	"collision"	"🇺🇦"	"flag: Ukraine"	2043
+"❤️"	"red heart"	"🇷🇺"	"flag: Russia"	2038
+"😭"	"loudly crying face"	"🇺🇦"	"flag: Ukraine"	2011
+"💥"	"collision"	"🇷🇺"	"flag: Russia"	2007
+"💙"	"blue heart"	"🙏"	"folded hands"	2004
+"🔴"	"red circle"	"🇺🇦"	"flag: Ukraine"	1942
+"🇫🇷"	"flag: France"	"🇺🇦"	"flag: Ukraine"	1854
+"♥️"	"heart suit"	"🇺🇦"	"flag: Ukraine"	1806
+"🇺🇸"	"flag: United States"	"🇷🇺"	"flag: Russia"	1790
+"❗"	"red exclamation mark"	"🇺🇦"	"flag: Ukraine"	1765
+"☠"	"skull and crossbones"	"‼"	"double exclamation mark"	1714
+"💙"	"blue heart"	"🌻"	"sunflower"	1693
+"💛"	"yellow heart"	"🌻"	"sunflower"	1643
+
+###################################################################
+##### BRASIL
+###################################################################
+
+#-----------------------------------------------
+# Indifferent
+MATCH (n)-[r:FOLLOWED_BY { index: "brasil" }]->(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+	n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	112643
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	85166
+"🇧🇷"	"flag: Brazil"	"🇧🇷"	"flag: Brazil"	74887
+"👏"	"clapping hands"	"👏"	"clapping hands"	33450
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	27177
+"🤡"	"clown face"	"🤡"	"clown face"	20223
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	18333
+"🙏"	"folded hands"	"🙏"	"folded hands"	14453
+"😡"	"pouting face"	"😡"	"pouting face"	9554
+"🤔"	"thinking face"	"🤔"	"thinking face"	9480
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	9335
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	8689
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	7806
+"❤️"	"red heart"	"❤️"	"red heart"	7430
+"💩"	"pile of poo"	"💩"	"pile of poo"	6862
+"🚨"	"police car light"	"🚨"	"police car light"	6852
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	5886
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	5540
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	5067
+"💚"	"green heart"	"💛"	"yellow heart"	4851
+"🙏"	"folded hands"	"🇧🇷"	"flag: Brazil"	3981
+"💪"	"flexed biceps"	"💪"	"flexed biceps"	3757
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	3620
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	3565
+"🔥"	"fire"	"🔥"	"fire"	3411
+"🚩"	"triangular flag"	"🚩"	"triangular flag"	3261
+"🥰"	"smiling face with hearts"	"🥰"	"smiling face with hearts"	3200
+"😱"	"face screaming in fear"	"😱"	"face screaming in fear"	3166
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	2999
+"🇧🇷"	"flag: Brazil"	"🙏"	"folded hands"	2902
+"🙏🏻"	"folded hands: light skin tone"	"🙏🏻"	"folded hands: light skin tone"	2853
+"🙌"	"raising hands"	"🙌"	"raising hands"	2665
+"🇧🇷"	"flag: Brazil"	"💚"	"green heart"	2627
+"👍"	"thumbs up"	"👍"	"thumbs up"	2498
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	2362
+"🤭"	"face with hand over mouth"	"🤭"	"face with hand over mouth"	2313
+"😢"	"crying face"	"😢"	"crying face"	2017
+"💛"	"yellow heart"	"💚"	"green heart"	1964
+"👏🏽"	"clapping hands: medium skin tone"	"👏🏽"	"clapping hands: medium skin tone"	1957
+"😆"	"grinning squinting face"	"😆"	"grinning squinting face"	1828
+"❤"	"red heart"	"❤"	"red heart"	1783
+"🐀"	"rat"	"🐀"	"rat"	1713
+"💰"	"money bag"	"💰"	"money bag"	1702
+"🤪"	"zany face"	"🤪"	"zany face"	1689
+"🍉"	"watermelon"	"🍉"	"watermelon"	1640
+"😔"	"pensive face"	"😔"	"pensive face"	1625
+"💚"	"green heart"	"💚"	"green heart"	1613
+"🇦🇷"	"flag: Argentina"	"🇦🇷"	"flag: Argentina"	1599
+"🤢"	"nauseated face"	"🤢"	"nauseated face"	1561
+"🥺"	"pleading face"	"🥺"	"pleading face"	1494
+
+#-----------------------------------------------
+# With repetition
+MATCH (n)-[r:FOLLOWED_BY { index: "brasil" }]->(m) WHERE n.emoji = m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"🤣"	"rolling on the floor laughing"	"🤣"	"rolling on the floor laughing"	112643
+"😂"	"face with tears of joy"	"😂"	"face with tears of joy"	85166
+"🇧🇷"	"flag: Brazil"	"🇧🇷"	"flag: Brazil"	74887
+"👏"	"clapping hands"	"👏"	"clapping hands"	33450
+"😭"	"loudly crying face"	"😭"	"loudly crying face"	27177
+"🤡"	"clown face"	"🤡"	"clown face"	20223
+"🤮"	"face vomiting"	"🤮"	"face vomiting"	18333
+"🙏"	"folded hands"	"🙏"	"folded hands"	14453
+"😡"	"pouting face"	"😡"	"pouting face"	9554
+"🤔"	"thinking face"	"🤔"	"thinking face"	9480
+"🤬"	"face with symbols on mouth"	"🤬"	"face with symbols on mouth"	9335
+"👇"	"backhand index pointing down"	"👇"	"backhand index pointing down"	8689
+"👏🏻"	"clapping hands: light skin tone"	"👏🏻"	"clapping hands: light skin tone"	7806
+"❤️"	"red heart"	"❤️"	"red heart"	7430
+"💩"	"pile of poo"	"💩"	"pile of poo"	6862
+"🚨"	"police car light"	"🚨"	"police car light"	6852
+"😍"	"smiling face with heart-eyes"	"😍"	"smiling face with heart-eyes"	5067
+"💪"	"flexed biceps"	"💪"	"flexed biceps"	3757
+"😅"	"grinning face with sweat"	"😅"	"grinning face with sweat"	3620
+"👏🏼"	"clapping hands: medium-light skin tone"	"👏🏼"	"clapping hands: medium-light skin tone"	3565
+"🔥"	"fire"	"🔥"	"fire"	3411
+"🚩"	"triangular flag"	"🚩"	"triangular flag"	3261
+"🥰"	"smiling face with hearts"	"🥰"	"smiling face with hearts"	3200
+"😱"	"face screaming in fear"	"😱"	"face screaming in fear"	3166
+"🙄"	"face with rolling eyes"	"🙄"	"face with rolling eyes"	2999
+"🙏🏻"	"folded hands: light skin tone"	"🙏🏻"	"folded hands: light skin tone"	2853
+"🙌"	"raising hands"	"🙌"	"raising hands"	2665
+"👍"	"thumbs up"	"👍"	"thumbs up"	2498
+"😁"	"beaming face with smiling eyes"	"😁"	"beaming face with smiling eyes"	2362
+"🤭"	"face with hand over mouth"	"🤭"	"face with hand over mouth"	2313
+"😢"	"crying face"	"😢"	"crying face"	2017
+"👏🏽"	"clapping hands: medium skin tone"	"👏🏽"	"clapping hands: medium skin tone"	1957
+"😆"	"grinning squinting face"	"😆"	"grinning squinting face"	1828
+"❤"	"red heart"	"❤"	"red heart"	1783
+"🐀"	"rat"	"🐀"	"rat"	1713
+"💰"	"money bag"	"💰"	"money bag"	1702
+"🤪"	"zany face"	"🤪"	"zany face"	1689
+"🍉"	"watermelon"	"🍉"	"watermelon"	1640
+"😔"	"pensive face"	"😔"	"pensive face"	1625
+"💚"	"green heart"	"💚"	"green heart"	1613
+"🇦🇷"	"flag: Argentina"	"🇦🇷"	"flag: Argentina"	1599
+"🤢"	"nauseated face"	"🤢"	"nauseated face"	1561
+"🥺"	"pleading face"	"🥺"	"pleading face"	1494
+"🖕"	"middle finger"	"🖕"	"middle finger"	1429
+"🗣️"	"speaking head"	"🗣️"	"speaking head"	1396
+"😎"	"smiling face with sunglasses"	"😎"	"smiling face with sunglasses"	1389
+"🤦"	"person facepalming"	"🤦"	"person facepalming"	1370
+"👀"	"eyes"	"👀"	"eyes"	1358
+"🌹"	"rose"	"🌹"	"rose"	1350
+"🥳"	"partying face"	"🥳"	"partying face"	1301
+
+#-----------------------------------------------
+# No repetition
+MATCH (n)-[r:FOLLOWED_BY { index: "brasil" }]->(m) WHERE n.emoji <> m.emoji RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	5886
+"🤣"	"rolling on the floor laughing"	"😂"	"face with tears of joy"	5540
+"💚"	"green heart"	"💛"	"yellow heart"	4851
+"🙏"	"folded hands"	"🇧🇷"	"flag: Brazil"	3981
+"🇧🇷"	"flag: Brazil"	"🙏"	"folded hands"	2902
+"🇧🇷"	"flag: Brazil"	"💚"	"green heart"	2627
+"💛"	"yellow heart"	"💚"	"green heart"	1964
+"💚"	"green heart"	"🇧🇷"	"flag: Brazil"	1494
+"💛"	"yellow heart"	"💙"	"blue heart"	1457
+"🇧🇷"	"flag: Brazil"	"❤️"	"red heart"	1376
+"🤢"	"nauseated face"	"🤮"	"face vomiting"	1368
+"❤️"	"red heart"	"🇧🇷"	"flag: Brazil"	1304
+"🙏🏻"	"folded hands: light skin tone"	"🇧🇷"	"flag: Brazil"	1267
+"💛"	"yellow heart"	"🇧🇷"	"flag: Brazil"	1108
+"👊"	"oncoming fist"	"🇧🇷"	"flag: Brazil"	1105
+"👏"	"clapping hands"	"🇧🇷"	"flag: Brazil"	1070
+"🙏"	"folded hands"	"🙌"	"raising hands"	1038
+"🙌"	"raising hands"	"🇧🇷"	"flag: Brazil"	956
+"🇧🇷"	"flag: Brazil"	"👊"	"oncoming fist"	929
+"💪"	"flexed biceps"	"🇧🇷"	"flag: Brazil"	852
+"🙌"	"raising hands"	"🙏"	"folded hands"	793
+"1️⃣"	"keycap: 1"	"3️⃣"	"keycap: 3"	789
+"😡"	"pouting face"	"🤬"	"face with symbols on mouth"	773
+"🇧🇷"	"flag: Brazil"	"💛"	"yellow heart"	772
+"🆘"	"SOS button"	"🇧🇷"	"flag: Brazil"	724
+"😅"	"grinning face with sweat"	"😂"	"face with tears of joy"	699
+"😅"	"grinning face with sweat"	"🤣"	"rolling on the floor laughing"	690
+"🇧🇷"	"flag: Brazil"	"👏"	"clapping hands"	678
+"💙"	"blue heart"	"❤️"	"red heart"	672
+"🇧🇷"	"flag: Brazil"	"🙌"	"raising hands"	670
+"🇧🇷"	"flag: Brazil"	"💪"	"flexed biceps"	616
+"🇧🇷"	"flag: Brazil"	"❤"	"red heart"	603
+"🤣"	"rolling on the floor laughing"	"😅"	"grinning face with sweat"	576
+"🚨"	"police car light"	"🇧🇷"	"flag: Brazil"	566
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	561
+"🤣"	"rolling on the floor laughing"	"🤡"	"clown face"	539
+"🌟"	"glowing star"	"✨"	"sparkles"	525
+"🇧🇷"	"flag: Brazil"	"🙏🏻"	"folded hands: light skin tone"	525
+"🇧🇷"	"flag: Brazil"	"🚩"	"triangular flag"	523
+"⭐"	"star"	"🌟"	"glowing star"	517
+"✨"	"sparkles"	"💥"	"collision"	512
+"🚩"	"triangular flag"	"🇧🇷"	"flag: Brazil"	498
+"🍳"	"cooking"	"🥚"	"egg"	497
+"🇲🇽"	"flag: Mexico"	"🇺🇸"	"flag: United States"	496
+"🤜"	"right-facing fist"	"🤛"	"left-facing fist"	476
+"💚"	"green heart"	"💙"	"blue heart"	476
+"😂"	"face with tears of joy"	"🤡"	"clown face"	472
+"🙏"	"folded hands"	"❤️"	"red heart"	471
+"🇧🇷"	"flag: Brazil"	"👉"	"backhand index pointing right"	470
+"🤡"	"clown face"	"🤣"	"rolling on the floor laughing"	468
+
+#-----------------------------------------------
+# No repetition and independent of the order
+MATCH (n)-[r:FOLLOWED_BY { index: "brasil" }]-(m) WHERE n.emoji <> m.emoji AND ID(n) < ID(m) RETURN n.emoji,n.name,m.emoji,m.name,SUM(r.count) ORDER BY SUM(r.count) DESC LIMIT 50;
+
+n.emoji	n.name	m.emoji	m.name	SUM(r.count)
+"😂"	"face with tears of joy"	"🤣"	"rolling on the floor laughing"	11426
+"🙏"	"folded hands"	"🇧🇷"	"flag: Brazil"	6883
+"💛"	"yellow heart"	"💚"	"green heart"	6815
+"💚"	"green heart"	"🇧🇷"	"flag: Brazil"	4121
+"❤️"	"red heart"	"🇧🇷"	"flag: Brazil"	2680
+"👊"	"oncoming fist"	"🇧🇷"	"flag: Brazil"	2034
+"💛"	"yellow heart"	"🇧🇷"	"flag: Brazil"	1880
+"🙏"	"folded hands"	"🙌"	"raising hands"	1831
+"🙏🏻"	"folded hands: light skin tone"	"🇧🇷"	"flag: Brazil"	1792
+"🤢"	"nauseated face"	"🤮"	"face vomiting"	1777
+"💙"	"blue heart"	"💛"	"yellow heart"	1775
+"👏"	"clapping hands"	"🇧🇷"	"flag: Brazil"	1748
+"🙌"	"raising hands"	"🇧🇷"	"flag: Brazil"	1626
+"💪"	"flexed biceps"	"🇧🇷"	"flag: Brazil"	1468
+"🤣"	"rolling on the floor laughing"	"😅"	"grinning face with sweat"	1266
+"😂"	"face with tears of joy"	"😅"	"grinning face with sweat"	1260
+"😡"	"pouting face"	"🤬"	"face with symbols on mouth"	1240
+"🆘"	"SOS button"	"🇧🇷"	"flag: Brazil"	1174
+"🚩"	"triangular flag"	"🇧🇷"	"flag: Brazil"	1021
+"🚨"	"police car light"	"🇧🇷"	"flag: Brazil"	1019
+"🤣"	"rolling on the floor laughing"	"🤡"	"clown face"	1007
+"❤"	"red heart"	"🇧🇷"	"flag: Brazil"	949
+"😂"	"face with tears of joy"	"🤡"	"clown face"	924
+"✊"	"raised fist"	"🌹"	"rose"	868
+"💙"	"blue heart"	"💚"	"green heart"	828
+"👍"	"thumbs up"	"🇧🇷"	"flag: Brazil"	818
+"1️⃣"	"keycap: 1"	"3️⃣"	"keycap: 3"	796
+"😎"	"smiling face with sunglasses"	"🇧🇷"	"flag: Brazil"	787
+"❤️"	"red heart"	"🙏"	"folded hands"	774
+"❤️"	"red heart"	"💙"	"blue heart"	773
+"💩"	"pile of poo"	"🤮"	"face vomiting"	733
+"👉"	"backhand index pointing right"	"🇧🇷"	"flag: Brazil"	713
+"🇺🇸"	"flag: United States"	"🇲🇽"	"flag: Mexico"	697
+"🔵"	"blue circle"	"🔴"	"red circle"	693
+"🥰"	"smiling face with hearts"	"😍"	"smiling face with heart-eyes"	680
+"🇺🇸"	"flag: United States"	"🇧🇷"	"flag: Brazil"	677
+"😭"	"loudly crying face"	"🇧🇷"	"flag: Brazil"	675
+"🙏"	"folded hands"	"👏"	"clapping hands"	636
+"💙"	"blue heart"	"🤍"	"white heart"	604
+"💩"	"pile of poo"	"🤡"	"clown face"	586
+"❤️"	"red heart"	"😍"	"smiling face with heart-eyes"	583
+"👍"	"thumbs up"	"👏"	"clapping hands"	582
+"🤝"	"handshake"	"🇧🇷"	"flag: Brazil"	564
+"🇧🇷"	"flag: Brazil"	"🪖"	"military helmet"	548
+"✨"	"sparkles"	"🌟"	"glowing star"	545
+"⭐"	"star"	"🌟"	"glowing star"	526
+"✨"	"sparkles"	"💥"	"collision"	518
+"🥚"	"egg"	"🍳"	"cooking"	510
+"🙏🏼"	"folded hands: medium-light skin tone"	"🇧🇷"	"flag: Brazil"	506
+"🤛"	"left-facing fist"	"🤜"	"right-facing fist"	485
+
+

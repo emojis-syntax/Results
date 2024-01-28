@@ -1,0 +1,634 @@
+###############################################
+Prominent emojis
+###############################################
+
+
+###############################################
+POLY
+###############################################
+http://localhost/distance.php?index=poly
+
+n	id	emoji	name	closeness
+1	29	🇺🇸	flag: United States	0.55057
+2	11	❤️	red heart	0.54720
+3	9	😂	face with tears of joy	0.53277
+4	49	🔥	fire	0.53141
+5	26	🤣	rolling on the floor laughing	0.51019
+6	114	💕	two hearts	0.50606
+7	13	😎	smiling face with sunglasses	0.50525
+8	38	👍	thumbs up	0.50525
+9	36	🥰	smiling face with hearts	0.50362
+10	57	💯	hundred points	0.50362
+11	17	✨	sparkles	0.49565
+12	12	💙	blue heart	0.49447
+13	56	💖	sparkling heart	0.48678
+14	74	😍	smiling face with heart-eyes	0.48602
+15	159	🖤	black heart	0.48490
+16	18	😊	smiling face with smiling eyes	0.48340
+17	199	😘	face blowing a kiss	0.48228
+18	19	🤩	star-struck	0.47969
+19	10	❤	red heart	0.47896
+20	68	🙏	folded hands	0.47859
+21	8	😭	loudly crying face	0.47786
+22	95	🌊	water wave	0.47352
+23	233	💞	revolving hearts	0.46997
+24	166	💛	yellow heart	0.46577
+25	103	💜	purple heart	0.46474
+26	136	😳	flushed face	0.46233
+27	39	♥️	heart suit	0.45996
+28	65	😁	beaming face with smiling eyes	0.45827
+29	215	💀	skull	0.45827
+30	349	✌️	victory hand	0.45760
+31	94	🗳	ballot box with ballot	0.45693
+32	111	💥	collision	0.45627
+33	218	👏	clapping hands	0.45231
+34	597	🧨	firecracker	0.45004
+35	22	🤔	thinking face	0.45004
+36	505	🌿	herb	0.44971
+37	92	🙌	raising hands	0.44907
+38	63	🥺	pleading face	0.44587
+39	73	🙏🏼	folded hands: medium-light skin tone	0.44492
+40	237	😜	winking face with tongue	0.44429
+41	55	🤗	hugging face	0.44366
+42	117	👍🏻	thumbs up: light skin tone	0.44303
+43	365	😩	weary face	0.44272
+44	15	👀	eyes	0.44272
+45	61	🌺	hibiscus	0.44209
+46	14	😷	face with medical mask	0.44178
+47	268	⚡	high voltage	0.44147
+48	173	💚	green heart	0.44116
+49	423	🧡	orange heart	0.43930
+50	275	🥳	partying face	0.43746
+
+###############################################
+POLIAMORY
+###############################################
+http://localhost/distance.php?index=poliamory
+
+n	id	emoji	name	closeness
+1	9	😂	face with tears of joy	0.51423
+2	11	❤️	red heart	0.50909
+3	29	🇺🇸	flag: United States	0.50771
+4	49	🔥	fire	0.49734
+5	57	💯	hundred points	0.48359
+6	36	🥰	smiling face with hearts	0.48193
+7	114	💕	two hearts	0.47741
+8	56	💖	sparkling heart	0.47417
+9	12	💙	blue heart	0.47098
+10	8	😭	loudly crying face	0.46784
+11	17	✨	sparkles	0.46745
+12	13	😎	smiling face with sunglasses	0.46667
+13	74	😍	smiling face with heart-eyes	0.46091
+14	159	🖤	black heart	0.45566
+15	38	👍	thumbs up	0.45455
+16	10	❤	red heart	0.45418
+17	68	🙏	folded hands	0.45307
+18	103	💜	purple heart	0.45125
+19	19	🤩	star-struck	0.44872
+20	199	😘	face blowing a kiss	0.44800
+21	95	🌊	water wave	0.44657
+22	26	🤣	rolling on the floor laughing	0.44060
+23	92	🙌	raising hands	0.43818
+24	215	💀	skull	0.43682
+25	166	💛	yellow heart	0.43682
+26	18	😊	smiling face with smiling eyes	0.43614
+27	136	😳	flushed face	0.43614
+28	505	🌿	herb	0.43344
+29	349	✌️	victory hand	0.42846
+30	65	😁	beaming face with smiling eyes	0.42813
+31	14	😷	face with medical mask	0.42586
+32	22	🤔	thinking face	0.42328
+33	268	⚡	high voltage	0.42296
+34	597	🧨	firecracker	0.42296
+35	173	💚	green heart	0.41948
+36	237	😜	winking face with tongue	0.41948
+37	402	💓	beating heart	0.41916
+38	76	🙏🏽	folded hands: medium skin tone	0.41791
+39	55	🤗	hugging face	0.41760
+40	243	🎶	musical notes	0.41698
+41	34	😋	face savoring food	0.41667
+42	233	💞	revolving hearts	0.41512
+43	269	❄️	snowflake	0.41390
+44	423	🧡	orange heart	0.41359
+45	63	🥺	pleading face	0.41359
+46	90	😉	winking face	0.41359
+47	275	🥳	partying face	0.41176
+48	94	🗳	ballot box with ballot	0.41086
+49	46	😅	grinning face with sweat	0.41026
+50	121	📚	books	0.40996
+
+###############################################
+METOO
+###############################################
+http://localhost/distance.php?index=metoo
+
+n	id	emoji	name	closeness
+1	38	👍	thumbs up	0.50425
+2	11	❤️	red heart	0.49376
+3	114	💕	two hearts	0.46614
+4	9	😂	face with tears of joy	0.46477
+5	214	💪	flexed biceps	0.46477
+6	49	🔥	fire	0.46027
+7	218	👏	clapping hands	0.45983
+8	17	✨	sparkles	0.45368
+9	8	😭	loudly crying face	0.44896
+10	29	🇺🇸	flag: United States	0.44268
+11	68	🙏	folded hands	0.44145
+12	144	👌	OK hand	0.44145
+13	150	😱	face screaming in fear	0.44104
+14	56	💖	sparkling heart	0.43738
+15	221	✊	raised fist	0.43578
+16	103	💜	purple heart	0.43025
+17	57	💯	hundred points	0.42986
+18	100	💋	kiss mark	0.42716
+19	339	💗	growing heart	0.42677
+20	10	❤	red heart	0.42639
+21	429	😇	smiling face with halo	0.42639
+22	22	🤔	thinking face	0.42525
+23	407	💪🏻	flexed biceps: light skin tone	0.42110
+24	54	🙄	face with rolling eyes	0.42035
+25	470	🌹	rose	0.41924
+26	92	🙌	raising hands	0.41887
+27	74	😍	smiling face with heart-eyes	0.41594
+28	26	🤣	rolling on the floor laughing	0.41557
+29	530	🙌🏾	raising hands: medium-dark skin tone	0.41412
+30	78	😈	smiling face with horns	0.41268
+31	199	😘	face blowing a kiss	0.41233
+32	216	💔	broken heart	0.41197
+33	136	😳	flushed face	0.41019
+34	234	😢	crying face	0.41019
+35	111	💥	collision	0.40984
+36	23	😡	pouting face	0.40948
+37	287	💪🏾	flexed biceps: medium-dark skin tone	0.40948
+38	76	🙏🏽	folded hands: medium skin tone	0.40878
+39	90	😉	winking face	0.40808
+40	159	🖤	black heart	0.40633
+41	364	😆	grinning squinting face	0.40529
+42	225	💪🏽	flexed biceps: medium skin tone	0.40152
+43	343	☺	smiling face	0.40118
+44	243	🎶	musical notes	0.39916
+45	13	😎	smiling face with sunglasses	0.39816
+46	173	💚	green heart	0.39749
+47	12	💙	blue heart	0.39683
+48	208	✌	victory hand	0.39583
+49	1105	💑	couple with heart	0.39485
+50	432	🙈	see-no-evil monkey	0.39386
+
+###############################################
+CLIMATE
+###############################################
+http://localhost/distance.php?index=climate
+
+n	id	emoji	name	closeness
+1	594	🌎	globe showing Americas	0.78653
+2	511	🌍	globe showing Europe-Africa	0.77242
+3	436	🌏	globe showing Asia-Australia	0.74326
+4	747	🌳	deciduous tree	0.73559
+5	49	🔥	fire	0.73013
+6	873	🌱	seedling	0.72782
+7	123	☀️	sun	0.72298
+8	11	❤️	red heart	0.71846
+9	173	💚	green heart	0.71746
+10	95	🌊	water wave	0.71696
+11	931	♻️	recycling symbol	0.70982
+12	269	❄️	snowflake	0.70982
+13	505	🌿	herb	0.70909
+14	296	🌞	sun with face	0.70643
+15	268	⚡	high voltage	0.70354
+16	293	🌲	evergreen tree	0.70282
+17	13	😎	smiling face with sunglasses	0.69807
+18	214	💪	flexed biceps	0.69177
+19	38	👍	thumbs up	0.69130
+20	29	🇺🇸	flag: United States	0.69061
+21	9	😂	face with tears of joy	0.69038
+22	22	🤔	thinking face	0.68854
+23	218	👏	clapping hands	0.68625
+24	68	🙏	folded hands	0.68557
+25	12	💙	blue heart	0.68331
+26	74	😍	smiling face with heart-eyes	0.68263
+27	17	✨	sparkles	0.68195
+28	548	💦	sweat droplets	0.67993
+29	92	🙌	raising hands	0.67815
+30	114	💕	two hearts	0.67615
+31	961	🍃	leaf fluttering in wind	0.67593
+32	18	😊	smiling face with smiling eyes	0.67395
+33	591	🌴	palm tree	0.67373
+34	57	💯	hundred points	0.67329
+35	153	🌈	rainbow	0.67198
+36	154	👇	backhand index pointing down	0.67110
+37	221	✊	raised fist	0.67045
+38	111	💥	collision	0.66958
+39	552	🐧	penguin	0.66549
+40	35	👉	backhand index pointing right	0.66549
+41	150	😱	face screaming in fear	0.66420
+42	136	😳	flushed face	0.66208
+43	10	❤	red heart	0.66123
+44	274	💧	droplet	0.66081
+45	271	💨	dashing away	0.66038
+46	308	🌸	cherry blossom	0.65996
+47	43	🇬🇧	flag: United Kingdom	0.65933
+48	282	💡	light bulb	0.65891
+49	185	🌻	sunflower	0.65598
+50	162	🐝	honeybee	0.65598
+
+###############################################
+CAPITOL
+###############################################
+http://localhost/distance.php?index=capitol
+
+n	id	emoji	name	closeness
+1	29	🇺🇸	flag: United States	0.69167
+2	9	😂	face with tears of joy	0.62636
+3	26	🤣	rolling on the floor laughing	0.60698
+4	11	❤️	red heart	0.59484
+5	49	🔥	fire	0.59484
+6	86	🇺🇲	flag: U.S. Outlying Islands	0.59216
+7	13	😎	smiling face with sunglasses	0.58951
+8	14	😷	face with medical mask	0.58914
+9	68	🙏	folded hands	0.58801
+10	38	👍	thumbs up	0.58614
+11	57	💯	hundred points	0.58244
+12	46	😅	grinning face with sweat	0.58134
+13	136	😳	flushed face	0.57987
+14	23	😡	pouting face	0.57915
+15	244	🤡	clown face	0.57842
+16	15	👀	eyes	0.57661
+17	65	😁	beaming face with smiling eyes	0.57589
+18	54	🙄	face with rolling eyes	0.57054
+19	214	💪	flexed biceps	0.56949
+20	12	💙	blue heart	0.56704
+21	531	🇮🇳	flag: India	0.56669
+22	8	😭	loudly crying face	0.56323
+23	219	🎉	party popper	0.56288
+24	218	👏	clapping hands	0.56220
+25	216	💔	broken heart	0.56220
+26	39	♥️	heart suit	0.56083
+27	429	😇	smiling face with halo	0.55947
+28	635	🗽	Statue of Liberty	0.55913
+29	10	❤	red heart	0.55879
+30	364	😆	grinning squinting face	0.55845
+31	234	😢	crying face	0.55777
+32	154	👇	backhand index pointing down	0.55710
+33	111	💥	collision	0.55542
+34	19	🤩	star-struck	0.55475
+35	237	😜	winking face with tongue	0.55409
+36	67	‼️	double exclamation mark	0.55375
+37	137	🥴	woozy face	0.55309
+38	453	🤦‍♂️	man facepalming	0.55210
+39	349	✌️	victory hand	0.54946
+40	144	👌	OK hand	0.54881
+41	454	🤦🏽‍♀️	woman facepalming: medium skin tone	0.54686
+42	55	🤗	hugging face	0.54653
+43	501	🥂	clinking glasses	0.54589
+44	76	🙏🏽	folded hands: medium skin tone	0.54524
+45	445	🏛	classical building	0.54524
+46	594	🌎	globe showing Americas	0.54492
+47	35	👉	backhand index pointing right	0.54299
+48	175	🙃	upside-down face	0.54267
+49	17	✨	sparkles	0.54267
+50	41	🦅	eagle	0.54267
+
+###############################################
+BREXIT
+###############################################
+http://localhost/distance.php?index=brexit
+
+n	id	emoji	name	closeness
+1	43	🇬🇧	flag: United Kingdom	0.82194
+2	1314	🇪🇺	flag: European Union	0.80463
+3	9	😂	face with tears of joy	0.74238
+4	38	👍	thumbs up	0.72822
+5	13	😎	smiling face with sunglasses	0.71173
+6	22	🤔	thinking face	0.70888
+7	11	❤️	red heart	0.70657
+8	90	😉	winking face	0.70503
+9	18	😊	smiling face with smiling eyes	0.70249
+10	218	👏	clapping hands	0.70097
+11	432	🙈	see-no-evil monkey	0.69821
+12	65	😁	beaming face with smiling eyes	0.69771
+13	29	🇺🇸	flag: United States	0.69721
+14	54	🙄	face with rolling eyes	0.69696
+15	136	😳	flushed face	0.69596
+16	150	😱	face screaming in fear	0.69472
+17	26	🤣	rolling on the floor laughing	0.69373
+18	964	⚽	soccer ball	0.69299
+19	68	🙏	folded hands	0.69176
+20	49	🔥	fire	0.69152
+21	219	🎉	party popper	0.69103
+22	943	🇫🇷	flag: France	0.69029
+23	144	👌	OK hand	0.68858
+24	154	👇	backhand index pointing down	0.68495
+25	350	😀	grinning face	0.68447
+26	511	🌍	globe showing Europe-Africa	0.68423
+27	15	👀	eyes	0.68399
+28	237	😜	winking face with tongue	0.68064
+29	364	😆	grinning squinting face	0.68041
+30	1302	🇮🇪	flag: Ireland	0.68041
+31	74	😍	smiling face with heart-eyes	0.67875
+32	96	🍻	clinking beer mugs	0.67875
+33	234	😢	crying face	0.67827
+34	214	💪	flexed biceps	0.67804
+35	8	😭	loudly crying face	0.67686
+36	365	😩	weary face	0.67686
+37	17	✨	sparkles	0.67662
+38	202	💩	pile of poo	0.67662
+39	827	🏴󠁧󠁢󠁳󠁣󠁴󠁿	flag: Scotland	0.67639
+40	117	👍🏻	thumbs up: light skin tone	0.67615
+41	190	😃	grinning face with big eyes	0.67615
+42	323	👊	oncoming fist	0.67569
+43	111	💥	collision	0.67569
+44	175	🙃	upside-down face	0.67498
+45	672	🔫	water pistol	0.67475
+46	216	💔	broken heart	0.67382
+47	53	😬	grimacing face	0.67358
+48	199	😘	face blowing a kiss	0.67358
+49	570	🍾	bottle with popping cork	0.67312
+50	1515	💷	pound banknote	0.67265
+
+###############################################
+UKRAINE
+###############################################
+http://localhost/distance.php?index=ukraine
+
+n	id	emoji	name	closeness
+1	1583	🇺🇦	flag: Ukraine	0.82933
+2	1203	🇷🇺	flag: Russia	0.79009
+3	11	❤️	red heart	0.77467
+4	68	🙏	folded hands	0.77410
+5	49	🔥	fire	0.75738
+6	12	💙	blue heart	0.74955
+7	154	👇	backhand index pointing down	0.74478
+8	29	🇺🇸	flag: United States	0.74085
+9	38	👍	thumbs up	0.73773
+10	216	💔	broken heart	0.73644
+11	214	💪	flexed biceps	0.73618
+12	10	❤	red heart	0.73541
+13	464	🙏🏻	folded hands: light skin tone	0.73464
+14	475	🕊	dove	0.72702
+15	39	♥️	heart suit	0.72702
+16	511	🌍	globe showing Europe-Africa	0.72452
+17	9	😂	face with tears of joy	0.72327
+18	8	😭	loudly crying face	0.72327
+19	66	🚨	police car light	0.72302
+20	57	💯	hundred points	0.72278
+21	1314	🇪🇺	flag: European Union	0.72228
+22	234	😢	crying face	0.72178
+23	452	🚀	rocket	0.72104
+24	111	💥	collision	0.72030
+25	166	💛	yellow heart	0.72005
+26	349	✌️	victory hand	0.71858
+27	218	👏	clapping hands	0.71784
+28	221	✊	raised fist	0.71687
+29	198	❗	red exclamation mark	0.71638
+30	629	🤝	handshake	0.71540
+31	852	☮️	peace symbol	0.71395
+32	22	🤔	thinking face	0.71395
+33	26	🤣	rolling on the floor laughing	0.71322
+34	17	✨	sparkles	0.71225
+35	268	⚡	high voltage	0.71177
+36	15	👀	eyes	0.71177
+37	63	🥺	pleading face	0.71105
+38	1064	🕊️	dove	0.71105
+39	185	🌻	sunflower	0.70937
+40	23	😡	pouting face	0.70913
+41	594	🌎	globe showing Americas	0.70889
+42	13	😎	smiling face with sunglasses	0.70889
+43	73	🙏🏼	folded hands: medium-light skin tone	0.70794
+44	67	‼️	double exclamation mark	0.70580
+45	150	😱	face screaming in fear	0.70321
+46	92	🙌	raising hands	0.70227
+47	244	🤡	clown face	0.70087
+48	70	😔	pensive face	0.69970
+49	531	🇮🇳	flag: India	0.69877
+50	2448	🪖	military helmet	0.69877
+
+###############################################
+US2020
+###############################################
+http://localhost/distance.php?index=us2020
+
+n	id	emoji	name	closeness
+1	29	🇺🇸	flag: United States	0.96959
+2	11	❤️	red heart	0.95774
+3	9	😂	face with tears of joy	0.95596
+4	68	🙏	folded hands	0.95368
+5	12	💙	blue heart	0.95166
+6	14	😷	face with medical mask	0.95091
+7	38	👍	thumbs up	0.95066
+8	49	🔥	fire	0.95066
+9	57	💯	hundred points	0.94941
+10	17	✨	sparkles	0.94916
+11	26	🤣	rolling on the floor laughing	0.94916
+12	244	🤡	clown face	0.94493
+13	95	🌊	water wave	0.94493
+14	15	👀	eyes	0.94493
+15	114	💕	two hearts	0.94443
+16	111	💥	collision	0.94344
+17	13	😎	smiling face with sunglasses	0.94319
+18	635	🗽	Statue of Liberty	0.94295
+19	218	👏	clapping hands	0.94270
+20	39	♥️	heart suit	0.94270
+21	214	💪	flexed biceps	0.94245
+22	65	😁	beaming face with smiling eyes	0.94147
+23	86	🇺🇲	flag: U.S. Outlying Islands	0.94147
+24	10	❤	red heart	0.94073
+25	94	🗳	ballot box with ballot	0.94049
+26	36	🥰	smiling face with hearts	0.94049
+27	74	😍	smiling face with heart-eyes	0.93975
+28	22	🤔	thinking face	0.93926
+29	67	‼️	double exclamation mark	0.93901
+30	482	🦠	microbe	0.93877
+31	77	👑	crown	0.93877
+32	154	👇	backhand index pointing down	0.93853
+33	202	💩	pile of poo	0.93804
+34	54	🙄	face with rolling eyes	0.93755
+35	219	🎉	party popper	0.93755
+36	359	💰	money bag	0.93706
+37	199	😘	face blowing a kiss	0.93682
+38	153	🌈	rainbow	0.93682
+39	464	🙏🏻	folded hands: light skin tone	0.93657
+40	90	😉	winking face	0.93657
+41	275	🥳	partying face	0.93609
+42	429	😇	smiling face with halo	0.93609
+43	313	🤪	zany face	0.93560
+44	55	🤗	hugging face	0.93536
+45	594	🌎	globe showing Americas	0.93536
+46	8	😭	loudly crying face	0.93512
+47	418	✝️	latin cross	0.93487
+48	18	😊	smiling face with smiling eyes	0.93487
+49	173	💚	green heart	0.93463
+50	350	😀	grinning face	0.93439
+
+###############################################
+COVID
+###############################################
+http://localhost/distance.php?index=covid
+
+n	id	emoji	name	closeness
+1	14	😷	face with medical mask	0.97206
+2	482	🦠	microbe	0.96862
+3	11	❤️	red heart	0.96764
+4	9	😂	face with tears of joy	0.96568
+5	17	✨	sparkles	0.96447
+6	38	👍	thumbs up	0.96228
+7	49	🔥	fire	0.96228
+8	114	💕	two hearts	0.96180
+9	26	🤣	rolling on the floor laughing	0.96180
+10	12	💙	blue heart	0.96180
+11	214	💪	flexed biceps	0.96107
+12	68	🙏	folded hands	0.96011
+13	154	👇	backhand index pointing down	0.95963
+14	29	🇺🇸	flag: United States	0.95939
+15	10	❤	red heart	0.95939
+16	579	💉	syringe	0.95939
+17	8	😭	loudly crying face	0.95915
+18	65	😁	beaming face with smiling eyes	0.95891
+19	18	😊	smiling face with smiling eyes	0.95867
+20	22	🤔	thinking face	0.95843
+21	74	😍	smiling face with heart-eyes	0.95843
+22	218	👏	clapping hands	0.95843
+23	511	🌍	globe showing Europe-Africa	0.95795
+24	39	♥️	heart suit	0.95771
+25	103	💜	purple heart	0.95747
+26	219	🎉	party popper	0.95747
+27	173	💚	green heart	0.95723
+28	153	🌈	rainbow	0.95699
+29	275	🥳	partying face	0.95699
+30	36	🥰	smiling face with hearts	0.95699
+31	13	😎	smiling face with sunglasses	0.95699
+32	57	💯	hundred points	0.95651
+33	410	🚫	prohibited	0.95579
+34	159	🖤	black heart	0.95579
+35	55	🤗	hugging face	0.95556
+36	19	🤩	star-struck	0.95556
+37	90	😉	winking face	0.95532
+38	964	⚽	soccer ball	0.95508
+39	15	👀	eyes	0.95484
+40	92	🙌	raising hands	0.95460
+41	389	✅	check mark button	0.95436
+42	243	🎶	musical notes	0.95436
+43	66	🚨	police car light	0.95436
+44	46	😅	grinning face with sweat	0.95436
+45	56	💖	sparkling heart	0.95436
+46	111	💥	collision	0.95413
+47	629	🤝	handshake	0.95413
+48	216	💔	broken heart	0.95413
+49	359	💰	money bag	0.95341
+50	166	💛	yellow heart	0.95341
+
+###############################################
+UKRAINEWAR
+###############################################
+http://localhost/distance.php?index=ukrainewar
+
+n	id	emoji	name	closeness
+1	1583	🇺🇦	flag: Ukraine	0.89418
+2	1203	🇷🇺	flag: Russia	0.86594
+3	11	❤️	red heart	0.85410
+4	68	🙏	folded hands	0.84897
+5	49	🔥	fire	0.84657
+6	29	🇺🇸	flag: United States	0.84258
+7	12	💙	blue heart	0.83916
+8	214	💪	flexed biceps	0.83086
+9	111	💥	collision	0.83086
+10	154	👇	backhand index pointing down	0.83086
+11	38	👍	thumbs up	0.82702
+12	268	⚡	high voltage	0.82601
+13	185	🌻	sunflower	0.82297
+14	1314	🇪🇺	flag: European Union	0.82046
+15	17	✨	sparkles	0.82021
+16	452	🚀	rocket	0.81971
+17	218	👏	clapping hands	0.81946
+18	511	🌍	globe showing Europe-Africa	0.81796
+19	166	💛	yellow heart	0.81796
+20	67	‼️	double exclamation mark	0.81647
+21	216	💔	broken heart	0.81647
+22	9	😂	face with tears of joy	0.81523
+23	22	🤔	thinking face	0.81375
+24	43	🇬🇧	flag: United Kingdom	0.81227
+25	10	❤	red heart	0.81203
+26	26	🤣	rolling on the floor laughing	0.81105
+27	57	💯	hundred points	0.81031
+28	13	😎	smiling face with sunglasses	0.80983
+29	39	♥️	heart suit	0.80885
+30	349	✌️	victory hand	0.80861
+31	198	❗	red exclamation mark	0.80836
+32	475	🕊	dove	0.80836
+33	629	🤝	handshake	0.80812
+34	35	👉	backhand index pointing right	0.80642
+35	221	✊	raised fist	0.80594
+36	594	🌎	globe showing Americas	0.80497
+37	464	🙏🏻	folded hands: light skin tone	0.80329
+38	90	😉	winking face	0.80137
+39	8	😭	loudly crying face	0.80137
+40	66	🚨	police car light	0.80137
+41	234	😢	crying face	0.80113
+42	15	👀	eyes	0.80066
+43	244	🤡	clown face	0.79970
+44	852	☮️	peace symbol	0.79851
+45	943	🇫🇷	flag: France	0.79780
+46	1064	🕊️	dove	0.79780
+47	1091	🇩🇪	flag: Germany	0.79662
+48	74	😍	smiling face with heart-eyes	0.79568
+49	2448	🪖	military helmet	0.79521
+50	36	🥰	smiling face with hearts	0.79450
+
+###############################################
+BRASIL
+###############################################
+http://localhost/distance.php?index=brasil
+
+n	id	emoji	name	closeness
+1	1210	🇧🇷	flag: Brazil	0.85327
+2	11	❤️	red heart	0.81185
+3	49	🔥	fire	0.79717
+4	68	🙏	folded hands	0.78862
+5	218	👏	clapping hands	0.78024
+6	17	✨	sparkles	0.77874
+7	13	😎	smiling face with sunglasses	0.77427
+8	26	🤣	rolling on the floor laughing	0.77328
+9	214	💪	flexed biceps	0.77303
+10	9	😂	face with tears of joy	0.77303
+11	1026	🇲🇽	flag: Mexico	0.76813
+12	38	👍	thumbs up	0.76765
+13	15	👀	eyes	0.76692
+14	173	💚	green heart	0.76668
+15	244	🤡	clown face	0.76619
+16	36	🥰	smiling face with hearts	0.76186
+17	74	😍	smiling face with heart-eyes	0.76186
+18	12	💙	blue heart	0.76114
+19	92	🙌	raising hands	0.76114
+20	39	♥️	heart suit	0.75947
+21	388	🚩	triangular flag	0.75924
+22	35	👉	backhand index pointing right	0.75592
+23	111	💥	collision	0.75545
+24	629	🤝	handshake	0.75498
+25	154	👇	backhand index pointing down	0.75498
+26	464	🙏🏻	folded hands: light skin tone	0.75334
+27	611	🇻🇪	flag: Venezuela	0.75264
+28	1561	🇦🇷	flag: Argentina	0.75194
+29	22	🤔	thinking face	0.75147
+30	323	👊	oncoming fist	0.75008
+31	10	❤	red heart	0.74961
+32	964	⚽	soccer ball	0.74938
+33	389	✅	check mark button	0.74892
+34	29	🇺🇸	flag: United States	0.74684
+35	8	😭	loudly crying face	0.74684
+36	520	👏🏻	clapping hands: light skin tone	0.74661
+37	199	😘	face blowing a kiss	0.74615
+38	90	😉	winking face	0.74478
+39	221	✊	raised fist	0.74478
+40	66	🚨	police car light	0.74341
+41	207	🤮	face vomiting	0.74250
+42	1439	🇨🇴	flag: Colombia	0.74250
+43	65	😁	beaming face with smiling eyes	0.74068
+44	470	🌹	rose	0.74023
+45	390	🗣️	speaking head	0.73820
+46	23	😡	pouting face	0.73820
+47	359	💰	money bag	0.73798
+48	19	🤩	star-struck	0.73731
+49	202	💩	pile of poo	0.73641
+50	349	✌️	victory hand	0.73574
+
+
+

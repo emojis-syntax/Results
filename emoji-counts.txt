@@ -1,0 +1,526 @@
+############################################################
+################ MySQL queries and results #################
+############################################################
+
+SELECT emo_emoji, emo_name, emp_count FROM emoji JOIN emoji_project ON emo_id=emp_emoid JOIN project ON emp_proid=pro_id WHERE pro_name='poly' ORDER BY emp_count DESC LIMIT 50;
++-----------+--------------------------------+-----------+
+| emo_emoji | emo_name                       | emp_count |
++-----------+--------------------------------+-----------+
+| 😂         | face with tears of joy         |      1173 |
+| 🇺🇸        | flag: United States            |       751 |
+| 🤣         | rolling on the floor laughing  |       529 |
+| 😭         | loudly crying face             |       458 |
+| ❤️        | red heart                      |       357 |
+| 🔥         | fire                           |       254 |
+| 🤔         | thinking face                  |       233 |
+| ✨         | sparkles                       |       200 |
+| 😍         | smiling face with heart-eyes   |       196 |
+| 🚨         | police car light               |       181 |
+| 🥰         | smiling face with hearts       |       165 |
+| 🙄         | face with rolling eyes         |       150 |
+| 👀         | eyes                           |       141 |
+| 💕         | two hearts                     |       136 |
+| 🥺         | pleading face                  |       134 |
+| 👇         | backhand index pointing down   |       126 |
+| 💙         | blue heart                     |       122 |
+| 😁         | beaming face with smiling eyes |       121 |
+| 🙏         | folded hands                   |       118 |
+| ❤         | red heart                      |       114 |
+| 👍         | thumbs up                      |       108 |
+| 😳         | flushed face                   |       108 |
+| 👏         | clapping hands                 |       106 |
+| 💯         | hundred points                 |       103 |
+| 😷         | face with medical mask         |        99 |
+| 💖         | sparkling heart                |        96 |
+| 😅         | grinning face with sweat       |        93 |
+| 💥         | collision                      |        93 |
+| ‼️        | double exclamation mark        |        92 |
+| 💜         | purple heart                   |        92 |
+| 😌         | relieved face                  |        92 |
+| 😊         | smiling face with smiling eyes |        91 |
+| ✅         | check mark button              |        91 |
+| 🥴         | woozy face                     |        87 |
+| 😎         | smiling face with sunglasses   |        86 |
+| 📷         | camera                         |        84 |
+| ➡️        | right arrow                    |        79 |
+| 😡         | pouting face                   |        78 |
+| 👉         | backhand index pointing right  |        78 |
+| 😉         | winking face                   |        77 |
+| 🖤         | black heart                    |        75 |
+| 😘         | face blowing a kiss            |        75 |
+| 🗳         | ballot box with ballot         |        71 |
+| 💀         | skull                          |        70 |
+| 😔         | pensive face                   |        62 |
+| ⛵         | sailboat                       |        59 |
+| 🙃         | upside-down face               |        56 |
+| 🤡         | clown face                     |        56 |
+| 🤩         | star-struck                    |        54 |
+| 🤬         | face with symbols on mouth     |        54 |
++-----------+--------------------------------+-----------+
+50 rows in set (0,047 sec)
+
+
+SELECT emo_emoji, emo_name, emp_count FROM emoji JOIN emoji_project ON emo_id=emp_emoid JOIN project ON emp_proid=pro_id WHERE pro_name='metoo' ORDER BY emp_count DESC LIMIT 50;
++-----------+----------------------------------------+-----------+
+| emo_emoji | emo_name                               | emp_count |
++-----------+----------------------------------------+-----------+
+| 😂         | face with tears of joy                 |       596 |
+| ❤️        | red heart                              |       252 |
+| 👏         | clapping hands                         |       213 |
+| 🤔         | thinking face                          |       204 |
+| 🙄         | face with rolling eyes                 |       166 |
+| 🔥         | fire                                   |       157 |
+| 👍         | thumbs up                              |       108 |
+| ❤         | red heart                              |       106 |
+| 👇         | backhand index pointing down           |       104 |
+| 😡         | pouting face                           |       100 |
+| 🤣         | rolling on the floor laughing          |       100 |
+| 💜         | purple heart                           |        95 |
+| 😭         | loudly crying face                     |        90 |
+| 💕         | two hearts                             |        89 |
+| 😉         | winking face                           |        83 |
+| ⚡         | high voltage                           |        69 |
+| 💪         | flexed biceps                          |        67 |
+| 😢         | crying face                            |        67 |
+| 😍         | smiling face with heart-eyes           |        66 |
+| 🙏         | folded hands                           |        63 |
+| 🙌         | raising hands                          |        62 |
+| ✊         | raised fist                            |        62 |
+| 😳         | flushed face                           |        59 |
+| 👏🏻        | clapping hands: light skin tone        |        57 |
+| 🇺🇸        | flag: United States                    |        53 |
+| 💔         | broken heart                           |        48 |
+| 😅         | grinning face with sweat               |        47 |
+| 👏🏽        | clapping hands: medium skin tone       |        47 |
+| 👏🏼        | clapping hands: medium-light skin tone |        47 |
+| 😎         | smiling face with sunglasses           |        45 |
+| ‼️        | double exclamation mark                |        44 |
+| 🖕         | middle finger                          |        43 |
+| 💖         | sparkling heart                        |        42 |
+| 😔         | pensive face                           |        41 |
+| 😊         | smiling face with smiling eyes         |        39 |
+| 😁         | beaming face with smiling eyes         |        38 |
+| 💩         | pile of poo                            |        38 |
+| 💯         | hundred points                         |        37 |
+| 💙         | blue heart                             |        36 |
+| 💥         | collision                              |        36 |
+| 👉         | backhand index pointing right          |        35 |
+| 👌         | OK hand                                |        35 |
+| 😱         | face screaming in fear                 |        34 |
+| 😒         | unamused face                          |        34 |
+| ❌         | cross mark                             |        34 |
+| ✨         | sparkles                               |        33 |
+| 😑         | expressionless face                    |        33 |
+| 🙈         | see-no-evil monkey                     |        33 |
+| 😠         | angry face                             |        32 |
+| 🌊         | water wave                             |        32 |
++-----------+----------------------------------------+-----------+
+50 rows in set (0,048 sec)
+
+
+SELECT emo_emoji, emo_name, emp_count FROM emoji JOIN emoji_project ON emo_id=emp_emoid JOIN project ON emp_proid=pro_id WHERE pro_name='climate' ORDER BY emp_count DESC LIMIT 50;
++-----------+--------------------------------+-----------+
+| emo_emoji | emo_name                       | emp_count |
++-----------+--------------------------------+-----------+
+| 😂         | face with tears of joy         |     11398 |
+| 🌎         | globe showing Americas         |     10919 |
+| 🌍         | globe showing Europe-Africa    |      9688 |
+| 🔥         | fire                           |      6614 |
+| 🤔         | thinking face                  |      6486 |
+| 👉         | backhand index pointing right  |      5525 |
+| 🌏         | globe showing Asia-Australia   |      4828 |
+| 👏         | clapping hands                 |      4623 |
+| 🌳         | deciduous tree                 |      4293 |
+| ❤️        | red heart                      |      4235 |
+| ✅         | check mark button              |      4145 |
+| ➡️        | right arrow                    |      4115 |
+| 🙄         | face with rolling eyes         |      3914 |
+| 🌱         | seedling                       |      3522 |
+| 💚         | green heart                    |      3521 |
+| ⚡         | high voltage                   |      3398 |
+| 🤣         | rolling on the floor laughing  |      3286 |
+| 🌊         | water wave                     |      3050 |
+| 👇         | backhand index pointing down   |      3047 |
+| ☀️        | sun                            |      2967 |
+| 🌲         | evergreen tree                 |      2874 |
+| ❄️        | snowflake                      |      2587 |
+| 😭         | loudly crying face             |      2389 |
+| 👍         | thumbs up                      |      2309 |
+| 😡         | pouting face                   |      2086 |
+| 😱         | face screaming in fear         |      1944 |
+| 😎         | smiling face with sunglasses   |      1838 |
+| 🇺🇸        | flag: United States            |      1797 |
+| 💥         | collision                      |      1712 |
+| 😳         | flushed face                   |      1646 |
+| 🌞         | sun with face                  |      1620 |
+| 🌿         | herb                           |      1609 |
+| 😢         | crying face                    |      1545 |
+| 🚨         | police car light               |      1513 |
+| 💪         | flexed biceps                  |      1471 |
+| ⚠️        | warning                        |      1455 |
+| ♻️        | recycling symbol               |      1364 |
+| 🙏         | folded hands                   |      1358 |
+| 😊         | smiling face with smiling eyes |      1320 |
+| ⬇️        | down arrow                     |      1285 |
+| 📷         | camera                         |      1276 |
+| 😍         | smiling face with heart-eyes   |      1268 |
+| 🙃         | upside-down face               |      1261 |
+| 😉         | winking face                   |      1184 |
+| ‼️        | double exclamation mark        |      1155 |
+| ✊         | raised fist                    |      1147 |
+| 🙌         | raising hands                  |      1113 |
+| ™         | trade mark                     |      1088 |
+| ✔️        | check mark                     |      1083 |
+| 💧         | droplet                        |      1019 |
++-----------+--------------------------------+-----------+
+50 rows in set (0,052 sec)
+
+
+SELECT emo_emoji, emo_name, emp_count FROM emoji JOIN emoji_project ON emo_id=emp_emoid JOIN project ON emp_proid=pro_id WHERE pro_name='capitol' ORDER BY emp_count DESC LIMIT 50;
++-----------+--------------------------------+-----------+
+| emo_emoji | emo_name                       | emp_count |
++-----------+--------------------------------+-----------+
+| 🇲🇲        | flag: Myanmar (Burma)          |      6695 |
+| 🇺🇸        | flag: United States            |      4130 |
+| 😂         | face with tears of joy         |      3686 |
+| 🅰         | A button (blood type)          |      3085 |
+| 🤣         | rolling on the floor laughing  |      2150 |
+| ⚖️        | balance scale                  |      1700 |
+| 🤔         | thinking face                  |      1262 |
+| ⬇️        | down arrow                     |      1244 |
+| ➡️        | right arrow                    |      1237 |
+| ⬆️        | up arrow                       |      1043 |
+| 👇         | backhand index pointing down   |       972 |
+| 🙏         | folded hands                   |       811 |
+| ⬅️        | left arrow                     |       805 |
+| ❤️        | red heart                      |       682 |
+| 🅱️        | B button (blood type)          |       641 |
+| 🔥         | fire                           |       621 |
+| 🙄         | face with rolling eyes         |       619 |
+| 😭         | loudly crying face             |       610 |
+| 🇮🇳        | flag: India                    |       590 |
+| 👏         | clapping hands                 |       539 |
+| 🔴         | red circle                     |       532 |
+| 🇺🇲        | flag: U.S. Outlying Islands    |       487 |
+| 😳         | flushed face                   |       469 |
+| 👉         | backhand index pointing right  |       444 |
+| 🤡         | clown face                     |       424 |
+| 😱         | face screaming in fear         |       385 |
+| 👀         | eyes                           |       375 |
+| 🤬         | face with symbols on mouth     |       368 |
+| 😅         | grinning face with sweat       |       349 |
+| 😡         | pouting face                   |       345 |
+| 🚨         | police car light               |       336 |
+| ‼️        | double exclamation mark        |       335 |
+| 💙         | blue heart                     |       292 |
+| 😁         | beaming face with smiling eyes |       278 |
+| 💯         | hundred points                 |       244 |
+| 👍         | thumbs up                      |       231 |
+| 😉         | winking face                   |       223 |
+| 📷         | camera                         |       222 |
+| ❗         | red exclamation mark           |       219 |
+| 🗽         | Statue of Liberty              |       216 |
+| 🥴         | woozy face                     |       205 |
+| 😎         | smiling face with sunglasses   |       194 |
+| 🧐         | face with monocle              |       194 |
+| 😆         | grinning squinting face        |       194 |
+| 😢         | crying face                    |       191 |
+| 😷         | face with medical mask         |       182 |
+| 😒         | unamused face                  |       179 |
+| 😀         | grinning face                  |       178 |
+| 💔         | broken heart                   |       175 |
+| 🤯         | exploding head                 |       172 |
++-----------+--------------------------------+-----------+
+50 rows in set (0,050 sec)
+
+
+SELECT emo_emoji, emo_name, emp_count FROM emoji JOIN emoji_project ON emo_id=emp_emoid JOIN project ON emp_proid=pro_id WHERE pro_name='brexit' ORDER BY emp_count DESC LIMIT 50;
++------------------------------+---------------------------------+-----------+
+| emo_emoji                    | emo_name                        | emp_count |
++------------------------------+---------------------------------+-----------+
+| 😂                            | face with tears of joy          |     49467 |
+| 🇬🇧                           | flag: United Kingdom            |     46670 |
+| 🇪🇺                           | flag: European Union            |     22166 |
+| 🤔                            | thinking face                   |     12243 |
+| 🤣                            | rolling on the floor laughing   |      9278 |
+| 🙄                            | face with rolling eyes          |      7865 |
+| 👏                            | clapping hands                  |      7463 |
+| 👍                            | thumbs up                       |      6964 |
+| 👇                            | backhand index pointing down    |      6692 |
+| 😱                            | face screaming in fear          |      5749 |
+| 😉                            | winking face                    |      4830 |
+| 😡                            | pouting face                    |      4677 |
+| 😭                            | loudly crying face              |      4443 |
+| 😳                            | flushed face                    |      4429 |
+| 😁                            | beaming face with smiling eyes  |      3820 |
+| 😢                            | crying face                     |      3595 |
+| 😀                            | grinning face                   |      3588 |
+| 🙈                            | see-no-evil monkey              |      3585 |
+| 👉                            | backhand index pointing right   |      3535 |
+| 😊                            | smiling face with smiling eyes  |      3520 |
+| ❤️                           | red heart                       |      3073 |
+| ➡️                           | right arrow                     |      2647 |
+| 😔                            | pensive face                    |      2616 |
+| 😎                            | smiling face with sunglasses    |      2538 |
+| 😅                            | grinning face with sweat        |      2397 |
+| 🔥                            | fire                            |      2344 |
+| 😆                            | grinning squinting face         |      2322 |
+| 🇺🇸                           | flag: United States             |      2182 |
+| 🔴                            | red circle                      |      2180 |
+| 😒                            | unamused face                   |      2119 |
+| 😄                            | grinning face with smiling eyes |      2086 |
+| 😩                            | weary face                      |      2074 |
+| 👀                            | eyes                            |      2024 |
+| ⬇️                           | down arrow                      |      2012 |
+| 😕                            | confused face                   |      1895 |
+| 😜                            | winking face with tongue        |      1885 |
+| 🎉                            | party popper                    |      1876 |
+| 👏🏻                           | clapping hands: light skin tone |      1828 |
+| 😬                            | grimacing face                  |      1768 |
+| 🏴󠁧󠁢󠁳󠁣󠁴󠁿                      | flag: Scotland                  |      1753 |
+| 💔                            | broken heart                    |      1735 |
+| 💩                            | pile of poo                     |      1682 |
+| 👍🏻                           | thumbs up: light skin tone      |      1679 |
+| 😞                            | disappointed face               |      1677 |
+| 😏                            | smirking face                   |      1675 |
+| 🎶                            | musical notes                   |      1668 |
+| ✅                            | check mark button               |      1655 |
+| 🇫🇷                           | flag: France                    |      1615 |
+| ⚡                            | high voltage                    |      1580 |
+| 🙏                            | folded hands                    |      1507 |
++------------------------------+---------------------------------+-----------+
+50 rows in set (0,050 sec)
+
+
+SELECT emo_emoji, emo_name, emp_count FROM emoji JOIN emoji_project ON emo_id=emp_emoid JOIN project ON emp_proid=pro_id WHERE pro_name='us2020' ORDER BY emp_count DESC LIMIT 50;
++-----------+------------------------------------------------------+-----------+
+| emo_emoji | emo_name                                             | emp_count |
++-----------+------------------------------------------------------+-----------+
+| 😂         | face with tears of joy                               |   9473058 |
+| 🤣         | rolling on the floor laughing                        |   6923564 |
+| 🇺🇸        | flag: United States                                  |   4748364 |
+| ❤️        | red heart                                            |   1366080 |
+| 👇         | backhand index pointing down                         |   1330848 |
+| 👏         | clapping hands                                       |   1248851 |
+| 🙏         | folded hands                                         |   1194230 |
+| 👍         | thumbs up                                            |   1155120 |
+| 🙄         | face with rolling eyes                               |   1009992 |
+| 🤡         | clown face                                           |    991065 |
+| 🤔         | thinking face                                        |    958875 |
+| 💩         | pile of poo                                          |    889505 |
+| 🤮         | face vomiting                                        |    835428 |
+| 💙         | blue heart                                           |    776784 |
+| 😭         | loudly crying face                                   |    712156 |
+| 🔥         | fire                                                 |    638157 |
+| 😡         | pouting face                                         |    605105 |
+| 🌊         | water wave                                           |    577188 |
+| 🖕         | middle finger                                        |    514746 |
+| 🤬         | face with symbols on mouth                           |    514086 |
+| 😆         | grinning squinting face                              |    464746 |
+| 💯         | hundred points                                       |    410805 |
+| ❤         | red heart                                            |    397584 |
+| ‼️        | double exclamation mark                              |    395846 |
+| 😅         | grinning face with sweat                             |    353873 |
+| 😁         | beaming face with smiling eyes                       |    353175 |
+| 🚨         | police car light                                     |    318029 |
+| 👏🏻        | clapping hands: light skin tone                      |    312373 |
+| 😳         | flushed face                                         |    309841 |
+| 😷         | face with medical mask                               |    309718 |
+| 👀         | eyes                                                 |    297591 |
+| 🇺🇲        | flag: U.S. Outlying Islands                          |    285253 |
+| 💀         | skull                                                |    284675 |
+| 😉         | winking face                                         |    284534 |
+| 🤥         | lying face                                           |    284446 |
+| 🤪         | zany face                                            |    273797 |
+| 🙏🏻        | folded hands: light skin tone                        |    255732 |
+| 💥         | collision                                            |    254216 |
+| ♥️        | heart suit                                           |    245979 |
+| 😎         | smiling face with sunglasses                         |    244273 |
+| 💪         | flexed biceps                                        |    239253 |
+| 😊         | smiling face with smiling eyes                       |    229951 |
+| 👇🏻        | backhand index pointing down: light skin tone        |    225311 |
+| 😍         | smiling face with heart-eyes                         |    218738 |
+| ⬇️        | down arrow                                           |    206144 |
+| 👏🏼        | clapping hands: medium-light skin tone               |    203209 |
+| 🤢         | nauseated face                                       |    202448 |
+| 👇🏼        | backhand index pointing down: medium-light skin tone |    185596 |
+| 👎         | thumbs down                                          |    184265 |
+| 🥰         | smiling face with hearts                             |    179395 |
++-----------+------------------------------------------------------+-----------+
+50 rows in set (0,070 sec)
+
+
+SELECT emo_emoji, emo_name, emp_count FROM emoji JOIN emoji_project ON emo_id=emp_emoid JOIN project ON emp_proid=pro_id WHERE pro_name='covid' ORDER BY emp_count DESC LIMIT 50;
++-----------+---------------------------------+-----------+
+| emo_emoji | emo_name                        | emp_count |
++-----------+---------------------------------+-----------+
+| 😂         | face with tears of joy          |   7004415 |
+| 😭         | loudly crying face              |   4017963 |
+| 🤣         | rolling on the floor laughing   |   3775702 |
+| 👇         | backhand index pointing down    |   2203210 |
+| 🙏         | folded hands                    |   2131841 |
+| 😷         | face with medical mask          |   1786529 |
+| 🤔         | thinking face                   |   1671135 |
+| ❤️        | red heart                       |   1420511 |
+| 👏         | clapping hands                  |   1358072 |
+| 🙄         | face with rolling eyes          |   1313987 |
+| 🥺         | pleading face                   |   1050866 |
+| 😡         | pouting face                    |    953633 |
+| 👍         | thumbs up                       |    912612 |
+| 🇺🇸        | flag: United States             |    835524 |
+| 😔         | pensive face                    |    810674 |
+| 🤡         | clown face                      |    779070 |
+| 🦠         | microbe                         |    754745 |
+| 👉         | backhand index pointing right   |    732931 |
+| 🔥         | fire                            |    732783 |
+| 🤬         | face with symbols on mouth      |    701685 |
+| 😍         | smiling face with heart-eyes    |    650549 |
+| 😢         | crying face                     |    649299 |
+| 💔         | broken heart                    |    605643 |
+| 😳         | flushed face                    |    602237 |
+| 🚨         | police car light                |    582504 |
+| 😅         | grinning face with sweat        |    568394 |
+| 👀         | eyes                            |    544861 |
+| ⬇️        | down arrow                      |    536976 |
+| ➡️        | right arrow                     |    531618 |
+| ‼️        | double exclamation mark         |    516360 |
+| 😱         | face screaming in fear          |    499487 |
+| 💀         | skull                           |    492687 |
+| 😩         | weary face                      |    486870 |
+| ✨         | sparkles                        |    482986 |
+| 🔴         | red circle                      |    481775 |
+| 😁         | beaming face with smiling eyes  |    473820 |
+| 😊         | smiling face with smiling eyes  |    462353 |
+| ✅         | check mark button               |    460364 |
+| 🙃         | upside-down face                |    451324 |
+| ❤         | red heart                       |    446666 |
+| 🥰         | smiling face with hearts        |    430062 |
+| 🙏🏻        | folded hands: light skin tone   |    420334 |
+| 🥴         | woozy face                      |    406552 |
+| 😉         | winking face                    |    404167 |
+| 💙         | blue heart                      |    396936 |
+| 👏🏻        | clapping hands: light skin tone |    330753 |
+| 💜         | purple heart                    |    329461 |
+| 😎         | smiling face with sunglasses    |    325357 |
+| 💯         | hundred points                  |    323950 |
+| 🤮         | face vomiting                   |    320339 |
++-----------+---------------------------------+-----------+
+50 rows in set (0,052 sec)
+
+
+SELECT emo_emoji, emo_name, emp_count FROM emoji JOIN emoji_project ON emo_id=emp_emoid JOIN project ON emp_proid=pro_id WHERE pro_name='ukrainewar' ORDER BY emp_count DESC LIMIT 50;
++-----------+-------------------------------+-----------+
+| emo_emoji | emo_name                      | emp_count |
++-----------+-------------------------------+-----------+
+| 🇺🇦        | flag: Ukraine                 |    795812 |
+| 🇷🇺        | flag: Russia                  |    250664 |
+| 🙏         | folded hands                  |    103957 |
+| ⚡         | high voltage                  |     98068 |
+| 👇         | backhand index pointing down  |     94693 |
+| 💙         | blue heart                    |     79092 |
+| 😂         | face with tears of joy        |     77231 |
+| ❗         | red exclamation mark          |     73556 |
+| 💛         | yellow heart                  |     71322 |
+| 🔥         | fire                          |     67323 |
+| 🤣         | rolling on the floor laughing |     66604 |
+| 👉         | backhand index pointing right |     66282 |
+| 🚨         | police car light              |     61734 |
+| ❤️        | red heart                     |     59345 |
+| 🔴         | red circle                    |     57074 |
+| ‼️        | double exclamation mark       |     50205 |
+| 🇺🇸        | flag: United States           |     48805 |
+| 🤔         | thinking face                 |     44846 |
+| 🇪🇺        | flag: European Union          |     42303 |
+| ⬇️        | down arrow                    |     41747 |
+| 💔         | broken heart                  |     38922 |
+| 🌻         | sunflower                     |     35237 |
+| 💥         | collision                     |     33689 |
+| 🛑         | stop sign                     |     33299 |
+| 😭         | loudly crying face            |     31583 |
+| 👏         | clapping hands                |     31539 |
+| 💪         | flexed biceps                 |     28867 |
+| ➡️        | right arrow                   |     27152 |
+| 👍         | thumbs up                     |     25265 |
+| 👑         | crown                         |     23472 |
+| 👹         | ogre                          |     23232 |
+| 🇩🇪        | flag: Germany                 |     23024 |
+| 🇬🇧        | flag: United Kingdom          |     22864 |
+| ⚠️        | warning                       |     22355 |
+| 🤬         | face with symbols on mouth    |     21845 |
+| 😡         | pouting face                  |     21404 |
+| 💀         | skull                         |     21021 |
+| 🤡         | clown face                    |     20954 |
+| 🙏🏻        | folded hands: light skin tone |     20013 |
+| 🚀         | rocket                        |     19543 |
+| 🕊         | dove                          |     19114 |
+| ❤         | red heart                     |     17901 |
+| 😢         | crying face                   |     16119 |
+| 🇫🇷        | flag: France                  |     16019 |
+| ✅         | check mark button             |     15994 |
+| 🤮         | face vomiting                 |     15792 |
+| 🙄         | face with rolling eyes        |     15473 |
+| 👀         | eyes                          |     14956 |
+| ✊         | raised fist                   |     14617 |
+| 🇵🇱        | flag: Poland                  |     13874 |
++-----------+-------------------------------+-----------+
+50 rows in set (0,047 sec)
+
+
+SELECT emo_emoji, emo_name, emp_count FROM emoji JOIN emoji_project ON emo_id=emp_emoid JOIN project ON emp_proid=pro_id WHERE pro_name='brasil' ORDER BY emp_count DESC LIMIT 50;
++-----------+----------------------------------------+-----------+
+| emo_emoji | emo_name                               | emp_count |
++-----------+----------------------------------------+-----------+
+| 🇧🇷        | flag: Brazil                           |    193020 |
+| 🤣         | rolling on the floor laughing          |    164534 |
+| 😂         | face with tears of joy                 |    135343 |
+| 👏         | clapping hands                         |     49001 |
+| 🤡         | clown face                             |     47040 |
+| 😭         | loudly crying face                     |     46813 |
+| 🙏         | folded hands                           |     43786 |
+| 🤮         | face vomiting                          |     32564 |
+| 🤔         | thinking face                          |     31988 |
+| ❤️        | red heart                              |     31042 |
+| 🚨         | police car light                       |     27887 |
+| 👇         | backhand index pointing down           |     25270 |
+| 😡         | pouting face                           |     20694 |
+| 🤬         | face with symbols on mouth             |     17402 |
+| 💩         | pile of poo                            |     16409 |
+| 😍         | smiling face with heart-eyes           |     14669 |
+| 👍         | thumbs up                              |     13448 |
+| 💚         | green heart                            |     13374 |
+| 🔴         | red circle                             |     11736 |
+| 🙄         | face with rolling eyes                 |     11482 |
+| 👏🏻        | clapping hands: light skin tone        |     11475 |
+| 👉         | backhand index pointing right          |     11258 |
+| 🥰         | smiling face with hearts               |     11173 |
+| 🔥         | fire                                   |     11137 |
+| 😅         | grinning face with sweat               |     11063 |
+| 💪         | flexed biceps                          |     10582 |
+| 🙏🏻        | folded hands: light skin tone          |      9901 |
+| 🙌         | raising hands                          |      9510 |
+| 💛         | yellow heart                           |      8859 |
+| 🚩         | triangular flag                        |      7945 |
+| 👀         | eyes                                   |      7929 |
+| 🇲🇽        | flag: Mexico                           |      7737 |
+| 😎         | smiling face with sunglasses           |      7637 |
+| 😉         | winking face                           |      7629 |
+| 🤭         | face with hand over mouth              |      7591 |
+| 😱         | face screaming in fear                 |      7539 |
+| 😔         | pensive face                           |      7362 |
+| 😁         | beaming face with smiling eyes         |      7167 |
+| 😢         | crying face                            |      6965 |
+| 🇻🇪        | flag: Venezuela                        |      6866 |
+| 🇺🇸        | flag: United States                    |      6753 |
+| ❤         | red heart                              |      6728 |
+| ✅         | check mark button                      |      6480 |
+| 🥺         | pleading face                          |      6261 |
+| 🗣️        | speaking head                          |      5915 |
+| ✨         | sparkles                               |      5761 |
+| 💙         | blue heart                             |      5646 |
+| 👏🏼        | clapping hands: medium-light skin tone |      5466 |
+| 👊         | oncoming fist                          |      5321 |
+| ➡️        | right arrow                            |      5223 |
++-----------+----------------------------------------+-----------+
+50 rows in set (0,052 sec)
+
+
